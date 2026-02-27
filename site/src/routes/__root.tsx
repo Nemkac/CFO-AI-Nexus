@@ -1,9 +1,12 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
+import { useCallback, useEffect, useState } from 'react'
 
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
+import LoadingScreen from '../components/layout/LoadingScreen'
+import { PageLoadContext } from '../components/layout/PageLoadContext'
 
 import appCss from '../styles.css?url'
 
@@ -22,6 +25,7 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      { rel: 'icon', href: '/favicon.png', type: 'image/png' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
         rel: 'preconnect',
@@ -42,26 +46,50 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  const signalReady = useCallback(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setIsLoaded(true)
+      })
+    })
+  }, [])
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsLoaded((prev) => (prev ? prev : true))
+        })
+      })
+    })
+  }, [])
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className="flex flex-col min-h-screen bg-slate-900">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+      <body className="flex flex-col min-h-screen bg-surface-page">
+        <PageLoadContext.Provider value={{ isLoaded, signalReady }}>
+          <LoadingScreen isVisible={!isLoaded} />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <TanStackDevtools
+            config={{
+              position: 'bottom-right',
+            }}
+            plugins={[
+              {
+                name: 'Tanstack Router',
+                render: <TanStackRouterDevtoolsPanel />,
+              },
+            ]}
+          />
+        </PageLoadContext.Provider>
         <Scripts />
       </body>
     </html>

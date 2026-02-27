@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import { motion } from "motion/react"
 import Badge from "@/components/ui/badge"
 import Button from "@/components/ui/Button"
+import { usePageLoad } from '@/components/layout/PageLoadContext'
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -8,13 +10,19 @@ const fadeUp = {
 }
 
 const HeroSection = () => {
+    const { isLoaded, signalReady } = usePageLoad()
+
+    useEffect(() => {
+        signalReady()
+    }, [])
+
     return (
         <div className='flex flex-col w-full items-center justify-center h-[calc(100vh-96px)] bg-surface-page gap-6 p-4'>
             <motion.div
                 variants={fadeUp}
                 initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                animate={isLoaded ? "visible" : "hidden"}
+                transition={{ duration: 0.2, ease: "easeOut" }}
             >
                 <Badge label="October 20–21, 2026 | 100% Virtual" delay={500} />
             </motion.div>
@@ -23,7 +31,7 @@ const HeroSection = () => {
                 className="flex flex-col gap-1 items-center justify-center text-pretty max-w-4xl text-center"
                 variants={fadeUp}
                 initial="hidden"
-                animate="visible"
+                animate={isLoaded ? "visible" : "hidden"}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
             >
                 <h2 className="text-h1 text-content-heading">The First AI-Powered ExpoSummit for Finance Leaders</h2>
@@ -34,11 +42,13 @@ const HeroSection = () => {
                 className="flex flex-col items-center gap-4"
                 variants={fadeUp}
                 initial="hidden"
-                animate="visible"
+                animate={isLoaded ? "visible" : "hidden"}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
-                <Button label="Get your pass" />
-                <p className="text-p-xsm text-content-heading">Save $200: Only 55 Super Early Bird passes remaining</p>
+                <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
+                    <Button label="Get your pass" />
+                </a>
+                <p className="text-p-xsm text-content-heading">55 Super Early Bird Passes Remaining</p>
             </motion.div>
         </div>
     )

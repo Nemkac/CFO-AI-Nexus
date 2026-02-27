@@ -1,7 +1,9 @@
 import { Link } from '@tanstack/react-router'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { motion } from 'motion/react'
 import Button from '../ui/Button'
+import { usePageLoad } from './PageLoadContext'
 
 const navLinks = [
   { to: "/speakers" as const, label: "Speakers" },
@@ -9,59 +11,74 @@ const navLinks = [
   { to: "/packages" as const, label: "Packages" }
 ]
 
+const navItems = [
+  { to: "/" as const, label: "Home", exact: true },
+  { to: "/speakers" as const, label: "Speakers", exact: true },
+  { to: "/packages" as const, label: "Sponsor", exact: true },
+]
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const { isLoaded } = usePageLoad()
 
   return (
     <>
       <header className="sticky top-0 z-40 bg-surface-page backdrop-blur py-2 md:py-4 text-white">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="text-lg font-bold tracking-tight">
-            <img src='/assets/logo.svg' alt='Logo' className='h-8 md:h-10' />
-          </Link>
+
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={isLoaded ? { opacity: 1, x: 0 } : { opacity: 0, x: -12 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            <Link to="/" className="text-lg font-bold tracking-tight">
+              <img src='/assets/logo.svg' alt='Logo' className='h-8 md:h-10' />
+            </Link>
+          </motion.div>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8 transition-[0.5s]">
-            <Link
-              key={"home"}
-              to={"/"}
-              className="text-p-md text-color-purple-50 hover:text-pink-500 "
-              activeProps={{ className: 'text-pink-500' }}
-              activeOptions={{ exact: true }}
+          <nav className="hidden md:flex items-center gap-4">
+            {navItems.map(({ to, label, exact }, i) => (
+              <motion.div
+                key={to}
+                initial={{ opacity: 0 }}
+                animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 + i * 0.08 }}
+              >
+                <Link
+                  to={to}
+                  className="text-p-md text-color-purple-50 rounded-full px-5 py-2.5 nav-link"
+                  activeProps={{ className: 'nav-active-pill', style: { color: 'white' } }}
+                  activeOptions={{ exact }}
+                >
+                  {label}
+                </Link>
+              </motion.div>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 + navItems.length * 0.08 }}
             >
-              Home
-            </Link>
-            <Link
-              key={"speakers"}
-              to={"/speakers"}
-              className="text-p-md text-color-purple-50 hover:text-pink-500 "
-              activeProps={{ className: 'text-pink-500' }}
-              activeOptions={{ exact: true }}
-            >
-              Speakers
-            </Link>
-            <Link
-              key={"packages"}
-              to={"/packages"}
-              className="text-p-md text-color-purple-50 hover:text-pink-500 "
-              activeProps={{ className: 'text-pink-500' }}
-              activeOptions={{ exact: true }}
-            >
-              Sponsor
-            </Link>
-            <Link to='/checkout'>
-              <Button label='Reserve a Ticket' />
-            </Link>
+              <Link to='/checkout'>
+                <Button label='Reserve a Ticket' />
+              </Link>
+            </motion.div>
           </nav>
 
           {/* Mobile hamburger */}
-          <button
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
             onClick={() => setIsOpen(true)}
             className="md:hidden p-2 hover:bg-gray-800 rounded-lg transition-colors"
             aria-label="Open menu"
           >
             <Menu size={24} />
-          </button>
+          </motion.button>
         </div>
       </header>
 

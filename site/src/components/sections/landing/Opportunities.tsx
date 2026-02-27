@@ -32,7 +32,7 @@ const OpportunitiesSection = () => {
                 <div className="flex flex-col items-center flex-wrap gap-6">
                     <Badge label='Double Your ROI with AI-Powered Matchmaking ' />
                     <div className='flex flex-col gap-4 items-center text-center'>
-                        <h2 className='text-h2 text-content-heading'>Exhibitor and Sponsorship Opportunities</h2>
+                        <h2 className='text-h2 text-content-heading'>Exhibitor Opportunities</h2>
                         <p className='text-p-md text-content-heading text-balance'>Stop wasting time on "blind" networking. Our AI-Powered Prospecting analyzes the intent, interests, and behavior of every attendee to locate your high-value prospects.</p>
                     </div>
                     <Button label='See Exhibitor & Sponsorship Packages' />

@@ -5,12 +5,20 @@ type Props = {
     title: string,
     description: string,
     flip?: boolean,
-    minHeight?: number
+    minHeight?: number,
+    buttonVariant: "primary" | "white",
+    buttonLabel: string
 }
 
 const FeatureCard = ({ ...props }: Props) => {
     return (
-        <div className='flex flex-col md:flex-row w-full items-center border rounded-3xl p-8 border-content-heading gap-8' style={props.minHeight ? { minHeight: props.minHeight } : undefined}>
+        <div
+            className='flex flex-col md:flex-row w-full items-center rounded-3xl p-8 gap-8 border border-stroke-default/25 backdrop-blur-sm bg-purple-800/10'
+            style={{
+                boxShadow: 'inset 0 1px 0 rgba(201, 208, 255, 0.2), inset 0 -1px 0 rgba(77, 93, 255, 0.12), inset 1px 0 0 rgba(201, 208, 255, 0.1), inset -1px 0 0 rgba(77, 93, 255, 0.08), inset 0 0 48px rgba(201, 208, 255, 0.04)',
+                ...(props.minHeight ? { minHeight: props.minHeight } : undefined)
+            }}
+        >
             {props.flip ?
                 (
                     <>
@@ -19,7 +27,7 @@ const FeatureCard = ({ ...props }: Props) => {
                                 <h4 className='text-h4 text-content-heading'>{props.title}</h4>
                                 <p className='text-p-md text-content-body text-pretty'>{props.description}</p>
                             </div>
-                            <Button label='Apply for Partnership' />
+                            <Button label={props.buttonLabel} variant={props.buttonVariant} />
                         </div>
                         {props.image ? (<img className='rounded-2xl' />) : (<div className='rounded-2xl bg-content-heading h-full w-full md:w-[50%]' />)}
                     </>
@@ -31,7 +39,7 @@ const FeatureCard = ({ ...props }: Props) => {
                                 <h4 className='text-h4 text-content-heading'>{props.title}</h4>
                                 <p className='text-p-md text-content-body text-pretty'>{props.description}</p>
                             </div>
-                            <Button label='Apply for Partnership' />
+                            <Button label={props.buttonLabel} variant={props.buttonVariant} />
                         </div>
                     </>
                 )}

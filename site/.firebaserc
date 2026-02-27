@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "cfo-ai-nexus",
+    "development": "cfo-ai-nexus",
+    "production": "cfo-ai-nexus"
+  },
+  "targets": {},
+  "etags": {}
+}
