@@ -1,4 +1,5 @@
 import HeroSection from '@/components/sections/landing/Hero'
+import ImageSection from '@/components/sections/landing/Image'
 import NumbersSection from '@/components/sections/landing/Numbers'
 import OpportunitiesSection from '@/components/sections/landing/Opportunities'
 import StagesSection from '@/components/sections/landing/Stages'
@@ -14,6 +15,7 @@ function App() {
     <>
       <HeroSection />
       <NumbersSection />
+      <ImageSection />
       <WhyAttendSection />
       <StagesSection />
       <VendorsSection />

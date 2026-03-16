@@ -3,46 +3,7 @@ import { motion, AnimatePresence } from "motion/react"
 import Button from "@/components/ui/Button"
 import FilterButton from "@/components/ui/FilterButton"
 import SpeakerCard from "@/components/ui/SpeakerCard"
-import { Link } from "@tanstack/react-router"
-
-const stages = ['Main Stage', 'FP & A', 'Financial Close & Consolidation', 'Treasury & Cash Management', 'AR/AP Automation']
-const speakers = [
-    {
-        image: '/assets/speaker1.jpg',
-        title: "The Autonomous Finance Office: Leveraging Gen-AI for 10x Operational Efficiency",
-        speaker: "Bojan Radojičić",
-        role: "Founder of CFO AI Nexus and Corporate Finance Hub",
-        stage: ['Main Stage', 'FP & A']
-    },
-    {
-        image: '/assets/speaker1.jpg',
-        title: "The Autonomous Finance Office: Leveraging Gen-AI for 10x Operational Efficiency",
-        speaker: "Bojan Radojičić",
-        role: "Founder of CFO AI Nexus and Corporate Finance Hub",
-        stage: ['FP & A']
-    },
-    {
-        image: '/assets/speaker1.jpg',
-        title: "The Autonomous Finance Office: Leveraging Gen-AI for 10x Operational Efficiency",
-        speaker: "Bojan Radojičić",
-        role: "Founder of CFO AI Nexus and Corporate Finance Hub",
-        stage: ['Financial Close & Consolidation', 'FP & A']
-    },
-    {
-        image: '/assets/speaker1.jpg',
-        title: "The Autonomous Finance Office: Leveraging Gen-AI for 10x Operational Efficiency",
-        speaker: "Bojan Radojičić",
-        role: "Founder of CFO AI Nexus and Corporate Finance Hub",
-        stage: ['Treasury & Cash Management', 'AR/AP Automation']
-    },
-    {
-        image: '/assets/speaker1.jpg',
-        title: "The Autonomous Finance Office: Leveraging Gen-AI for 10x Operational Efficiency",
-        speaker: "Bojan Radojičić",
-        role: "Founder of CFO AI Nexus and Corporate Finance Hub",
-        stage: ['AR/AP Automation']
-    },
-]
+import { stages, speakers } from "@/data/speakers"
 
 
 const StagesSection = () => {
@@ -60,7 +21,7 @@ const StagesSection = () => {
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                            Stages
+                            Conference
                         </motion.h2>
                         <motion.p
                             className="text-p-md text-content-body text-center text-balance max-w-3xl"
@@ -88,18 +49,20 @@ const StagesSection = () => {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeStage}
-                        className="flex flex-row flex-wrap items-center gap-6 justify-center"
+                        className="flex flex-row flex-wrap items-stretch gap-6 justify-center"
                         exit={{ opacity: 0, y: -12, transition: { duration: 0.2, ease: "easeIn" } }}
                     >
                         {speakers.filter(speaker => speaker.stage.some(s => s === activeStage)).map((speaker, i) => (
                             <motion.div
                                 key={i}
+                                className="flex"
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-40px" }}
                                 transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.08 }}
                             >
                                 <SpeakerCard imageUrl={speaker.image} title={speaker.title} speaker={speaker.speaker} role={speaker.role} />
+
                             </motion.div>
                         ))}
                     </motion.div>
@@ -112,9 +75,9 @@ const StagesSection = () => {
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <Link to="/speakers">
-                        <Button label="View All Speakers" />
-                    </Link>
+                    <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
+                        <Button label="Get Your Pass" />
+                    </a>
                 </motion.div>
             </div>
         </div>

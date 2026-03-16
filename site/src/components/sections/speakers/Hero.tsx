@@ -38,7 +38,7 @@ const SpeakersHeroSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
                 <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
-                    <Button label="Get your pass" />
+                    <Button label="Get Your Pass" />
                 </a>
                 <p className="text-p-xsm text-content-heading">Save $200: Only 55 Super Early Bird passes remaining</p>
             </motion.div>

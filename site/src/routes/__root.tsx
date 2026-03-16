@@ -9,6 +9,7 @@ import LoadingScreen from '../components/layout/LoadingScreen'
 import { PageLoadContext } from '../components/layout/PageLoadContext'
 
 import appCss from '../styles.css?url'
+import Banner from '@/components/layout/Banner'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -21,8 +22,21 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'CFO AI Nexus 2025',
+        title: 'CFO AI Nexus 2026',
       },
+      // Open Graph
+      { property: 'og:title', content: 'CFO AI Nexus 2026' },
+      { property: 'og:description', content: 'October 20–21, 2026 | 100% Virtual — The premier AI conference for finance leaders.' },
+      { property: 'og:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://cfo-ai-nexus.web.app/' },
+      // Twitter / X
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'CFO AI Nexus 2026' },
+      { name: 'twitter:description', content: 'October 20–21, 2026 | 100% Virtual — The premier AI conference for finance leaders.' },
+      { name: 'twitter:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
     ],
     links: [
       { rel: 'icon', href: '/favicon.png', type: 'image/png' },
@@ -47,6 +61,8 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [bannerHeight, setBannerHeight] = useState(52)
+  const [headerHeight, setHeaderHeight] = useState(80)
 
   const signalReady = useCallback(() => {
     requestAnimationFrame(() => {
@@ -66,6 +82,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     })
   }, [])
 
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--layout-offset',
+      `${bannerHeight + headerHeight}px`
+    )
+  }, [bannerHeight, headerHeight])
+
   return (
     <html lang="en">
       <head>
@@ -75,8 +98,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className="flex flex-col min-h-screen bg-surface-page">
         <PageLoadContext.Provider value={{ isLoaded, signalReady }}>
           <LoadingScreen isVisible={!isLoaded} />
-          <Header />
-          <main className="flex-1">{children}</main>
+          <Banner
+            onHeightChange={setBannerHeight}
+            onTypingDone={() => { }}
+          />
+          <Header
+            bannerHeight={bannerHeight}
+            onHeightChange={setHeaderHeight}
+          />
+          <main
+            className="flex-1"
+            style={{ paddingTop: bannerHeight + headerHeight }}
+          >
+            {children}
+          </main>
           <Footer />
           <TanStackDevtools
             config={{

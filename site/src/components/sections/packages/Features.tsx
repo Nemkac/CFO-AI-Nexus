@@ -4,24 +4,34 @@ import FeatureCard from '@/components/ui/FeatureCard'
 
 const features = [
     {
+        title: "Intent-Based Matchmaking and Engagement",
+        description: 'Our AI-powered prospecting analyzes attendee intent, interests, and behavior to pinpoint your high-value prospects and streamline lead scanning. Book meetings instantly with a seamless integrated scheduler.',
+        image: "./assets/opportunities/IntentBasedMatchmakingAndEngagement.png"
+    },
+    {
         title: "Virtual Booth",
-        description: `A demand generation engine featuring value proposition and exhibitor profile. Run live or pre-recorded product demos with intent-based qualified buyers, host 1:1 video meetings, and engage via Q&A sessions and chats. Offer downloadable assets, showcase team profile cards, embed custom content, and measure traffic to track every interaction.`
+        description: `Run live or pre-recorded product demos with intent-based qualified buyers, host 1:1 video meetings, and engage via Q&A sessions and chats. Offer downloadable assets, showcase team expertise, monitor exact ROI through advanced metrics.`,
+        image: "./assets/opportunities/VirtualBooth.png"
     },
     {
-        title: "Host Session or Workshop",
-        description: 'Host a dedicated 30 minutes long learning session or hands‑on workshop designed and led by your team, allowing you to demonstrate your expertise, present case studies, and engage directly with CFOs and finance leaders. Choose between live and pre-recorded sessions.'
+        title: "Conference Speaking Slot",
+        description: 'Host a dedicated 30-minute Strategic Session led by your experts. Bridge the gap between complex industry challenges and your product’s unique value proposition. Choose live or pre-recorded sessions.',
+        image: "./assets/opportunities/ConferenceSpeakingSlot.png",
     },
     {
-        title: `Intent-Based Matchmaking and Engagement`,
-        description: `Stop wasting time on "blind" networking. Our AI-powered prospecting analyzes attendee intent, interests, and behavior to pinpoint your high-value prospects and streamline lead scanning. Book meetings instantly with a seamless integrated scheduler.`
+        title: `Curated 1:1 with pre-qualified leads`,
+        description: `Our team proactively identifies and invites profiles matching your criteria to ensure your 1:1 calendar is filled with high-value prospects.`,
+        image: "./assets/opportunities/Curated1-1WithPre-qualifiedLeads.png",
     },
     {
-        title: "Digital presence and branding",
-        description: "Your brand will be featured on our official landing page with targeted copy and a direct backlink to your corporate site, plus dedicated exposure across our official LinkedIn and social media channels. Brand logo will be displayed in all event agendas and presentations."
+        title: "Digital Presence and Branding",
+        description: "Your brand will be featured on our official website page, LinkedIn posts, displayed in all event agendas and presentations, with direct backlink to your landing pages.",
+        image: "./assets/opportunities/DigitalPresenceAndBranding.png"
     },
     {
         title: "MQL Data & Analytics",
-        description: 'Access and export lead lists, booth visitor metrics, and engagement heatmaps in one click. Arm yourself for the post-event call and measure exact ROI.'
+        description: 'Access and export lead lists, booth visitor metrics, and engagement heatmaps in one click. Arm yourself for the post-event call and measure exact ROI.',
+        image: "./assets/opportunities/MQLData&Analytics.png"
     },
 ]
 
@@ -59,7 +69,7 @@ const FeaturesSection = () => {
                                 viewport={{ once: true, margin: "-80px" }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}
                             >
-                                <FeatureCard buttonVariant='white' buttonLabel='Secure Your Spot' title={feature.title} description={feature.description} flip={flip} minHeight={cardHeight || undefined} />
+                                <FeatureCard buttonVariant='white' buttonLabel='Secure Your Spot' title={feature.title} description={feature.description} flip={flip} minHeight={cardHeight || undefined} image={feature.image} />
                             </motion.div>
                         )
                     })}

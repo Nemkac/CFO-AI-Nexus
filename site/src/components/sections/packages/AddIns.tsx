@@ -1,10 +1,12 @@
 import AddInCard from "@/components/ui/AddInCard"
+import Button from "@/components/ui/Button"
+import { motion } from 'motion/react'
 
 const addInsTop = [
     {
         icon: "/icons/mail_outline.svg",
         title: "Exclusive “The Knowledge Series” Newsletter",
-        description: "Sponsorship of a series of 3 pre-event newsletters delivering your expert insights, including your logo at the top and a “Message from our sponsor” section in the middle to all registrants. "
+        description: "Sponsorship of a series of 3 pre-event newsletters delivering your expert insights, including your logo at the top and a “Message from our sponsor” section in the middle to all registrants."
     },
     {
         icon: "/icons/home_work.svg",
@@ -48,6 +50,15 @@ const AddIns = () => {
                         ))}
                     </div>
                 </div>
+                <motion.div
+                    className="flex flex-col items-center w-full gap-4"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <Button label="Schedule A Call" />
+                </motion.div>
             </div>
         </div>
     )

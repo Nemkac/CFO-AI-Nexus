@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SpeakersRouteImport } from './routes/speakers'
+import { Route as ProposalRouteImport } from './routes/proposal'
 import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as OrganizerRouteImport } from './routes/organizer'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -19,9 +21,19 @@ const SpeakersRoute = SpeakersRouteImport.update({
   path: '/speakers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProposalRoute = ProposalRouteImport.update({
+  id: '/proposal',
+  path: '/proposal',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PackagesRoute = PackagesRouteImport.update({
   id: '/packages',
   path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrganizerRoute = OrganizerRouteImport.update({
+  id: '/organizer',
+  path: '/organizer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckoutRoute = CheckoutRouteImport.update({
@@ -38,34 +50,55 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/organizer': typeof OrganizerRoute
   '/packages': typeof PackagesRoute
+  '/proposal': typeof ProposalRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/organizer': typeof OrganizerRoute
   '/packages': typeof PackagesRoute
+  '/proposal': typeof ProposalRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/organizer': typeof OrganizerRoute
   '/packages': typeof PackagesRoute
+  '/proposal': typeof ProposalRoute
   '/speakers': typeof SpeakersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/checkout' | '/packages' | '/speakers'
+  fullPaths:
+    | '/'
+    | '/checkout'
+    | '/organizer'
+    | '/packages'
+    | '/proposal'
+    | '/speakers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/checkout' | '/packages' | '/speakers'
-  id: '__root__' | '/' | '/checkout' | '/packages' | '/speakers'
+  to: '/' | '/checkout' | '/organizer' | '/packages' | '/proposal' | '/speakers'
+  id:
+    | '__root__'
+    | '/'
+    | '/checkout'
+    | '/organizer'
+    | '/packages'
+    | '/proposal'
+    | '/speakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CheckoutRoute: typeof CheckoutRoute
+  OrganizerRoute: typeof OrganizerRoute
   PackagesRoute: typeof PackagesRoute
+  ProposalRoute: typeof ProposalRoute
   SpeakersRoute: typeof SpeakersRoute
 }
 
@@ -78,11 +111,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SpeakersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/proposal': {
+      id: '/proposal'
+      path: '/proposal'
+      fullPath: '/proposal'
+      preLoaderRoute: typeof ProposalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/packages': {
       id: '/packages'
       path: '/packages'
       fullPath: '/packages'
       preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/organizer': {
+      id: '/organizer'
+      path: '/organizer'
+      fullPath: '/organizer'
+      preLoaderRoute: typeof OrganizerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout': {
@@ -105,7 +152,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CheckoutRoute: CheckoutRoute,
+  OrganizerRoute: OrganizerRoute,
   PackagesRoute: PackagesRoute,
+  ProposalRoute: ProposalRoute,
   SpeakersRoute: SpeakersRoute,
 }
 export const routeTree = rootRouteImport

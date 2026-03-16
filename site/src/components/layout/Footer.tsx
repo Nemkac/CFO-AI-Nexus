@@ -22,12 +22,13 @@ export default function Footer() {
             </div>
           </nav>
           <div className="flex flex-col gap-4">
-            <span className="text-p-md text-white">When</span>
+            <span className="text-p-md text-white">About</span>
+            <Link to="/organizer" className="text-p-md-link text-content-body hover:text-pink-500 underline">Organizer</Link>
             <p className="text-p-md text-content-body">October 20–21, 2026</p>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-6 w-full items-center md:justify-between text-center">
-          <p className="text-p-sm text-white">© {new Date().getFullYear()} Swiss Gate. All rights reserved.</p>
+          <p className="text-p-sm text-white">© {new Date().getFullYear()} CFO AI Nexus Conference. All rights reserved.</p>
           <p className="text-p-sm text-white underline cursor-pointer">Terms & Conditions | Cookie Policy | Privacy Policy</p>
         </div>
       </div>

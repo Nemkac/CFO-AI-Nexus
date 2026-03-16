@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion } from 'motion/react'
 import Button from '../ui/Button'
@@ -17,20 +17,86 @@ const navItems = [
   { to: "/packages" as const, label: "Sponsor", exact: true },
 ]
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+interface HeaderProps {
+  bannerHeight: number
+  onHeightChange: (h: number) => void
+}
+
+export default function Header({ bannerHeight, onHeightChange }: HeaderProps) {
   const { isLoaded } = usePageLoad()
+  const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+
+  const headerRef = useRef<HTMLElement>(null)
+  const lastScrollY = useRef(0)
+  const onHeightChangeRef = useRef(onHeightChange)
+  onHeightChangeRef.current = onHeightChange
+
+  // Measure and report header height
+  useEffect(() => {
+    if (!headerRef.current) return
+    const el = headerRef.current
+    const measure = () => onHeightChangeRef.current(el.offsetHeight)
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
+  // Show header when page is loaded (simultaneous with banner)
+  useEffect(() => {
+    if (isLoaded) setIsVisible(true)
+  }, [isLoaded])
+
+  // Scroll-based show/hide (desktop only)
+  useEffect(() => {
+    if (!isLoaded) return
+
+    // Check initial scroll position
+    if (window.innerWidth >= 768 && window.scrollY >= window.innerHeight / 2) {
+      setIsVisible(false)
+    }
+
+    lastScrollY.current = window.scrollY
+
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      const isMobile = window.innerWidth < 768
+
+      if (isMobile || currentY < window.innerHeight / 2) {
+        setIsVisible(true)
+      } else if (currentY > lastScrollY.current) {
+        setIsVisible(false)
+      } else {
+        setIsVisible(true)
+      }
+
+      lastScrollY.current = currentY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isLoaded])
+
+  const headerY = isLoaded && isVisible ? 0 : '-100%'
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-surface-page backdrop-blur py-2 md:py-4 text-white">
+      <motion.header
+        ref={headerRef}
+        className="fixed left-0 right-0 z-40 bg-surface-page backdrop-blur py-2 md:py-4 text-white w-full"
+        style={{ top: bannerHeight }}
+        animate={{ y: headerY }}
+        initial={{ y: '-100%' }}
+        transition={{ duration: 0.35, ease: 'easeInOut' }}
+      >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={isLoaded ? { opacity: 1, x: 0 } : { opacity: 0, x: -12 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.5, ease: 'easeOut', delay: 0.15 }}
           >
             <Link to="/" className="text-lg font-bold tracking-tight">
               <img src='/assets/logo.svg' alt='Logo' className='h-8 md:h-10' />
@@ -44,7 +110,7 @@ export default function Header() {
                 key={to}
                 initial={{ opacity: 0 }}
                 animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 + i * 0.08 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 + i * 0.08 }}
               >
                 <Link
                   to={to}
@@ -60,7 +126,7 @@ export default function Header() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 + navItems.length * 0.08 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 + navItems.length * 0.08 }}
             >
               <Link to='/checkout'>
                 <Button label='Reserve a Ticket' />
@@ -72,7 +138,7 @@ export default function Header() {
           <motion.button
             initial={{ opacity: 0 }}
             animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.4 }}
             onClick={() => setIsOpen(true)}
             className="md:hidden p-2 hover:bg-gray-800 rounded-lg transition-colors"
             aria-label="Open menu"
@@ -80,7 +146,7 @@ export default function Header() {
             <Menu size={24} />
           </motion.button>
         </div>
-      </header>
+      </motion.header>
 
       {/* Mobile drawer overlay */}
       {isOpen && (

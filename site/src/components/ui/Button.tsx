@@ -19,11 +19,12 @@ const buttonVariants = cva(
 
 type Props = VariantProps<typeof buttonVariants> & {
     label: string
+    className?: string
 }
 
-const Button = ({ variant, label }: Props) => {
+const Button = ({ variant, label, className }: Props) => {
     return (
-        <button className={cn(buttonVariants({ variant }))}>
+        <button className={cn(buttonVariants({ variant }), className)}>
             <span className="relative z-10 text-p-md-semibold transition-[0.5s]">{label}</span>
         </button>
     )

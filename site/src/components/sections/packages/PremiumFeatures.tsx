@@ -5,27 +5,33 @@ import FeatureCard from '@/components/ui/FeatureCard'
 const features = [
     {
         title: "Main Stage Keynote",
-        description: `Take the main stage as a thought leader. Deliver a high‑impact keynote session to share your vision, showcase your solutions, and set the tone for the conference.Choose between live and pre-recorded sessions. `
+        description: `Take the main stage as a thought leader. Deliver a high‑impact keynote session to share your vision, showcase your solutions, and set the tone for the conference.Choose between live and pre-recorded sessions. `,
+        image: "./assets/opportunities/MainStageKeynote.png"
     },
     {
-        title: `Intent-Based Meeting "Guarantor"`,
-        description: 'We schedule your team meetings or even exclusive breakout rooms with pre-qualified leads and bring them into a breakout environment for you. Functioning as a high-end webinar and group discussion space, we organize a room where we invite profiles matching your specific criteria. '
+        title: `Targeted Breakout Room`,
+        description: 'Access our bespoke roundtable feature: An invite-only digital room designed for high-level engagement with a group of finance executives tailored to your criteria.',
+        image: "./assets/opportunities/BreakoutRoom.png"
     },
     {
-        title: `Viral digital presence and premium featuring`,
-        description: `Guaranteed 100,000 brand impressions on LinkedIn through leading B2B creator profiles and pages. Your brand will be prominently featured at the top of the event website and in social media posts, as well as in premium positions in the official PDF agenda and all event presentations.`
+        title: `Viral Digital Presence`,
+        description: `Guaranteed 100,000 brand impressions on LinkedIn through leading B2B creator profiles and pages. Premium featuring on the website, social media content, official PDF agenda and all event presentations.`,
+        image: "./assets/opportunities/ViralDigitalPresence.png"
     },
     {
         title: "Premium Visibility",
-        description: `"Top of the List" priority positioning for your booth to the qualified buyers, headline website banner featured, official linkedin page banner featured. `
+        description: `"Top of the List" priority positioning for your booth to the qualified buyers, headline website banner featured, official linkedin page banner featured.`,
+        image: "./assets/opportunities/PremiumVisibility.png"
     },
     {
         title: "Pre-roll videos",
-        description: '20-second sponsor video spots played between conference sessions and workshops, giving your brand visibility right before the next content starts.'
+        description: '20-second sponsor video spots played between conference sessions and workshops, giving your brand visibility right before the next content starts.',
+        image: "./assets/opportunities/Pre-RollVideos.png"
     },
     {
         title: "Powered by",
-        description: 'Main sponsor of the entire event with brand logo featured on all available places for promotion and sponsorship, Mobile app official sponsor and branding, scheduled notifications, exclusive In-app announcements, checkout page sponsor.'
+        description: 'Main sponsor of the entire event with brand logo featured on all available places for promotion and sponsorship, mobile app official sponsor and branding, exclusive In-app announcements, checkout page sponsor and more.',
+        image: "./assets/opportunities/PoweredBy.png"
     },
 ]
 
@@ -63,7 +69,7 @@ const PremiumFeaturesSection = () => {
                                 viewport={{ once: true, margin: "-80px" }}
                                 transition={{ duration: 0.6, ease: "easeOut" }}
                             >
-                                <FeatureCard buttonVariant='primary' buttonLabel='Connect With Us' title={feature.title} description={feature.description} flip={flip} minHeight={cardHeight || undefined} />
+                                <FeatureCard buttonVariant='primary' buttonLabel='Connect With Us' title={feature.title} description={feature.description} flip={flip} minHeight={cardHeight || undefined} image={feature.image} />
                             </motion.div>
                         )
                     })}

@@ -17,7 +17,7 @@ const HeroSection = () => {
     }, [])
 
     return (
-        <div className='flex flex-col w-full items-center justify-center h-[calc(100vh-96px)] bg-surface-page gap-6 p-4'>
+        <div className='flex flex-col w-full items-center justify-center bg-surface-page gap-6 p-4' style={{ height: 'calc(100vh - var(--layout-offset, 152px))' }}>
             <motion.div
                 variants={fadeUp}
                 initial="hidden"
@@ -46,7 +46,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
                 <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
-                    <Button label="Get your pass" />
+                    <Button label="Get Your Pass" />
                 </a>
                 <p className="text-p-xsm text-content-heading">55 Super Early Bird Passes Remaining</p>
             </motion.div>

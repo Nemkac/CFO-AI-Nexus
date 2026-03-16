@@ -1,3 +1,5 @@
+import Button from '@/components/ui/Button'
+import { Link } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
 export interface SponsorshipRow {
@@ -14,10 +16,10 @@ interface SponsorshipPackagesProps {
 
 const CheckMark = () => (
     <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5 shrink-0" aria-label="Included">
-        <circle cx="10" cy="10" r="9" fill="#3a4ecc" />
+        <circle cx="10" cy="10" r="9" fill="#FC69D2" />
         <path
             d="M6 10.5l2.5 2.5 5.5-5.5"
-            stroke="#e6e9ff"
+            stroke="#040820"
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -92,6 +94,17 @@ const SponsorshipPackages = ({ rows }: SponsorshipPackagesProps) => {
                             ))}
                         </tbody>
                     </table>
+                </motion.div>
+                <motion.div
+                    className="flex flex-col items-center w-full gap-4"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <Link to='/proposal'>
+                        <Button label="Get Full Proposal" />
+                    </Link>
                 </motion.div>
             </div>
         </div>
