@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import Button from "@/components/ui/Button"
 import WhyAttendCard from "@/components/ui/WhyAttendCard"
+import { Link } from "@tanstack/react-router"
 
 const reasons = [
     { icon: <img src="/icons/whyAttendIcon-1.svg" />, title: "Leading Voices\nin Finance AI", description: "Learn from the architects of AI implementation within complex global systems." },
@@ -51,9 +52,9 @@ const WhyAttendSection = () => {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             >
-                <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
+                <Link to={'/checkout'}>
                     <Button label="Register Now" />
-                </a>
+                </Link>
                 <p className="text-p-xsm text-content-heading">Super Early Bird Offer Ends Soon</p>
             </motion.div>
         </div>

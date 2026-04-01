@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import Button from "@/components/ui/Button"
+import { Link } from "@tanstack/react-router"
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -27,7 +28,9 @@ const PackagesHeroSection = () => {
                 animate="visible"
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             >
-                <Button label="Schedule A Call" />
+                <Link to="/proposal">
+                    <Button label="Schedule A Call" />
+                </Link>
                 <p className="text-p-xsm text-content-heading">Are you an innovator? Join the exclusive 30. Apply here.</p>
             </motion.div>
         </div>

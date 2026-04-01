@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import Badge from "@/components/ui/badge"
 import Button from "@/components/ui/Button"
+import { Link } from "@tanstack/react-router"
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -37,9 +38,9 @@ const SpeakersHeroSection = () => {
                 animate="visible"
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
-                <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
+                <Link to="/checkout">
                     <Button label="Get Your Pass" />
-                </a>
+                </Link>
                 <p className="text-p-xsm text-content-heading">Save $200: Only 55 Super Early Bird passes remaining</p>
             </motion.div>
         </div>

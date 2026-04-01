@@ -1,5 +1,6 @@
 import AddInCard from "@/components/ui/AddInCard"
 import Button from "@/components/ui/Button"
+import { Link } from "@tanstack/react-router"
 import { motion } from 'motion/react'
 
 const addInsTop = [
@@ -57,7 +58,9 @@ const AddIns = () => {
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <Button label="Schedule A Call" />
+                    <Link to="/proposal">
+                        <Button label="Schedule A Call" />
+                    </Link>
                 </motion.div>
             </div>
         </div>

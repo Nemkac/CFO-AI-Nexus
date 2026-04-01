@@ -1,0 +1,123 @@
+[debug] [2026-03-26T14:53:48.522Z] ----------------------------------------------------------------------
+[debug] [2026-03-26T14:53:48.523Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2026-03-26T14:53:48.523Z] CLI Version:   15.11.0
+[debug] [2026-03-26T14:53:48.523Z] Platform:      darwin
+[debug] [2026-03-26T14:53:48.524Z] Node Version:  v20.12.1
+[debug] [2026-03-26T14:53:48.524Z] Time:          Thu Mar 26 2026 15:53:48 GMT+0100 (Central European Standard Time)
+[debug] [2026-03-26T14:53:48.524Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-26T14:53:48.525Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-03-26T14:53:49.320Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-26T14:53:49.320Z] > authorizing via signed-in user (hostingcfoainexus@gmail.com)
+[debug] [2026-03-26T14:53:49.320Z] [iam] checking project cfo-ai-nexus for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-03-26T14:53:49.320Z] Checked if tokens are valid: false, expires at: 1774464185959
+[debug] [2026-03-26T14:53:49.320Z] Checked if tokens are valid: false, expires at: 1774464185959
+[debug] [2026-03-26T14:53:49.320Z] > refreshing access token with scopes: []
+[debug] [2026-03-26T14:53:49.321Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-26T14:53:49.321Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-26T14:53:49.474Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-03-26T14:53:49.474Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-26T14:53:49.491Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions [none]
+[debug] [2026-03-26T14:53:49.491Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions  x-goog-user-project=cfo-ai-nexus
+[debug] [2026-03-26T14:53:49.491Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-26T14:53:49.893Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-03-26T14:53:49.893Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-03-26T14:53:49.925Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions 200
+[debug] [2026-03-26T14:53:49.925Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-26T14:53:49.926Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:49.926Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:49.927Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/cfo-ai-nexus/serviceAccounts/cfo-ai-nexus@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-26T14:53:49.927Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/cfo-ai-nexus/serviceAccounts/cfo-ai-nexus@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-26T14:53:50.965Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/cfo-ai-nexus/serviceAccounts/cfo-ai-nexus@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-26T14:53:50.965Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/cfo-ai-nexus/serviceAccounts/cfo-ai-nexus@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-26T14:53:50.966Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:50.966Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:50.966Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cfo-ai-nexus [none]
+[debug] [2026-03-26T14:53:51.895Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cfo-ai-nexus 200
+[debug] [2026-03-26T14:53:51.896Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cfo-ai-nexus {"projectId":"cfo-ai-nexus","projectNumber":"451501222232","displayName":"CFO-AI-Nexus","name":"projects/cfo-ai-nexus","resources":{"hostingSite":"cfo-ai-nexus"},"state":"ACTIVE","etag":"1_4975a936-0d2a-4239-87e0-e4f7d7e9b7ab"}
+[info] 
+[info] === Deploying to 'cfo-ai-nexus'...
+[info] 
+[info] i  deploying functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2026-03-26T14:53:56.331Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:56.331Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:56.331Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus [none]
+[debug] [2026-03-26T14:53:57.334Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus 200
+[debug] [2026-03-26T14:53:57.334Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus {"projectNumber":"451501222232","projectId":"cfo-ai-nexus","lifecycleState":"ACTIVE","name":"CFO-AI-Nexus","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-02-26T20:35:04.234005Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-26T14:53:57.338Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:57.338Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:53:57.339Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cfo-ai-nexus/adminSdkConfig [none]
+[debug] [2026-03-26T14:53:57.696Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cfo-ai-nexus/adminSdkConfig 200
+[debug] [2026-03-26T14:53:57.696Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cfo-ai-nexus/adminSdkConfig {"projectId":"cfo-ai-nexus","storageBucket":"cfo-ai-nexus.firebasestorage.app"}
+[debug] [2026-03-26T14:53:57.699Z] Validating nodejs source
+[warn] ⚠  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[debug] [2026-03-26T14:53:58.254Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0",
+    "stripe": "^20.4.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.4.1",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2026-03-26T14:53:58.254Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-26T14:53:58.255Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-26T14:53:58.263Z] Found firebase-functions binary at '/Users/nemanjatodorovic/Documents/GitHub/CFO-AI-Nexus/site/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8880
+
+[debug] [2026-03-26T14:53:58.759Z] Got response from /__/functions.yaml {"endpoints":{"createCheckoutSession":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":10,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","secretEnvironmentVariables":[{"key":"STRIPE_SECRET_KEY"}],"labels":{},"httpsTrigger":{"invoker":["public"]},"entryPoint":"createCheckoutSession"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{},"params":[{"type":"secret","name":"STRIPE_SECRET_KEY"}]}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-26T14:54:03.777Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-26T14:54:03.778Z] > authorizing via signed-in user (hostingcfoainexus@gmail.com)
+[debug] [2026-03-26T14:54:03.778Z] [iam] checking project cfo-ai-nexus for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-26T14:54:03.778Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:03.778Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:03.778Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions [none]
+[debug] [2026-03-26T14:54:03.778Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions  x-goog-user-project=cfo-ai-nexus
+[debug] [2026-03-26T14:54:03.778Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-26T14:54:04.709Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions 200
+[debug] [2026-03-26T14:54:04.709Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cfo-ai-nexus:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-26T14:54:04.710Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:04.711Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:04.713Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/cfo-ai-nexus/instances pageSize=100&pageToken=
+[debug] [2026-03-26T14:54:05.900Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/cfo-ai-nexus/instances 200
+[debug] [2026-03-26T14:54:05.900Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/cfo-ai-nexus/instances {}
+[debug] [2026-03-26T14:54:05.902Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:05.902Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:05.902Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/cfo-ai-nexus/secrets/STRIPE_SECRET_KEY [none]
+[debug] [2026-03-26T14:54:06.432Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/cfo-ai-nexus/secrets/STRIPE_SECRET_KEY 200
+[debug] [2026-03-26T14:54:06.432Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/cfo-ai-nexus/secrets/STRIPE_SECRET_KEY {"name":"projects/451501222232/secrets/STRIPE_SECRET_KEY","replication":{"automatic":{}},"createTime":"2026-03-23T21:14:05.513785Z","labels":{"firebase-managed":"functions"},"etag":"\"164db783d84f8c\""}
+[debug] [2026-03-26T14:54:06.434Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:06.434Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:06.434Z] >>> [apiv2][query] GET https://secretmanager.googleapis.com/v1/projects/cfo-ai-nexus/secrets/STRIPE_SECRET_KEY/versions/latest [none]
+[debug] [2026-03-26T14:54:06.664Z] <<< [apiv2][status] GET https://secretmanager.googleapis.com/v1/projects/cfo-ai-nexus/secrets/STRIPE_SECRET_KEY/versions/latest 200
+[debug] [2026-03-26T14:54:06.665Z] <<< [apiv2][body] GET https://secretmanager.googleapis.com/v1/projects/cfo-ai-nexus/secrets/STRIPE_SECRET_KEY/versions/latest {"name":"projects/451501222232/secrets/STRIPE_SECRET_KEY/versions/4","createTime":"2026-03-23T22:36:10.267289Z","state":"ENABLED","replicationStatus":{"automatic":{}},"etag":"\"164db8a9515e99\""}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/nemanjatodorovic/Documents/GitHub/CFO-AI-Nexus/site/functions (73.78 KB) for uploading 
+[debug] [2026-03-26T14:54:06.713Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:06.713Z] Checked if tokens are valid: true, expires at: 1774540428474
+[debug] [2026-03-26T14:54:06.713Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/cfo-ai-nexus/locations/-/functions [none]

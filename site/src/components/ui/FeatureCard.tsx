@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import Button from './Button'
 
 type Props = {
@@ -27,7 +28,9 @@ const FeatureCard = ({ ...props }: Props) => {
                                 <h4 className='text-h4 text-content-heading'>{props.title}</h4>
                                 <p className='text-p-md text-content-body text-pretty'>{props.description}</p>
                             </div>
-                            <Button label={props.buttonLabel} variant={props.buttonVariant} />
+                            <Link to='/proposal'>
+                                <Button label={props.buttonLabel} variant={props.buttonVariant} />
+                            </Link>
                         </div>
                         {props.image ? (<img src={props.image} className='rounded-2xl w-full md:w-[50%]' />) : (<div className='rounded-2xl bg-content-heading h-full w-full md:w-[50%]' />)}
                     </>
@@ -39,7 +42,9 @@ const FeatureCard = ({ ...props }: Props) => {
                                 <h4 className='text-h4 text-content-heading'>{props.title}</h4>
                                 <p className='text-p-md text-content-body text-pretty'>{props.description}</p>
                             </div>
-                            <Button label={props.buttonLabel} variant={props.buttonVariant} />
+                            <Link to='/proposal'>
+                                <Button label={props.buttonLabel} variant={props.buttonVariant} />
+                            </Link>
                         </div>
                     </>
                 )}

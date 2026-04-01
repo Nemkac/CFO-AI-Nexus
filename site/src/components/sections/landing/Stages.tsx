@@ -4,6 +4,7 @@ import Button from "@/components/ui/Button"
 import FilterButton from "@/components/ui/FilterButton"
 import SpeakerCard from "@/components/ui/SpeakerCard"
 import { stages, speakers } from "@/data/speakers"
+import { Link } from "@tanstack/react-router"
 
 
 const StagesSection = () => {
@@ -75,9 +76,9 @@ const StagesSection = () => {
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
+                    <Link to="/checkout">
                         <Button label="Get Your Pass" />
-                    </a>
+                    </Link>
                 </motion.div>
             </div>
         </div>

@@ -6,32 +6,32 @@ const features = [
     {
         title: "Main Stage Keynote",
         description: `Take the main stage as a thought leader. Deliver a high‑impact keynote session to share your vision, showcase your solutions, and set the tone for the conference.Choose between live and pre-recorded sessions. `,
-        image: "./assets/opportunities/MainStageKeynote.png"
+        image: "./assets/opportunities/MainStageKeynote.webp"
     },
     {
         title: `Targeted Breakout Room`,
         description: 'Access our bespoke roundtable feature: An invite-only digital room designed for high-level engagement with a group of finance executives tailored to your criteria.',
-        image: "./assets/opportunities/BreakoutRoom.png"
+        image: "./assets/opportunities/BreakoutRoom.webp"
     },
     {
         title: `Viral Digital Presence`,
         description: `Guaranteed 100,000 brand impressions on LinkedIn through leading B2B creator profiles and pages. Premium featuring on the website, social media content, official PDF agenda and all event presentations.`,
-        image: "./assets/opportunities/ViralDigitalPresence.png"
+        image: "./assets/opportunities/ViralDigitalPresence.webp"
     },
     {
         title: "Premium Visibility",
         description: `"Top of the List" priority positioning for your booth to the qualified buyers, headline website banner featured, official linkedin page banner featured.`,
-        image: "./assets/opportunities/PremiumVisibility.png"
+        image: "./assets/opportunities/PremiumVisibility.webp"
     },
     {
         title: "Pre-roll videos",
         description: '20-second sponsor video spots played between conference sessions and workshops, giving your brand visibility right before the next content starts.',
-        image: "./assets/opportunities/Pre-RollVideos.png"
+        image: "./assets/opportunities/Pre-RollVideos.webp"
     },
     {
         title: "Powered by",
         description: 'Main sponsor of the entire event with brand logo featured on all available places for promotion and sponsorship, mobile app official sponsor and branding, exclusive In-app announcements, checkout page sponsor and more.',
-        image: "./assets/opportunities/PoweredBy.png"
+        image: "./assets/opportunities/PoweredBy.webp"
     },
 ]
 

@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import Badge from "@/components/ui/badge"
 import Button from "@/components/ui/Button"
 import { usePageLoad } from '@/components/layout/PageLoadContext'
+import { Link } from '@tanstack/react-router'
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -34,7 +35,7 @@ const HeroSection = () => {
                 animate={isLoaded ? "visible" : "hidden"}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
             >
-                <h2 className="text-h1 text-content-heading">The First AI-Powered ExpoSummit for Finance Leaders</h2>
+                <h2 className="text-h1 text-content-heading">The First AI-Native ExpoSummit for Finance Leaders</h2>
                 <p className="text-p-md text-content-body text-balance">Two days of world-class sessions, live product demos, and AI-driven networking — built to help CFOs and finance teams cut through the noise and find the tools reshaping modern finance.</p>
             </motion.div>
 
@@ -45,9 +46,9 @@ const HeroSection = () => {
                 animate={isLoaded ? "visible" : "hidden"}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
-                <a href="https://corporate-finance-learning.kit.com/f730d10d6f" target="_blank" rel="noopener noreferrer">
+                <Link to={'/checkout'}>
                     <Button label="Get Your Pass" />
-                </a>
+                </Link>
                 <p className="text-p-xsm text-content-heading">55 Super Early Bird Passes Remaining</p>
             </motion.div>
         </div>

@@ -8,7 +8,7 @@ import { usePageLoad } from './PageLoadContext'
 const navLinks = [
   { to: "/speakers" as const, label: "Speakers" },
   { to: "/checkout" as const, label: "Reserve a Ticket" },
-  { to: "/packages" as const, label: "Packages" }
+  { to: "/packages" as const, label: "Sponsor" }
 ]
 
 const navItems = [

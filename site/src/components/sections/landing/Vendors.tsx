@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react"
 import Button from "@/components/ui/Button"
 import FilterButton from "@/components/ui/FilterButton"
 import VendorCard from "@/components/ui/VendorCard"
+import { Link } from "@tanstack/react-router"
 
 const vendorTypes = ['Accounting & ERP', 'Financial Close', 'FP&A', 'Spend Management', 'AR/AP Automation', 'Global Payments', 'Treasury']
 const vendors = [
@@ -29,13 +30,13 @@ const vendors = [
     },
     {
         image: '/assets/partners/sage_intacct.svg',
-        title: "SageInacct",
+        title: "Sage Inacct",
         description: "A powerful financial system focused on providing AI-powered accounting like scanning transactions in real-time to catch duplicate entries or anomalies.",
         types: ['Accounting & ERP'],
         link: 'https://www.sage.com/en-us/sage-business-cloud/intacct/'
     },
     {
-        image: '/assets/partners/maxima.png',
+        image: '/assets/partners/maxima.webp',
         title: "Maxima",
         description: "AI-powered financial intelligence that automates complex data analysis, providing CFOs with predictive insights to drive faster business growth.",
         types: ['Accounting & ERP'],
@@ -56,7 +57,7 @@ const vendors = [
         link: 'https://www.floqast.com/ '
     },
     {
-        image: '/assets/partners/consark.png',
+        image: '/assets/partners/consark.webp',
         title: "Consark.ai",
         description: "From first entry to final report. AI-powered financial close automation executed by agents and expert-reviewed, delivering a 50% faster close.",
         types: ['Financial Close'],
@@ -98,14 +99,14 @@ const vendors = [
         link: 'https://www.bill.com/'
     },
     {
-        image: '/assets/partners/Sequence.png',
+        image: '/assets/partners/Sequence.webp',
         title: "Sequence",
         description: "The billing infrastructure for scale. Automate complex B2B pricing models, quote-to-cash workflows, and revenue collection with one integrated data-driven system.",
         types: ['AR/AP Automation'],
         link: 'https://www.sequencehq.com/'
     },
     {
-        image: '/assets/partners/hyperbots.png',
+        image: '/assets/partners/hyperbots.webp',
         title: "Hyperbots",
         description: "AI-native robots for finance. Handle accounts payable, receivable, and expenses with human-like intelligence, delivering 10x speed and zero manual errors.",
         types: ['AR/AP Automation'],
@@ -126,7 +127,7 @@ const vendors = [
         link: 'https://www.paddle.com/'
     },
     {
-        image: '/assets/partners/lu.png',
+        image: '/assets/partners/lu.webp',
         title: "Lumanu",
         description: "Automate talent payments, contract management, and budget tracking to streamline your entire external workforce operations.",
         types: ['Global Payments'],
@@ -211,9 +212,7 @@ const VendorsSection = () => {
                                 viewport={{ once: true, margin: "-40px" }}
                                 transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.08 }}
                             >
-                                <a href={vendor.link}>
-                                    <VendorCard imageUrl={vendor.image} title={vendor.title} description={vendor.description} />
-                                </a>
+                                <VendorCard imageUrl={vendor.image} title={vendor.title} description={vendor.description} />
                             </motion.div>
                         ))}
                     </motion.div>
@@ -226,7 +225,9 @@ const VendorsSection = () => {
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <Button label="Access Expo" />
+                    <Link to="/checkout">
+                        <Button label="Access Expo" />
+                    </Link>
                     <p className="text-p-xsm text-content-heading">Super Early Bird Offer Ends Soon</p>
                 </motion.div>
             </div>

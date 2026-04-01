@@ -13,6 +13,7 @@ import { Route as SpeakersRouteImport } from './routes/speakers'
 import { Route as ProposalRouteImport } from './routes/proposal'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as OrganizerRouteImport } from './routes/organizer'
+import { Route as OrderConfirmedRouteImport } from './routes/order-confirmed'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -36,6 +37,11 @@ const OrganizerRoute = OrganizerRouteImport.update({
   path: '/organizer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OrderConfirmedRoute = OrderConfirmedRouteImport.update({
+  id: '/order-confirmed',
+  path: '/order-confirmed',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CheckoutRoute = CheckoutRouteImport.update({
   id: '/checkout',
   path: '/checkout',
@@ -50,6 +56,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/order-confirmed': typeof OrderConfirmedRoute
   '/organizer': typeof OrganizerRoute
   '/packages': typeof PackagesRoute
   '/proposal': typeof ProposalRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/order-confirmed': typeof OrderConfirmedRoute
   '/organizer': typeof OrganizerRoute
   '/packages': typeof PackagesRoute
   '/proposal': typeof ProposalRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/checkout': typeof CheckoutRoute
+  '/order-confirmed': typeof OrderConfirmedRoute
   '/organizer': typeof OrganizerRoute
   '/packages': typeof PackagesRoute
   '/proposal': typeof ProposalRoute
@@ -77,16 +86,25 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/checkout'
+    | '/order-confirmed'
     | '/organizer'
     | '/packages'
     | '/proposal'
     | '/speakers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/checkout' | '/organizer' | '/packages' | '/proposal' | '/speakers'
+  to:
+    | '/'
+    | '/checkout'
+    | '/order-confirmed'
+    | '/organizer'
+    | '/packages'
+    | '/proposal'
+    | '/speakers'
   id:
     | '__root__'
     | '/'
     | '/checkout'
+    | '/order-confirmed'
     | '/organizer'
     | '/packages'
     | '/proposal'
@@ -96,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CheckoutRoute: typeof CheckoutRoute
+  OrderConfirmedRoute: typeof OrderConfirmedRoute
   OrganizerRoute: typeof OrganizerRoute
   PackagesRoute: typeof PackagesRoute
   ProposalRoute: typeof ProposalRoute
@@ -132,6 +151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrganizerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/order-confirmed': {
+      id: '/order-confirmed'
+      path: '/order-confirmed'
+      fullPath: '/order-confirmed'
+      preLoaderRoute: typeof OrderConfirmedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/checkout': {
       id: '/checkout'
       path: '/checkout'
@@ -152,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CheckoutRoute: CheckoutRoute,
+  OrderConfirmedRoute: OrderConfirmedRoute,
   OrganizerRoute: OrganizerRoute,
   PackagesRoute: PackagesRoute,
   ProposalRoute: ProposalRoute,

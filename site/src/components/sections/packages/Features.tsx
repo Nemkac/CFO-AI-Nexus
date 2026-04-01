@@ -6,32 +6,32 @@ const features = [
     {
         title: "Intent-Based Matchmaking and Engagement",
         description: 'Our AI-powered prospecting analyzes attendee intent, interests, and behavior to pinpoint your high-value prospects and streamline lead scanning. Book meetings instantly with a seamless integrated scheduler.',
-        image: "./assets/opportunities/IntentBasedMatchmakingAndEngagement.png"
+        image: "./assets/opportunities/IntentBasedMatchmakingAndEngagement.webp"
     },
     {
         title: "Virtual Booth",
         description: `Run live or pre-recorded product demos with intent-based qualified buyers, host 1:1 video meetings, and engage via Q&A sessions and chats. Offer downloadable assets, showcase team expertise, monitor exact ROI through advanced metrics.`,
-        image: "./assets/opportunities/VirtualBooth.png"
+        image: "./assets/opportunities/VirtualBooth.webp"
     },
     {
         title: "Conference Speaking Slot",
         description: 'Host a dedicated 30-minute Strategic Session led by your experts. Bridge the gap between complex industry challenges and your product’s unique value proposition. Choose live or pre-recorded sessions.',
-        image: "./assets/opportunities/ConferenceSpeakingSlot.png",
+        image: "./assets/opportunities/ConferenceSpeakingSlot.webp",
     },
     {
         title: `Curated 1:1 with pre-qualified leads`,
         description: `Our team proactively identifies and invites profiles matching your criteria to ensure your 1:1 calendar is filled with high-value prospects.`,
-        image: "./assets/opportunities/Curated1-1WithPre-qualifiedLeads.png",
+        image: "./assets/opportunities/Curated1-1WithPre-qualifiedLeads.webp",
     },
     {
         title: "Digital Presence and Branding",
         description: "Your brand will be featured on our official website page, LinkedIn posts, displayed in all event agendas and presentations, with direct backlink to your landing pages.",
-        image: "./assets/opportunities/DigitalPresenceAndBranding.png"
+        image: "./assets/opportunities/DigitalPresenceAndBranding.webp"
     },
     {
         title: "MQL Data & Analytics",
         description: 'Access and export lead lists, booth visitor metrics, and engagement heatmaps in one click. Arm yourself for the post-event call and measure exact ROI.',
-        image: "./assets/opportunities/MQLData&Analytics.png"
+        image: "./assets/opportunities/MQLData&Analytics.webp"
     },
 ]
 

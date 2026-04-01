@@ -18,7 +18,6 @@ export default function Footer() {
               <Link to="/speakers" className="text-p-md-link text-content-body hover:text-pink-500">Speaker Portal</Link>
               <Link to="/checkout" className="text-p-md-link text-content-body hover:text-pink-500">Program Agenda</Link>
               <Link to="/speakers" className="text-p-md-link text-content-body hover:text-pink-500">Exhibitor Opportunities</Link>
-              <Link to="/checkout" className="text-p-md-link text-content-body hover:text-pink-500">Become a Sponsor</Link>
             </div>
           </nav>
           <div className="flex flex-col gap-4">
@@ -29,7 +28,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col md:flex-row gap-6 w-full items-center md:justify-between text-center">
           <p className="text-p-sm text-white">© {new Date().getFullYear()} CFO AI Nexus Conference. All rights reserved.</p>
-          <p className="text-p-sm text-white underline cursor-pointer">Terms & Conditions | Cookie Policy | Privacy Policy</p>
+          <p className="text-p-sm text-white underline cursor-pointer">Terms & Conditions | Privacy Policy</p>
         </div>
       </div>
     </footer>

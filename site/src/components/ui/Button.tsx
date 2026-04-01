@@ -20,11 +20,13 @@ const buttonVariants = cva(
 type Props = VariantProps<typeof buttonVariants> & {
     label: string
     className?: string
+    onClick?: () => void
+    disabled?: boolean
 }
 
-const Button = ({ variant, label, className }: Props) => {
+const Button = ({ variant, label, className, onClick, disabled }: Props) => {
     return (
-        <button className={cn(buttonVariants({ variant }), className)}>
+        <button className={cn(buttonVariants({ variant }), className, disabled && 'opacity-50 cursor-not-allowed')} onClick={onClick} disabled={disabled}>
             <span className="relative z-10 text-p-md-semibold transition-[0.5s]">{label}</span>
         </button>
     )

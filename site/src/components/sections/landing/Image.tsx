@@ -17,38 +17,38 @@ const ImageSection = () => {
         <div ref={ref} className="relative w-full overflow-hidden" style={{ aspectRatio: "16/7" }}>
             {/* Background — always visible */}
             <img
-                src="/assets/opportunities/BG.png"
+                src="/assets/opportunities/BG.webp"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
             />
 
             {/* Left Image — slides in from left on enter */}
             <motion.img
-                src="/assets/opportunities/Left Image.png"
+                src="/assets/opportunities/Left Image.webp"
                 alt=""
                 style={{ y: parallaxY }}
                 initial={{ opacity: 0, x: -80 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                className="absolute left-1/2 -translate-x-full top-1/2 -translate-y-1/2 w-[42%]"
+                className="absolute left-1/2 -translate-x-full top-1/2 -translate-y-1/2 w-[33%]"
             />
 
             {/* Right Image — slides in from right on enter */}
             <motion.img
-                src="/assets/opportunities/Right Image.png"
+                src="/assets/opportunities/Right Image.webp"
                 alt=""
                 style={{ y: parallaxY }}
                 initial={{ opacity: 0, x: 80 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 80 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="absolute left-1/2 top-1/2 -translate-y-1/2 w-[42%]"
+                className="absolute left-1/2 top-1/2 -translate-y-1/2 w-[33%]"
             />
 
             {/* Man — always visible, centered on top of panels */}
             <img
-                src="/assets/opportunities/Man.png"
+                src="/assets/opportunities/Man.webp"
                 alt=""
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[95%] object-contain z-10 pointer-events-none"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[85%] object-contain z-10 pointer-events-none"
             />
 
             {/* Conference button — top left */}

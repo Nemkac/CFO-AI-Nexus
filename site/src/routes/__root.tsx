@@ -27,7 +27,7 @@ export const Route = createRootRoute({
       // Open Graph
       { property: 'og:title', content: 'CFO AI Nexus 2026' },
       { property: 'og:description', content: 'October 20–21, 2026 | 100% Virtual — The premier AI conference for finance leaders.' },
-      { property: 'og:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
+      { property: 'og:image', content: 'https://cfo-ai-nexus.web.app/og-image.webp' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
       { property: 'og:type', content: 'website' },
@@ -36,10 +36,10 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'CFO AI Nexus 2026' },
       { name: 'twitter:description', content: 'October 20–21, 2026 | 100% Virtual — The premier AI conference for finance leaders.' },
-      { name: 'twitter:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
+      { name: 'twitter:image', content: 'https://cfo-ai-nexus.web.app/og-image.webp' },
     ],
     links: [
-      { rel: 'icon', href: '/favicon.png', type: 'image/png' },
+      { rel: 'icon', href: '/favicon.webp', type: 'image/png' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       {
         rel: 'preconnect',
@@ -93,7 +93,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.webp" type="image/png" />
       </head>
       <body className="flex flex-col min-h-screen bg-surface-page">
         <PageLoadContext.Provider value={{ isLoaded, signalReady }}>

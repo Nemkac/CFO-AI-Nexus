@@ -17,7 +17,7 @@ const SpeakerCtaCard = ({ ...props }: Props) => {
                 </div>
             </div>
             <p className="text-p-lg-semibold text-content-heading text-center text-balance grow">{props.title}</p>
-            <a href={props.linkedIn} className="flex flex-row items-center justify-center w-full border-[0.5px] py-3 px-2 gap-2 rounded-xl border-stroke-default bg-sapphire-800/50 hover:bg-sapphire-700 transition-[0.5s]">
+            <a href={props.linkedIn} target="_blank" rel="noopener noreferrer" className="flex flex-row items-center justify-center w-full border-[0.5px] py-3 px-2 gap-2 rounded-xl border-stroke-default bg-sapphire-800/50 hover:bg-sapphire-700 transition-[0.5s]">
                 <img src='/icons/BxBxlLinkedin 1.svg' className="size-6" />
                 <p className="text-p-sm text-content-heading">LinkedIn Profile</p>
             </a>
