@@ -102,6 +102,13 @@ export const createCheckoutSession = onRequest(
       return;
     }
 
+    // Block by actual IP location — Google Cloud injects this header automatically
+    const ipCountry = (req.headers["x-appengine-country"] as string | undefined)?.toUpperCase();
+    if (ipCountry && ipCountry !== "ZZ" && !ALLOWED_COUNTRY_CODES.has(ipCountry)) {
+      res.status(403).json({ error: "Tickets are not available in your region" });
+      return;
+    }
+
     const { priceId, quantity = 1, metadata } = req.body as { priceId: string; quantity?: number; metadata?: Record<string, unknown> };
 
     if (!priceId || !ALLOWED_PRICE_IDS.has(priceId)) {

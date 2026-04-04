@@ -1,8 +1,22 @@
+import { useEffect } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/order-confirmed')({ component: OrderConfirmedPage })
 
+declare global {
+    interface Window {
+        gtag?: (...args: unknown[]) => void
+    }
+}
+
 function OrderConfirmedPage() {
+    useEffect(() => {
+        window.gtag?.('event', 'purchase', {
+            event_category: 'ecommerce',
+            event_label: 'Ticket Purchase',
+        })
+    }, [])
+
     return (
         <div className='bg-surface-page min-h-screen flex items-center justify-center p-4'>
             <div className='flex flex-col items-center gap-8 max-w-lg text-center'>

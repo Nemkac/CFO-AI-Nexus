@@ -34,7 +34,6 @@ const BUDGET_OPTIONS = [
     { value: 'Under $10k', label: 'Under $10k' },
     { value: '$10k - $15k', label: '$10k - $15k' },
     { value: '$15k - $20k+', label: '$15k - $20k+' },
-    { value: 'Not defined yet', label: 'Not defined yet' },
 ]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'

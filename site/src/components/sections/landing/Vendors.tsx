@@ -30,7 +30,7 @@ const vendors = [
     },
     {
         image: '/assets/partners/sage_intacct.svg',
-        title: "Sage Inacct",
+        title: "Sage Intacct",
         description: "A powerful financial system focused on providing AI-powered accounting like scanning transactions in real-time to catch duplicate entries or anomalies.",
         types: ['Accounting & ERP'],
         link: 'https://www.sage.com/en-us/sage-business-cloud/intacct/'

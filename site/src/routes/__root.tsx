@@ -27,7 +27,7 @@ export const Route = createRootRoute({
       // Open Graph
       { property: 'og:title', content: 'CFO AI Nexus 2026' },
       { property: 'og:description', content: 'October 20–21, 2026 | 100% Virtual — The premier AI conference for finance leaders.' },
-      { property: 'og:image', content: 'https://cfo-ai-nexus.web.app/og-image.webp' },
+      { property: 'og:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
       { property: 'og:type', content: 'website' },
@@ -36,7 +36,19 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'CFO AI Nexus 2026' },
       { name: 'twitter:description', content: 'October 20–21, 2026 | 100% Virtual — The premier AI conference for finance leaders.' },
-      { name: 'twitter:image', content: 'https://cfo-ai-nexus.web.app/og-image.webp' },
+      { name: 'twitter:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
+    ],
+    scripts: [
+      {
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-9S4P7SGE7G',
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-9S4P7SGE7G');`,
+      },
     ],
     links: [
       { rel: 'icon', href: '/favicon.webp', type: 'image/png' },
