@@ -22,7 +22,7 @@ type Props = VariantProps<typeof cardVariants> & {
 const PartnerCard = ({ image, variant }: Props) => {
     return (
         <div className={cn(cardVariants({ variant }))}>
-            {image && (<img src={image} className="object-contain w-full h-full" />)}
+            {image && (<img src={image} className="object-contain w-full h-full" loading="lazy" />)}
         </div>
     )
 }

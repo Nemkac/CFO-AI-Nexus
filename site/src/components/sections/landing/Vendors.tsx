@@ -15,16 +15,16 @@ const vendors = [
         link: 'https://www.anaplan.com/'
     },
     {
-        image: '/assets/partners/prophix 1.svg',
-        title: "ProPhix",
-        description: "The next generation of financial performance, using AI to automate budgeting, forecasting, and reporting for more confident and strategic decision-making.",
+        image: '/assets/partners/una_logo_white.png',
+        title: "Una AI",
+        description: "AI-native FP&A platform with connected revenue intelligence, continuous reforecasting, and 4-week implementation. Transform budgeting, forecasting & planning.",
         types: ['FP&A'],
         link: 'https://www.prophix.com/'
     },
     {
-        image: '/assets/partners/workday 1.svg',
-        title: "Workday Adaptive Planning",
-        description: "Powerful, fast, and easy-to-use business planning software that helps teams collaborate and forecast with agility in a rapidly changing world.",
+        image: '/assets/partners/drivetrain_logo_white.png',
+        title: "Drivetrain",
+        description: "Accelerate budgeting and forecasting with a powerful autonomous FP&A platform that centralizes planning for better efficiency and faster decision-making.",
         types: ['FP&A'],
         link: 'https://www.workday.com/en-us/products/adaptive-planning/overview.html'
     },
@@ -43,9 +43,9 @@ const vendors = [
         link: 'https://www.maxima.ai/ '
     },
     {
-        image: '/assets/partners/rillet.svg',
-        title: "Rillet",
-        description: "The modern ERP for SaaS companies that automates revenue recognition and expense tracking by connecting directly to your CRM and payment stack.",
+        image: '/assets/partners/acumatica_logo_white.png',
+        title: "Acumatica",
+        description: "Cloud-based ERP platform that helps companies manage finance, operations, and workflows in one system while using automation and AI to improve efficiency and decision-making.",
         types: ['Accounting & ERP'],
         link: 'https://www.rillet.com/ '
     },

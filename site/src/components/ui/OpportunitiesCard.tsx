@@ -15,7 +15,7 @@ const OpportunitiesCard = ({ ...props }: Props) => {
         >
             <div className="w-full h-60 rounded-t-2xl overflow-hidden shrink-0">
                 {props.imageUrl ? (
-                    <img src={props.imageUrl} className="w-full h-full object-cover object-top" />
+                    <img src={props.imageUrl} className="w-full h-full object-cover object-top" loading="lazy" />
                 ) : (
                     <div className="bg-content-heading w-full h-full" />
                 )}

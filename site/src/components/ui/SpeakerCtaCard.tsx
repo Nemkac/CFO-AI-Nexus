@@ -10,7 +10,7 @@ const SpeakerCtaCard = ({ ...props }: Props) => {
     return (
         <div className="flex flex-col gap-10 px-8 py-10 rounded-2xl border-[0.3px] border-stroke-disabled bg-linear-to-t from-sapphire-800/70 to-transparent h-full">
             <div className="flex flex-col md:flex-row items-center gap-6 w-full">
-                <img src={props.image} className="rounded-full size-20 object-cover shrink-0" />
+                <img src={props.image} className="rounded-full size-20 object-cover shrink-0" loading="lazy" />
                 <div className="flex flex-col gap-2 items-center md:items-start">
                     <p className="text-p-md-semibold text-content-heading">{props.fullName}</p>
                     <p className="text-p-sm text-content-heading text-center md:text-start">{props.role}</p>

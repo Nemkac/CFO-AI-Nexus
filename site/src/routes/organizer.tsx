@@ -59,7 +59,7 @@ function RouteComponent() {
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
                 >
-                    <img src='./assets/speaker1.webp' className='rounded-full block' />
+                    <img src='./assets/speaker1.webp' className='rounded-full block' loading="lazy" />
                 </motion.div>
 
                 <motion.div
