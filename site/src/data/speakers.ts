@@ -120,7 +120,7 @@ export const speakers: Speaker[] = [
         speaker: "Bojan Radojičić",
         role: "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance.",
         stage: ['Financial Close & Consolidation'],
-        link: "https://www.linkedin.com/in/aleksandar-stojanovic-msc/"
+        link: "https://www.linkedin.com/in/bojan-radojicic-a132a526/"
     },
     {
         image: "./assets/speakers/2.webp",

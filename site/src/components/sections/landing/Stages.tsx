@@ -1,14 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import Button from "@/components/ui/Button"
 import FilterButton from "@/components/ui/FilterButton"
 import SpeakerCard from "@/components/ui/SpeakerCard"
-import { stages, speakers } from "@/data/speakers"
+import { fetchSpeakers, type WPSpeaker } from "@/lib/wordpress"
 import { Link } from "@tanstack/react-router"
 
+const stages = ['Main Stage', 'FP&A', 'Financial Close & Consolidation', 'Treasury & Cash Management', 'AR/AP Automation']
 
 const StagesSection = () => {
     const [activeStage, setActiveStage] = useState<string>('Main Stage')
+    const [speakers, setSpeakers] = useState<WPSpeaker[]>([])
+
+    useEffect(() => {
+        fetchSpeakers().then(setSpeakers).catch(console.error)
+    }, [])
 
     return (
         <div className="[background:radial-gradient(50%_80%_at_center,#1F2566,#040820)] md:[background:radial-gradient(40%_80%_at_top,#1F2566,#040820)] py-10 md:py-20 flex items-center w-full justify-center">
@@ -63,7 +69,6 @@ const StagesSection = () => {
                                 transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.08 }}
                             >
                                 <SpeakerCard imageUrl={speaker.image} title={speaker.title} speaker={speaker.speaker} role={speaker.role} />
-
                             </motion.div>
                         ))}
                     </motion.div>
