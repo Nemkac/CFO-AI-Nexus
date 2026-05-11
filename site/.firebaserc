@@ -4,6 +4,17 @@
     "development": "cfo-ai-nexus",
     "production": "cfo-ai-nexus"
   },
-  "targets": {},
+  "targets": {
+    "cfo-ai-nexus": {
+      "hosting": {
+        "main": [
+          "cfo-ai-nexus"
+        ],
+        "promo": [
+          "cfo-ai-nexus-promo"
+        ]
+      }
+    }
+  },
   "etags": {}
 }

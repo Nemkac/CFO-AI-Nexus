@@ -7,8 +7,10 @@
   },
   "scripts": {
     "dev": "vite dev --port 3000",
+    "dev:promo": "vite dev --config vite.config.promo.ts",
     "build": "vite build",
     "postbuild": "cp dist/client/_shell.html dist/client/index.html",
+    "build:promo": "vite build --config vite.config.promo.ts && mv dist-promo/promo.html dist-promo/index.html",
     "preview": "vite preview",
     "test": "vitest run",
     "lint": "eslint",
