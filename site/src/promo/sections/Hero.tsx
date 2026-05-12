@@ -3,6 +3,7 @@ import { motion } from 'motion/react'
 import Badge from '@/components/ui/badge'
 import Button from '@/components/ui/Button'
 import { useRegistration } from '@/promo/context/RegistrationContext'
+import type { PromoData } from '@/lib/wordpress'
 
 const DOT_COUNT = 60
 const FALLBACK_DATETIME = '2026-05-19T16:00'
@@ -52,8 +53,9 @@ const CountUnit = ({ value, label }: { value: number; label: string }) => (
     </div>
 )
 
-const Hero = ({ conferenceDatetime = FALLBACK_DATETIME }: { conferenceDatetime?: string }) => {
+const Hero = ({ cmsData }: { cmsData?: PromoData['hero'] }) => {
     const { openModal } = useRegistration()
+    const conferenceDatetime = cmsData?.conference_datetime ?? FALLBACK_DATETIME
     const { date: conferenceDate, displayDate, displayTime } = parseConferenceDatetime(conferenceDatetime)
     const getTimeLeft = makeGetTimeLeft(conferenceDate)
 
@@ -179,16 +181,16 @@ const Hero = ({ conferenceDatetime = FALLBACK_DATETIME }: { conferenceDatetime?:
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full">
                     {/* Left */}
                     <div className="flex flex-col items-start gap-6 max-w-lg">
-                        <Badge label="Live Virtual Conference" live />
+                        <Badge label={cmsData?.badge ?? 'Live Virtual Conference'} live />
                         <div className="flex flex-col gap-2">
                             <h1 className="text-h1 text-content-heading font-bold leading-tight text-balance">
-                                Building AI-Native Finance: Tools, Use Cases and Risks
+                                {cmsData?.jumbo ?? 'Building AI-Native Finance: Tools, Use Cases and Risks'}
                             </h1>
                             <h2 className="text-h4 text-content-heading">
-                                Evaluate ROI. Deliver Results.
+                                {cmsData?.subtitle ?? 'Evaluate ROI. Deliver Results.'}
                             </h2>
-                            <p className="text-p-md text-content-body text-balance">
-                                Master a proven system for implementing AI tools and securing your data.
+                            <p className="text-p-md text-content-body text-balance whitespace-pre-line">
+                                {cmsData?.description ?? 'Master a proven system for implementing AI tools and securing your data.'}
                             </p>
                         </div>
                     </div>
@@ -196,19 +198,19 @@ const Hero = ({ conferenceDatetime = FALLBACK_DATETIME }: { conferenceDatetime?:
                     {/* Right */}
                     <div className="flex flex-col items-center gap-4 shrink-0">
                         <img
-                            src="/assets/PromoImg.png"
+                            src={cmsData?.image || '/assets/PromoImg.png'}
                             alt="CFO AI Nexus Conference"
                             className="w-full max-w-lg rounded-2xl object-cover"
                         />
-                        <p className="text-p-md text-content-body text-center">
-                            Joined by 10,000+ finance leaders.<br />Seats are limited.
+                        <p className="text-p-md text-content-body text-center whitespace-pre-line">
+                            {cmsData?.image_caption ?? 'Joined by 10,000+ finance leaders.\nSeats are limited.'}
                         </p>
                     </div>
                 </div>
 
                 {/* Part 2 — button + star rating */}
                 <div className="flex flex-col md:flex-row items-center w-full gap-4 md:gap-8">
-                    <Button variant="sky" label="Save My Seat - It’s FREE" onClick={openModal} />
+                    <Button variant="sky" label={cmsData?.button_text ?? 'Save My Seat - It\'s FREE'} onClick={openModal} />
                     <div className="flex flex-col items-center gap-1">
                         <div className="flex flex-row gap-1">
                             {Array.from({ length: 5 }).map((_, i) => (
@@ -218,7 +220,7 @@ const Hero = ({ conferenceDatetime = FALLBACK_DATETIME }: { conferenceDatetime?:
                             ))}
                         </div>
                         <p className="text-p-sm text-white/50">
-                            Rated 4,97/5.00
+                            Rated 4,97 / 5.00
                         </p>
                     </div>
                 </div>

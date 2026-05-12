@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
+import type { PromoData } from '@/lib/wordpress'
 
-const redPoints = [
+const FALLBACK_RED_POINTS = [
     'Months of research with no clear direction',
     'Vendor demos that promise everything, deliver nothing',
     'AI pilots that cost budget and produce zero ROI',
@@ -8,7 +9,7 @@ const redPoints = [
     'Falling behind while competitors go AI-native',
 ]
 
-const greenPoints = [
+const FALLBACK_GREEN_POINTS = [
     'A proven framework for evaluating AI tools in finance',
     'Real implementation playbooks from CFOs who shipped',
     'A secure data strategy you can present to the board',
@@ -32,7 +33,14 @@ const CheckIcon = () => (
     </span>
 )
 
-const Costs = () => {
+const Costs = ({ cmsData }: { cmsData?: PromoData['costs'] }) => {
+    const title = cmsData?.title ?? 'The cost of doing nothing'
+    const subtitle = cmsData?.subtitle ?? 'Every month without a clear AI strategy is a month your competitors pull ahead. Here\'s what\'s at stake.'
+    const redTitle = cmsData?.without_title ?? 'Without CFO AI Nexus'
+    const greenTitle = cmsData?.with_title ?? 'With CFO AI Nexus'
+    const redPoints = cmsData?.without_points?.length ? cmsData.without_points : FALLBACK_RED_POINTS
+    const greenPoints = cmsData?.with_points?.length ? cmsData.with_points : FALLBACK_GREEN_POINTS
+
     return (
         <section className="min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-sapphire-800 to-surface-page py-20 px-6 gap-12">
 
@@ -45,16 +53,16 @@ const Costs = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    The cost of doing nothing
+                    {title}
                 </motion.h2>
                 <motion.p
-                    className="text-p-md text-content-body text-balance"
+                    className="text-p-md text-content-body text-balance whitespace-pre-line"
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                    Every month without a clear AI strategy is a month your competitors pull ahead. Here's what's at stake.
+                    {subtitle}
                 </motion.p>
             </div>
 
@@ -70,7 +78,7 @@ const Costs = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h3 className="text-h4 text-content-heading font-bold">Without CFO AI Nexus</h3>
+                    <h3 className="text-h4 text-content-heading font-bold">{redTitle}</h3>
                     <ul className="flex flex-col gap-4">
                         {redPoints.map((point, i) => (
                             <li key={i} className={`flex items-start gap-4 py-2 ${i < redPoints.length - 1 ? 'border-b border-[#A3465A]' : ''}`}>
@@ -90,7 +98,7 @@ const Costs = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.15 }}
                 >
-                    <h3 className="text-h4 text-content-heading font-bold">With CFO AI Nexus</h3>
+                    <h3 className="text-h4 text-content-heading font-bold">{greenTitle}</h3>
                     <ul className="flex flex-col gap-4">
                         {greenPoints.map((point, i) => (
                             <li key={i} className={`flex items-start gap-4 py-2 ${i < greenPoints.length - 1 ? 'border-b border-[#307865]' : ''}`}>

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
+import type { PromoData } from '@/lib/wordpress'
 
-const cards = [
+const FALLBACK_CARDS = [
     {
         icon: '/assets/big_icons/Frame.svg',
         title: 'AI Tools That Actually Work',
@@ -23,7 +24,10 @@ const cards = [
     },
 ]
 
-const InsideTheSession = () => {
+const InsideTheSession = ({ cmsData }: { cmsData?: PromoData['inside'] }) => {
+    const title = cmsData?.title ?? 'Inside The Session'
+    const cards = cmsData?.cards?.length ? cmsData.cards : FALLBACK_CARDS
+
     return (
         <section className="flex flex-col items-center bg-[#040820] py-20 px-6 gap-10">
             <div className="flex flex-col items-center gap-3 w-full max-w-6xl text-center">
@@ -34,7 +38,7 @@ const InsideTheSession = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    Inside The Session
+                    {title}
                 </motion.h2>
             </div>
 

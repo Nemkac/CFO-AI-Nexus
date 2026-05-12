@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import type { PromoData } from '@/lib/wordpress'
 
-const SLIDE_COUNT = 7
-const SLIDES = Array.from({ length: 7 }, (_, i) => `/assets/images_for_slider/image0${i + 1}.png`)
+const FALLBACK_SLIDES = Array.from({ length: 7 }, (_, i) => `/assets/images_for_slider/image0${i + 1}.png`)
 const AUTOPLAY_MS = 3500
 
-const Carousel = () => {
+const Carousel = ({ cmsData }: { cmsData?: PromoData['carousel'] }) => {
+    const slides = cmsData?.images?.length ? cmsData.images : FALLBACK_SLIDES
+    const slideCount = slides.length
+    const title = cmsData?.title ?? 'Stop drowning. Start building.'
+    const subtitle = cmsData?.subtitle ?? 'Bridge the gap from manual workflows to a fully automated AI-Native engine.'
+
     const [current, setCurrent] = useState(0)
     const [direction, setDirection] = useState(1)
 
     const go = (next: number, dir: number) => {
         setDirection(dir)
-        setCurrent((next + SLIDE_COUNT) % SLIDE_COUNT)
+        setCurrent((next + slideCount) % slideCount)
     }
 
     const prev = () => go(current - 1, -1)
@@ -20,7 +25,7 @@ const Carousel = () => {
     useEffect(() => {
         const id = setInterval(() => go(current + 1, 1), AUTOPLAY_MS)
         return () => clearInterval(id)
-    }, [current])
+    }, [current, slideCount])
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-sapphire-600 to-sapphire-800 py-20 px-6 overflow-hidden">
@@ -46,16 +51,16 @@ const Carousel = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
                         >
-                            Stop drowning. Start building.
+                            {title}
                         </motion.h2>
                         <motion.p
-                            className="text-p-md text-content-body"
+                            className="text-p-md text-content-body whitespace-pre-line"
                             initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.1 }}
                         >
-                            Bridge the gap from manual workflows to a <br /> fully automated AI-Native engine.
+                            {subtitle}
                         </motion.p>
                     </div>
 
@@ -63,7 +68,7 @@ const Carousel = () => {
                     <div className="flex flex-row items-center gap-4">
                         {/* Dot indicators */}
                         <div className="flex flex-row gap-2 items-center">
-                            {Array.from({ length: SLIDE_COUNT }).map((_, i) => (
+                            {Array.from({ length: slideCount }).map((_, i) => (
                                 <button
                                     key={i}
                                     onClick={() => go(i, i > current ? 1 : -1)}
@@ -107,7 +112,7 @@ const Carousel = () => {
                             transition={{ duration: 0.4, ease: 'easeInOut' }}
                             className="absolute inset-0 rounded-2xl overflow-hidden"
                         >
-                            <img src={SLIDES[current]} alt="" className="w-full h-full object-contain" />
+                            <img src={slides[current]} alt="" className="w-full h-full object-contain" />
                         </motion.div>
                     </AnimatePresence>
                 </div>
