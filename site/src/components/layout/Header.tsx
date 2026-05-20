@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { useEffect, useRef, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Download } from 'lucide-react'
 import { motion } from 'motion/react'
 import Button from '../ui/Button'
 import { usePageLoad } from './PageLoadContext'
@@ -20,9 +20,10 @@ const navItems = [
 interface HeaderProps {
   bannerHeight: number
   onHeightChange: (h: number) => void
+  onDownloadAgenda?: () => void
 }
 
-export default function Header({ bannerHeight, onHeightChange }: HeaderProps) {
+export default function Header({ bannerHeight, onHeightChange, onDownloadAgenda }: HeaderProps) {
   const { isLoaded } = usePageLoad()
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
@@ -127,7 +128,14 @@ export default function Header({ bannerHeight, onHeightChange }: HeaderProps) {
               initial={{ opacity: 0 }}
               animate={isLoaded ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 + navItems.length * 0.08 }}
+              className="flex items-center gap-3"
             >
+              <button onClick={onDownloadAgenda} className="group p-px rounded-full bg-linear-to-r from-[#CA54A8] to-[#3E4ACC] cursor-pointer transition-all duration-200">
+                <span className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-page group-hover:bg-transparent transition-colors duration-200 text-p-md-semibold text-white">
+                  <Download size={16} />
+                  Download Agenda
+                </span>
+              </button>
               <Link to='/checkout'>
                 <Button label='Reserve a Ticket' />
               </Link>
@@ -187,6 +195,15 @@ export default function Header({ bannerHeight, onHeightChange }: HeaderProps) {
               {label}
             </Link>
           ))}
+          <button
+            onClick={() => { setIsOpen(false); onDownloadAgenda?.() }}
+            className="mt-2 group p-px rounded-full bg-linear-to-r from-[#CA54A8] to-[#3E4ACC] cursor-pointer"
+          >
+            <span className="flex items-center gap-2 justify-center px-4 py-3 rounded-full bg-surface-page group-hover:bg-transparent transition-colors duration-200 text-p-md-semibold text-white">
+              <Download size={16} />
+              Download Agenda
+            </span>
+          </button>
         </nav>
       </aside>
     </>

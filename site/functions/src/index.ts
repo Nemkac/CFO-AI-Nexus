@@ -22,6 +22,7 @@ const ALLOWED_PRICE_IDS = new Set([
   "price_1TCfEbEPnfyhMV5YpLrnkqNC", // Standard Ticket
   "price_1TCfEEEPnfyhMV5YJeZYTsd5", // Early Bird Ticket
   "price_1TCeutEPnfyhMV5YNm84H8M0", // Super Early Bird Ticket
+  "price_1TWwZ3EPnfyhMV5YANCHcQkg", // $195 Ticket
   "price_1TFbgvEPnfyhMV5Y3iR5KJ5w", // $1 Client Testing Ticket
   // Test prices
   "price_1TF9KqEPnfyhMV5YMYdGM1zJ", // Last Minute Ticket (test)

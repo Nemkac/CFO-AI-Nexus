@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
 import type { PromoData } from '@/lib/wordpress'
+import { useRegistration } from '../context/RegistrationContext'
 
 const FALLBACK_RED_POINTS = [
     'Months of research with no clear direction',
@@ -34,6 +35,7 @@ const CheckIcon = () => (
 )
 
 const Costs = ({ cmsData }: { cmsData?: PromoData['costs'] }) => {
+    const { openModal } = useRegistration()
     const title = cmsData?.title ?? 'The cost of doing nothing'
     const subtitle = cmsData?.subtitle ?? 'Every month without a clear AI strategy is a month your competitors pull ahead. Here\'s what\'s at stake.'
     const redTitle = cmsData?.without_title ?? 'Without CFO AI Nexus'
@@ -110,6 +112,21 @@ const Costs = ({ cmsData }: { cmsData?: PromoData['costs'] }) => {
                 </motion.div>
 
             </div>
+            <motion.div
+                className="flex flex-col items-center gap-3"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
+                <button
+                    onClick={openModal}
+                    className="px-8 py-4 bg-[#A3E7FC] text-[#040820] rounded-full text-p-md-semibold hover:brightness-95 transition-all"
+                >
+                    Join Free Masterclass
+                </button>
+                <p className="text-p-sm text-content-body text-center">30,000+ finance leaders trust this masterclass<br />Seats are limited.</p>
+            </motion.div>
         </section>
     )
 }

@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { useNavigate } from '@tanstack/react-router'
 import { usePageLoad } from './PageLoadContext'
+import Countdown from '@/components/ui/Countdown'
 
-const MAIN_TEXT = 'Super Early Bird Tickets available for only $125. Act fast, only 55 seats left!'
+const CONFERENCE_DATE = new Date('2026-06-16T00:00:00Z')
+
+const MAIN_TEXT = 'Early bird end June 16 • 72 seats left at €195'
 const TYPING_SPEED = 30
 
 interface BannerProps {
@@ -52,15 +55,18 @@ const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
         <motion.div
             ref={bannerRef}
             onClick={() => navigate({ to: '/checkout' })}
-            className="fixed top-0 left-0 hover:border-b hover:border-pink-500 right-0 z-50 flex flex-row items-center justify-center w-full bg-linear-to-r from-[#4C203F] to-[#1F2566] p-4 cursor-pointer"
+            className="fixed top-0 left-0 hover:border-b hover:border-pink-500 right-0 z-50 flex flex-row items-center justify-center w-full bg-linear-to-r from-[#4C203F] to-[#1F2566] px-6 py-4 cursor-pointer"
             initial={{ y: '-100%' }}
             animate={isLoaded ? { y: 0 } : { y: '-100%' }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
         >
-            <p className="text-p-md text-content-heading min-h-[1.5em] text-center text-balance">
-                {typedMain}
-                {phase === 'main' && <span className="cursor-blink">|</span>}
-            </p>
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full max-w-6xl gap-3 md:gap-0">
+                <p className="text-p-md text-content-heading min-h-[1.5em] text-balance">
+                    {typedMain}
+                    {phase === 'main' && <span className="cursor-blink">|</span>}
+                </p>
+                <Countdown targetDate={CONFERENCE_DATE} />
+            </div>
         </motion.div>
     )
 }

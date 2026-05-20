@@ -1,15 +1,18 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import LoadingScreen from '../components/layout/LoadingScreen'
 import { PageLoadContext } from '../components/layout/PageLoadContext'
+import AgendaModal from '@/components/sections/landing/AgendaModal'
 
 import appCss from '../styles.css?url'
 import Banner from '@/components/layout/Banner'
+
+const AGENDA_KIT_UID = 'a28fd57841'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -75,6 +78,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false)
   const [bannerHeight, setBannerHeight] = useState(52)
   const [headerHeight, setHeaderHeight] = useState(80)
+  const [agendaOpen, setAgendaOpen] = useState(false)
+
+  const kitContainerRef = useRef<HTMLDivElement>(null)
+  const kitScriptInjected = useRef(false)
 
   const signalReady = useCallback(() => {
     requestAnimationFrame(() => {
@@ -101,6 +108,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     )
   }, [bannerHeight, headerHeight])
 
+  useEffect(() => {
+    if (kitScriptInjected.current || !kitContainerRef.current) return
+    kitScriptInjected.current = true
+    const script = document.createElement('script')
+    script.src = `https://corporate-finance-learning.kit.com/${AGENDA_KIT_UID}/index.js`
+    script.async = true
+    script.setAttribute('data-uid', AGENDA_KIT_UID)
+    kitContainerRef.current.appendChild(script)
+  }, [])
+
   return (
     <html lang="en">
       <head>
@@ -117,6 +134,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <Header
             bannerHeight={bannerHeight}
             onHeightChange={setHeaderHeight}
+            onDownloadAgenda={() => setAgendaOpen(true)}
           />
           <main
             className="flex-1"
@@ -125,6 +143,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             {children}
           </main>
           <Footer />
+          <AgendaModal open={agendaOpen} onClose={() => setAgendaOpen(false)} />
+          <div
+            ref={kitContainerRef}
+            style={{ position: 'fixed', left: '-9999px', visibility: 'hidden', pointerEvents: 'none' }}
+            aria-hidden="true"
+          />
           <TanStackDevtools
             config={{
               position: 'bottom-right',

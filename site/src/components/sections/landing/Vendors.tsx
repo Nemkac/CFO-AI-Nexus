@@ -232,9 +232,9 @@ const VendorsSection = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Link to="/checkout">
-                        <Button label="Access Expo" />
+                        <Button className="px-20" label="Register Now" />
                     </Link>
-                    <p className="text-p-xsm text-content-heading">Super Early Bird Offer Ends Soon</p>
+                    <p className="text-p-xsm text-content-heading">10.000+ finance leaders already trained</p>
                 </motion.div>
             </div>
         </div>

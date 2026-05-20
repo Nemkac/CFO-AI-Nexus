@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import Button from '@/components/ui/Button'
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string)
-const TICKET_PRICE = Number(import.meta.env.VITE_TICKET_PRICE) || 125
+const TICKET_PRICE = Number(import.meta.env.VITE_TICKET_PRICE) || 195
 
 interface StripePanelProps {
     clientSecret: string | null

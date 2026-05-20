@@ -54,6 +54,7 @@ const OpportunitiesSection = () => {
                     <Link to='/packages'>
                         <Button label='See Exhibitor & Sponsorship Packages' />
                     </Link>
+                    <p className="text-p-xsm text-content-heading">10.000+ finance leaders already trained</p>
                 </div>
             </div>
         </div>

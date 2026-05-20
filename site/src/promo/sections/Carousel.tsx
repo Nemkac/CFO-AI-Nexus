@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import type { PromoData } from '@/lib/wordpress'
+import { useRegistration } from '../context/RegistrationContext'
 
 const FALLBACK_SLIDES = Array.from({ length: 7 }, (_, i) => `/assets/images_for_slider/image0${i + 1}.png`)
 const AUTOPLAY_MS = 3500
 
 const Carousel = ({ cmsData }: { cmsData?: PromoData['carousel'] }) => {
+    const { openModal } = useRegistration()
     const slides = cmsData?.images?.length ? cmsData.images : FALLBACK_SLIDES
     const slideCount = slides.length
     const title = cmsData?.title ?? 'Stop drowning. Start building.'
@@ -118,6 +120,22 @@ const Carousel = ({ cmsData }: { cmsData?: PromoData['carousel'] }) => {
                 </div>
 
             </div>
+
+            <motion.div
+                className="relative z-10 flex flex-col items-center gap-3 mt-4"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
+                <button
+                    onClick={openModal}
+                    className="px-8 py-4 bg-[#A3E7FC] text-[#040820] rounded-full text-p-md-semibold hover:brightness-95 transition-all"
+                >
+                    Register for the Free Masterclass
+                </button>
+                <p className="text-p-sm text-content-body text-center">Joined by 10,000+ finance leaders. Seats are limited.</p>
+            </motion.div>
         </section>
     )
 }

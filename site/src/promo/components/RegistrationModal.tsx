@@ -113,22 +113,28 @@ const StyledSelect = ({
     </Select.Root>
 )
 
-const triggerKitForm = (uid: string, email: string) => {
-    try {
-        const form = document.querySelector<HTMLFormElement>(`form[data-uid="${uid}"]`)
-        if (!form) return
-        const emailInput = form.querySelector<HTMLInputElement>('input[type="email"], input[name="email_address"]')
-        if (emailInput) {
-            const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set
-            nativeInputValueSetter?.call(emailInput, email)
-            emailInput.dispatchEvent(new Event('input', { bubbles: true }))
+const triggerKitFormAndWait = (uid: string, email: string): Promise<void> =>
+    new Promise(resolve => {
+        const attempt = (retriesLeft: number) => {
+            const form = document.querySelector<HTMLFormElement>(`form[data-uid="${uid}"]`)
+            if (!form) {
+                if (retriesLeft > 0) setTimeout(() => attempt(retriesLeft - 1), 300)
+                else resolve()
+                return
+            }
+            const emailInput = form.querySelector<HTMLInputElement>('input[type="email"], input[name="email_address"]')
+            if (emailInput) {
+                const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set
+                setter?.call(emailInput, email)
+                emailInput.dispatchEvent(new Event('input', { bubbles: true }))
+            }
+            const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"], input[type="submit"]')
+            if (submitBtn) submitBtn.click()
+            else form.dispatchEvent(new SubmitEvent('submit', { bubbles: true, cancelable: true }))
+            setTimeout(resolve, 1500)
         }
-        form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }))
-        form.submit?.()
-    } catch {
-        // analytics tracking failed silently — main subscription already succeeded
-    }
-}
+        attempt(10)
+    })
 
 const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
     const [name, setName] = useState('')
@@ -165,7 +171,7 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
             setError('Please fill in all fields.')
             return
         }
-        if (!kitFormId) {
+        if (!kitFormId && !kitFormUid) {
             setError('Registration is not configured yet. Please try again later.')
             return
         }
@@ -175,23 +181,28 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
         const countryName = countryList.find(c => c.code === country)?.name ?? country
 
         try {
-            const res = await fetch(`https://api.convertkit.com/v3/forms/${kitFormId}/subscribe`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    api_key: KIT_API_KEY,
-                    email,
-                    first_name: name,
-                    fields: { job_title: jobTitle, country: countryName },
-                }),
-            })
-            const data = await res.json()
-            if (res.ok && data.subscription) {
-                if (kitFormUid) triggerKitForm(kitFormUid, email)
-                setSubmitted(true)
-            } else {
-                setError(data.message ?? 'Something went wrong. Please try again.')
+            // Step 1: submit through Kit's own JS so analytics are tracked natively
+            if (kitFormUid) await triggerKitFormAndWait(kitFormUid, email)
+
+            // Step 2: upsert subscriber with custom fields via V3 API
+            if (kitFormId) {
+                const res = await fetch(`https://api.convertkit.com/v3/forms/${kitFormId}/subscribe`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        api_key: KIT_API_KEY,
+                        email,
+                        first_name: name,
+                        fields: { job_title: jobTitle, country: countryName },
+                    }),
+                })
+                const data = await res.json()
+                if (!res.ok && !data.subscription) {
+                    console.warn('Kit V3 custom fields update failed:', data.message)
+                }
             }
+
+            setSubmitted(true)
         } catch {
             setError('Network error. Please check your connection and try again.')
         } finally {
@@ -227,7 +238,7 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
                                         <Check className="w-8 h-8 text-green-600" />
                                     </div>
                                     <h2 className="text-h3 text-black font-bold">You're registered!</h2>
-                                    <p className="text-p-md text-black/60 text-balance">Check your inbox — we'll send you the conference details and joining link closer to the date.</p>
+                                    <p className="text-p-md text-black/60 text-balance">Check your inbox — we'll send you the masterclass details and joining link.</p>
                                     <button onClick={onClose} className="mt-4 px-8 py-3 bg-black text-white rounded-full text-p-md-semibold hover:bg-black/80 transition-colors">
                                         Close
                                     </button>
@@ -244,8 +255,8 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
                                             <Field label="Full name">
                                                 <FilledInput type="text" placeholder="John Smith" value={name} onChange={setName} />
                                             </Field>
-                                            <Field label="Work email">
-                                                <FilledInput type="email" placeholder="john@company.com" value={email} onChange={setEmail} />
+                                            <Field label="Email address">
+                                                <FilledInput type="email" placeholder="john@domain.com" value={email} onChange={setEmail} />
                                             </Field>
                                             <Field label="Job title">
                                                 <StyledSelect

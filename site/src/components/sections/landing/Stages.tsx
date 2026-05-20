@@ -75,15 +75,16 @@ const StagesSection = () => {
                 </AnimatePresence>
 
                 <motion.div
-                    className="flex flex-col items-center w-full"
+                    className="flex flex-col items-center w-full gap-4"
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Link to="/checkout">
-                        <Button label="Get Your Pass" />
+                        <Button className="px-20" label="Register Now" />
                     </Link>
+                    <p className="text-p-xsm text-content-heading">10.000+ finance leaders already trained</p>
                 </motion.div>
             </div>
         </div>

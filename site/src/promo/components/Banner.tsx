@@ -50,9 +50,9 @@ const Banner = ({ text, conferenceDatetime }: { text?: string; conferenceDatetim
             animate={{ y: 0 }}
             transition={{ duration: 0.3, ease: 'easeOut', delay: 0.2 }}
         >
-            <div className='flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 max-w-6xl w-full mx-auto'>
+            <div className='flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-2 md:gap-4 max-w-6xl w-full mx-auto'>
                 <div className='flex flex-row items-center gap-3'>
-                    <div className='flex flex-row items-center'>
+                    <div className='hidden md:flex flex-row items-center'>
                         {[2, 3, 4, 5, 6].map((n, i) => (
                             <img
                                 key={n}
@@ -63,9 +63,9 @@ const Banner = ({ text, conferenceDatetime }: { text?: string; conferenceDatetim
                             />
                         ))}
                     </div>
-                    <p className='text-p-md-semibold text-content-heading min-h-6 text-balance'>Joined by 10,000+ finance leaders</p>
+                    <p className='text-p-sm md:text-p-md-semibold text-content-heading min-h-6 text-balance'>Joined by 10,000+ finance leaders</p>
                 </div>
-                <p className="text-p-md-semibold text-content-heading min-h-6 text-center text-balance">
+                <p className="text-p-sm md:text-p-md-semibold text-content-heading min-h-6 text-left md:text-center text-balance">
                     {typedMain}
                     {showCursor && <span className="cursor-blink">|</span>}
                 </p>
