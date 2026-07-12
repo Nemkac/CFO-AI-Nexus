@@ -1,9 +1,11 @@
 import Button from '@/components/ui/Button'
 import { useRegistration } from '@/promo/context/RegistrationContext'
+import { useConsent } from '@/components/consent/ConsentProvider'
 import type { PromoData } from '@/lib/wordpress'
 
 const Footer = ({ cmsData }: { cmsData?: PromoData['footer'] }) => {
     const { openModal } = useRegistration()
+    const { openSettings } = useConsent()
     const title = cmsData?.title ?? 'The AI-Native finance departments of 2027 are being built right now.'
     const description = cmsData?.subtitle ?? 'Join 2,500+ finance professionals live on Tuesday, May 19, to master the implementation roadmap, or watch your competitors automate while you manage legacy chaos.'
     const buttonLabel = cmsData?.button_text ?? 'Reserve My Free Seat'
@@ -38,6 +40,17 @@ const Footer = ({ cmsData }: { cmsData?: PromoData['footer'] }) => {
                         <Button variant="sky" label={buttonLabel} onClick={openModal} />
                         <p className="text-p-md text-content-heading text-center whitespace-pre-line">{subtext}</p>
                     </div>
+                </div>
+
+                {/* Legal row — the pages are hosted once, on the main domain. */}
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-p-sm text-content-heading border-t border-white/10 pt-6">
+                    <a href="https://cfoainexus.com/privacy-policy" className="underline hover:text-pink-500">Privacy Policy</a>
+                    <span aria-hidden>|</span>
+                    <a href="https://cfoainexus.com/terms" className="underline hover:text-pink-500">Terms &amp; Conditions</a>
+                    <span aria-hidden>|</span>
+                    <button type="button" onClick={openSettings} className="underline hover:text-pink-500 cursor-pointer">
+                        Cookie Settings
+                    </button>
                 </div>
 
                 {/* Bottom row: copyright | tagline */}

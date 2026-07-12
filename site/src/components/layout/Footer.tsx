@@ -1,6 +1,9 @@
 import { Link } from '@tanstack/react-router'
+import { useConsent } from '@/components/consent/ConsentProvider'
 
 export default function Footer() {
+  const { openSettings } = useConsent()
+
   return (
     <footer className="bg-surface-page py-12 w-full">
       <div className="max-w-6xl mx-auto px-6 flex flex-col gap-10 md:gap-30">
@@ -28,7 +31,15 @@ export default function Footer() {
         </div>
         <div className="flex flex-col md:flex-row gap-6 w-full items-center md:justify-between text-center">
           <p className="text-p-sm text-white">© {new Date().getFullYear()} CFO AI Nexus Conference. All rights reserved.</p>
-          <p className="text-p-sm text-white underline cursor-pointer">Terms & Conditions | Privacy Policy</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-p-sm text-white">
+            <Link to="/privacy-policy" className="underline hover:text-pink-500">Privacy Policy</Link>
+            <span aria-hidden>|</span>
+            <Link to="/terms" className="underline hover:text-pink-500">Terms &amp; Conditions</Link>
+            <span aria-hidden>|</span>
+            <button type="button" onClick={openSettings} className="underline hover:text-pink-500 cursor-pointer">
+              Cookie Settings
+            </button>
+          </div>
         </div>
       </div>
     </footer>

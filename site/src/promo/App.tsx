@@ -9,6 +9,7 @@ import InsideTheSession from './sections/InsideTheSession'
 import Carousel from './sections/Carousel'
 import Costs from './sections/Costs'
 import { fetchPromoContent, type PromoData } from '@/lib/wordpress'
+import { ConsentProvider } from '@/components/consent/ConsentProvider'
 
 const PromoContent = ({ data }: { data: PromoData | null }) => {
     const { open, closeModal } = useRegistration()
@@ -59,9 +60,11 @@ const PromoApp = () => {
     }, [])
 
     return (
-        <RegistrationProvider>
-            <PromoContent data={data} />
-        </RegistrationProvider>
+        <ConsentProvider clarityId="xek7otbc89" privacyUrl="https://cfoainexus.com/privacy-policy">
+            <RegistrationProvider>
+                <PromoContent data={data} />
+            </RegistrationProvider>
+        </ConsentProvider>
     )
 }
 

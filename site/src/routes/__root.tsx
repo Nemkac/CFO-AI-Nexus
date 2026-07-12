@@ -8,6 +8,7 @@ import Footer from '../components/layout/Footer'
 import LoadingScreen from '../components/layout/LoadingScreen'
 import { PageLoadContext } from '../components/layout/PageLoadContext'
 import { MainContentProvider } from '../components/layout/MainContentContext'
+import { ConsentProvider } from '@/components/consent/ConsentProvider'
 import AgendaModal from '@/components/sections/landing/AgendaModal'
 
 import appCss from '../styles.css?url'
@@ -43,19 +44,20 @@ export const Route = createRootRoute({
       { name: 'twitter:image', content: 'https://cfo-ai-nexus.web.app/og-image.png' },
     ],
     scripts: [
-      {
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-9S4P7SGE7G',
-        async: true,
-      },
+      // Consent Mode v2 defaults. Loads nothing external — Google Analytics and
+      // Microsoft Clarity are injected by ConsentProvider only after the visitor
+      // accepts. See src/lib/consent.ts.
       {
         children: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-9S4P7SGE7G');`,
-      },
-      // Microsoft Clarity
-      {
-        children: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xek177ja6y");`,
+window.gtag = gtag;
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied',
+  'wait_for_update': 500
+});`,
       },
     ],
     links: [
@@ -131,6 +133,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="flex flex-col min-h-screen bg-surface-page">
         <PageLoadContext.Provider value={{ isLoaded, signalReady }}>
+         <ConsentProvider clarityId="xek177ja6y" privacyUrl="/privacy-policy">
          <MainContentProvider>
           <LoadingScreen isVisible={!isLoaded} />
           <Banner
@@ -167,6 +170,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             ]}
           />
          </MainContentProvider>
+         </ConsentProvider>
         </PageLoadContext.Provider>
         <Scripts />
       </body>
