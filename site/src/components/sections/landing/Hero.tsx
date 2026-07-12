@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import Badge from "@/components/ui/badge"
 import Button from "@/components/ui/Button"
 import { usePageLoad } from '@/components/layout/PageLoadContext'
+import { useMainContent } from '@/components/layout/MainContentContext'
 import { Link } from '@tanstack/react-router'
 
 const fadeUp = {
@@ -10,16 +11,31 @@ const fadeUp = {
     visible: { opacity: 1, y: 0 },
 }
 
-const SPONSORS = [
-    { src: '/assets/partners/blackline 1.svg', alt: 'BlackLine' },
-    { src: '/assets/partners/anaplan 1.svg', alt: 'Anaplan' },
-    { src: '/assets/partners/workday 1.svg', alt: 'Workday' },
-    { src: '/assets/partners/tipalti 1.svg', alt: 'Tipalti' },
-    { src: '/assets/partners/kyriba 1.svg', alt: 'Kyriba' },
+// Fallback values — must mirror the current (pre-CMS) hero content.
+const FALLBACK_BADGE = 'October 20–21, 2026 | 100% Virtual | 10AM - 4PM EST'
+const FALLBACK_TITLE = 'Deploy AI in Finance Function'
+const FALLBACK_SUBTITLE = 'Auditable, Compliant, Controlled'
+const FALLBACK_DESCRIPTION = 'Two days of world-class sessions, live product demos, and AI-driven networking — built to help CFOs and finance teams cut through the noise and find the tools reshaping modern finance.'
+const FALLBACK_IMAGE = '/assets/Nexus Ai govornici.png'
+
+const FALLBACK_SPONSORS = [
+    '/assets/partners/blackline 1.svg',
+    '/assets/partners/anaplan 1.svg',
+    '/assets/partners/workday 1.svg',
+    '/assets/partners/tipalti 1.svg',
+    '/assets/partners/kyriba 1.svg',
 ]
 
 const HeroSection = () => {
     const { isLoaded, signalReady } = usePageLoad()
+    const cms = useMainContent()
+
+    const badge = cms?.hero?.badge || FALLBACK_BADGE
+    const title = cms?.hero?.title || FALLBACK_TITLE
+    const subtitle = cms?.hero?.subtitle || FALLBACK_SUBTITLE
+    const description = cms?.hero?.description || FALLBACK_DESCRIPTION
+    const image = cms?.hero?.image || FALLBACK_IMAGE
+    const sponsors = cms?.hero?.sponsors?.length ? cms.hero.sponsors.slice(0, 7) : FALLBACK_SPONSORS
 
     useEffect(() => {
         signalReady()
@@ -40,7 +56,7 @@ const HeroSection = () => {
                         animate={isLoaded ? "visible" : "hidden"}
                         transition={{ duration: 0.2, ease: "easeOut" }}
                     >
-                        <Badge label="October 20–21, 2026 | 100% Virtual | 10AM - 4PM EST" delay={500} live />
+                        <Badge label={badge} delay={500} live />
                     </motion.div>
 
                     <motion.div
@@ -50,9 +66,9 @@ const HeroSection = () => {
                         animate={isLoaded ? "visible" : "hidden"}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
                     >
-                        <h2 className="text-h1 text-content-heading text-balance">Deploy AI in Finance Function</h2>
-                        <h4 className="text-h4 text-content-heading text-balance">Auditable, Compliant, Controlled</h4>
-                        <p className="text-p-md text-content-body text-balance">Two days of world-class sessions, live product demos, and AI-driven networking — built to help CFOs and finance teams cut through the noise and find the tools reshaping modern finance.</p>
+                        <h2 className="text-h1 text-content-heading text-balance">{title}</h2>
+                        <h4 className="text-h4 text-content-heading text-balance">{subtitle}</h4>
+                        <p className="text-p-md text-content-body text-balance">{description}</p>
                     </motion.div>
 
                     <motion.div
@@ -78,7 +94,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                 >
                     <img
-                        src='/assets/Nexus Ai govornici.png'
+                        src={image}
                         alt='CFO AI Nexus Speakers'
                         className='w-full max-h-120 rounded-2xl object-contain'
                     />
@@ -94,8 +110,8 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.45 }}
             >
                 <div className='flex flex-row flex-wrap w-full items-center md:justify-between gap-8'>
-                    {SPONSORS.map(({ src, alt }) => (
-                        <img key={alt} src={src} alt={alt} className='h-7 object-contain opacity-40 hover:opacity-100 transition-opacity duration-200' />
+                    {sponsors.map((src, i) => (
+                        <img key={`${src}-${i}`} src={src} alt='Sponsor' className='h-7 object-contain opacity-40 hover:opacity-100 transition-opacity duration-200' />
                     ))}
                 </div>
             </motion.div>

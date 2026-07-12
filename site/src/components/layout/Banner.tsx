@@ -1,13 +1,28 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { useNavigate } from '@tanstack/react-router'
 import { usePageLoad } from './PageLoadContext'
+import { useMainContent } from './MainContentContext'
 import Countdown from '@/components/ui/Countdown'
+import { ceWallTimeToUtc } from '@/lib/conferenceTime'
 
-const CONFERENCE_DATE = new Date('2026-06-16T00:00:00Z')
+// Fallback values — must mirror the current (pre-CMS) banner content.
+const FALLBACK_DATE = '2026-06-16'
+const FALLBACK_MAIN_TEXT = 'Early bird end'
+const FALLBACK_FOLLOW_UP = '72 seats left at €195'
 
-const MAIN_TEXT = 'Early bird end June 16 • 72 seats left at €195'
 const TYPING_SPEED = 30
+
+// Display the conference date as "Month D" when it falls in the current year,
+// or "Month D, YYYY" when it falls in a later year.
+function formatConferenceDate(iso: string) {
+    const date = new Date(`${iso}T00:00:00Z`)
+    const month = date.toLocaleDateString('en-US', { month: 'long', timeZone: 'UTC' })
+    const day = date.getUTCDate()
+    const year = date.getUTCFullYear()
+    const base = `${month} ${day}`
+    return year === new Date().getUTCFullYear() ? base : `${base}, ${year}`
+}
 
 interface BannerProps {
     onHeightChange: (h: number) => void
@@ -16,9 +31,19 @@ interface BannerProps {
 
 const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
     const { isLoaded } = usePageLoad()
+    const cms = useMainContent()
     const navigate = useNavigate()
     const [typedMain, setTypedMain] = useState('')
     const [phase, setPhase] = useState<'main' | 'cta' | 'done'>('main')
+
+    const isoDate = cms?.banner?.date || FALLBACK_DATE
+    const mainTextPrefix = cms?.banner?.main_text || FALLBACK_MAIN_TEXT
+    const followUpText = cms?.banner?.follow_up_text || FALLBACK_FOLLOW_UP
+
+    // Count down to the start of the conference day in Central European time
+    // (not midnight UTC), so the countdown isn't an hour or two off.
+    const conferenceDate = useMemo(() => ceWallTimeToUtc(`${isoDate}T00:00`), [isoDate])
+    const MAIN_TEXT = `${mainTextPrefix} ${formatConferenceDate(isoDate)} • ${followUpText}`
 
     const bannerRef = useRef<HTMLDivElement>(null)
     const onHeightChangeRef = useRef(onHeightChange)
@@ -37,6 +62,13 @@ const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
         return () => ro.disconnect()
     }, [])
 
+    // Re-type from scratch whenever the resolved text changes (e.g. CMS data
+    // arrives after the initial fallback render).
+    useEffect(() => {
+        setTypedMain('')
+        setPhase('main')
+    }, [MAIN_TEXT])
+
     useEffect(() => {
         if (!isLoaded || phase !== 'main') return
         let i = 0
@@ -49,7 +81,7 @@ const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
             }
         }, TYPING_SPEED)
         return () => clearInterval(id)
-    }, [isLoaded, phase])
+    }, [isLoaded, phase, MAIN_TEXT])
 
     return (
         <motion.div
@@ -65,7 +97,7 @@ const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
                     {typedMain}
                     {phase === 'main' && <span className="cursor-blink">|</span>}
                 </p>
-                <Countdown targetDate={CONFERENCE_DATE} />
+                <Countdown targetDate={conferenceDate} />
             </div>
         </motion.div>
     )

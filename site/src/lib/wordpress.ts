@@ -81,11 +81,40 @@ export type PromoData = {
         kit_form_id: string
         kit_form_uid?: string
     }
+    modal: {
+        title: string
+        subtext: string
+    }
 }
 
 export async function fetchPromoContent(): Promise<PromoData> {
     const res = await fetch(`${WP_BASE_RAW}/cfo/v1/promo`, { cache: 'no-store' })
     if (!res.ok) throw new Error('Failed to fetch promo content')
+    return res.json()
+}
+
+export type MainFAQ = { question: string; answer: string }
+
+export type MainData = {
+    banner: {
+        main_text: string
+        date: string
+        follow_up_text: string
+    }
+    hero: {
+        badge: string
+        image: string
+        title: string
+        subtitle: string
+        description: string
+        sponsors: string[]
+    }
+    faq: MainFAQ[]
+}
+
+export async function fetchMainContent(): Promise<MainData> {
+    const res = await fetch(`${WP_BASE_RAW}/cfo/v1/main`, { cache: 'no-store' })
+    if (!res.ok) throw new Error('Failed to fetch main content')
     return res.json()
 }
 

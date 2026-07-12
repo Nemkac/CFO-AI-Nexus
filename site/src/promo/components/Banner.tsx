@@ -1,27 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
+import { formatConferenceTime } from '@/lib/conferenceTime'
 
 const FALLBACK_DATETIME = '2026-05-19T16:00'
 const TYPING_SPEED = 30
 
-function formatBannerDatetime(iso: string) {
-    const normalized = iso.includes('Z') ? iso : iso + ':00Z'
-    const date = new Date(normalized)
-    const shortDate = date.toLocaleDateString('en-US', {
-        weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC',
-    })
-    const utcH = date.getUTCHours()
-    const utcM = date.getUTCMinutes()
-    const fmt = (h: number, m: number, zone: string) => {
-        const ampm = h >= 12 ? 'PM' : 'AM'
-        const h12 = h % 12 === 0 ? 12 : h % 12
-        return `${h12}:${String(m).padStart(2, '0')} ${ampm} ${zone}`
-    }
-    return `${shortDate}, ${fmt(utcH - 5, utcM, 'EST')} (${fmt(utcH + 1, utcM, 'CET')})`
-}
-
 const Banner = ({ text, conferenceDatetime }: { text?: string; conferenceDatetime?: string }) => {
-    const datetime = formatBannerDatetime(conferenceDatetime ?? FALLBACK_DATETIME)
+    const { displayDateShort, displayTime } = formatConferenceTime(conferenceDatetime ?? FALLBACK_DATETIME)
+    const datetime = `${displayDateShort}, ${displayTime}`
     const mainText = text ? `${text} ${datetime}` : `See you! ${datetime}`
     const [typedMain, setTypedMain] = useState('')
     const [showCursor, setShowCursor] = useState(true)

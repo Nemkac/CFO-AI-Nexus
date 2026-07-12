@@ -43,6 +43,9 @@ const PromoContent = ({ data }: { data: PromoData | null }) => {
                 onClose={closeModal}
                 kitFormId={data?.registration?.kit_form_id}
                 kitFormUid={data?.registration?.kit_form_uid}
+                title={data?.modal?.title}
+                subtext={data?.modal?.subtext}
+                conferenceDatetime={data?.hero?.conference_datetime}
             />
         </div>
     )

@@ -5,6 +5,7 @@ import ReactCountryFlag from 'react-country-flag'
 import { countries } from 'countries-list'
 import { ChevronDown, Check } from 'lucide-react'
 import { ALLOWED_COUNTRY_CODES } from '@/data/blockedCountries'
+import { formatConferenceTime } from '@/lib/conferenceTime'
 
 const countryList = (Object.entries(countries) as [string, { name: string }][])
     .filter(([code]) => ALLOWED_COUNTRY_CODES.has(code))
@@ -27,9 +28,19 @@ type Props = {
     onClose: () => void
     kitFormId?: string
     kitFormUid?: string
+    title?: string
+    subtext?: string
+    conferenceDatetime?: string
 }
 
 const KIT_API_KEY = import.meta.env.VITE_KIT_API_KEY ?? ''
+
+const FALLBACK_DATETIME = '2026-05-19T16:00'
+
+function formatModalDatetime(iso: string) {
+    const { displayDateShort, displayTime } = formatConferenceTime(iso)
+    return `${displayDateShort} | ${displayTime}`
+}
 
 const labelClass = 'text-p-md text-black/70 font-medium'
 
@@ -136,7 +147,7 @@ const triggerKitFormAndWait = (uid: string, email: string): Promise<void> =>
         attempt(10)
     })
 
-const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
+const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid, title, subtext, conferenceDatetime }: Props) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [jobTitle, setJobTitle] = useState('')
@@ -246,8 +257,8 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
                             ) : (
                                 <>
                                     <div className="flex flex-col gap-1 items-center">
-                                        <h2 className="text-h3 text-black font-bold">Reserve Your Free Seat</h2>
-                                        <p className="text-p-md-semibold text-black">Tuesday, May 19 | 11:00 AM EST (5:00 PM CET)</p>
+                                        <h2 className="text-h3 text-black font-bold">{title || 'Reserve Your Free Seat'}</h2>
+                                        <p className="text-p-md-semibold text-black">{formatModalDatetime(conferenceDatetime ?? FALLBACK_DATETIME)}</p>
                                     </div>
 
                                     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
@@ -321,7 +332,7 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid }: Props) => {
                                             >
                                                 {loading ? 'Registering...' : 'Register Now'}
                                             </button>
-                                            <p className="text-p-sm text-black text-center text-balance">Seats are limited. Once all seats are filled, access cannot be guaranteed. By registering, you agree to receive newsletters from us and collaborated party. You can subscribe at any time.</p>
+                                            <p className="text-p-sm text-black text-center text-balance whitespace-pre-line">{subtext || 'Seats are limited. Once all seats are filled, access cannot be guaranteed. By registering, you agree to receive newsletters from us and collaborated party. You can subscribe at any time.'}</p>
                                         </div>
                                     </form>
                                 </>

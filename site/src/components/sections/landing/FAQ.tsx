@@ -1,6 +1,7 @@
 import type React from 'react'
 import { motion } from 'motion/react'
 import { Accordion, AccordionItem } from '@/components/ui/Accordion'
+import { useMainContent } from '@/components/layout/MainContentContext'
 
 const FAQS: { value: string; trigger: string; content: React.ReactNode }[] = [
     {
@@ -76,7 +77,17 @@ const FAQS: { value: string; trigger: string; content: React.ReactNode }[] = [
     },
 ]
 
-const FAQSection = () => (
+const FAQSection = () => {
+    const cms = useMainContent()
+    const faqs = cms?.faq?.length
+        ? cms.faq.map((item, i) => ({
+            value: `faq-${i}`,
+            trigger: item.question,
+            content: <p className="whitespace-pre-line">{item.answer}</p> as React.ReactNode,
+        }))
+        : FAQS
+
+    return (
     <section className="py-10 md:py-20 flex flex-col gap-10 items-center w-full justify-center bg-surface-page px-6">
         <motion.h2
             className="text-h2 text-content-heading text-center"
@@ -96,7 +107,7 @@ const FAQSection = () => (
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
         >
             <Accordion>
-                {FAQS.map(({ value, trigger, content }) => (
+                {faqs.map(({ value, trigger, content }) => (
                     <AccordionItem key={value} value={value} trigger={trigger}>
                         {content}
                     </AccordionItem>
@@ -104,6 +115,7 @@ const FAQSection = () => (
             </Accordion>
         </motion.div>
     </section>
-)
+    )
+}
 
 export default FAQSection

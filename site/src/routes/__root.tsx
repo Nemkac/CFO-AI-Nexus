@@ -7,6 +7,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import LoadingScreen from '../components/layout/LoadingScreen'
 import { PageLoadContext } from '../components/layout/PageLoadContext'
+import { MainContentProvider } from '../components/layout/MainContentContext'
 import AgendaModal from '@/components/sections/landing/AgendaModal'
 
 import appCss from '../styles.css?url'
@@ -51,6 +52,10 @@ export const Route = createRootRoute({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-9S4P7SGE7G');`,
+      },
+      // Microsoft Clarity
+      {
+        children: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xek177ja6y");`,
       },
     ],
     links: [
@@ -126,6 +131,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="flex flex-col min-h-screen bg-surface-page">
         <PageLoadContext.Provider value={{ isLoaded, signalReady }}>
+         <MainContentProvider>
           <LoadingScreen isVisible={!isLoaded} />
           <Banner
             onHeightChange={setBannerHeight}
@@ -160,6 +166,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               },
             ]}
           />
+         </MainContentProvider>
         </PageLoadContext.Provider>
         <Scripts />
       </body>

@@ -4,33 +4,13 @@ import Badge from '@/components/ui/badge'
 import Button from '@/components/ui/Button'
 import { useRegistration } from '@/promo/context/RegistrationContext'
 import type { PromoData } from '@/lib/wordpress'
+import { formatConferenceTime } from '@/lib/conferenceTime'
 
 const DOT_COUNT = 60
 const FALLBACK_DATETIME = '2026-05-19T16:00'
 
 type Dot = { x: number; y: number; r: number; dx: number; dy: number }
 type TimeLeft = { days: number; hours: number; minutes: number; seconds: number }
-
-function parseConferenceDatetime(iso: string) {
-    const normalized = iso.includes('Z') ? iso : iso + ':00Z'
-    const date = new Date(normalized)
-
-    const displayDate = date.toLocaleDateString('en-US', {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
-    })
-
-    const fmt = (h: number, m: number, zone: string) => {
-        const ampm = h >= 12 ? 'PM' : 'AM'
-        const h12 = h % 12 === 0 ? 12 : h % 12
-        return `${h12}:${String(m).padStart(2, '0')} ${ampm} ${zone}`
-    }
-
-    const utcH = date.getUTCHours()
-    const utcM = date.getUTCMinutes()
-    const displayTime = `${fmt(utcH - 5, utcM, 'EST')} (${fmt(utcH + 1, utcM, 'CET')})`
-
-    return { date, displayDate, displayTime }
-}
 
 function makeGetTimeLeft(conferenceDate: Date) {
     return (): TimeLeft => {
@@ -56,7 +36,7 @@ const CountUnit = ({ value, label }: { value: number; label: string }) => (
 const Hero = ({ cmsData }: { cmsData?: PromoData['hero'] }) => {
     const { openModal } = useRegistration()
     const conferenceDatetime = cmsData?.conference_datetime ?? FALLBACK_DATETIME
-    const { date: conferenceDate, displayDate, displayTime } = parseConferenceDatetime(conferenceDatetime)
+    const { instant: conferenceDate, displayDateLong: displayDate, displayTime } = formatConferenceTime(conferenceDatetime)
     const getTimeLeft = makeGetTimeLeft(conferenceDate)
 
     const canvasRef = useRef<HTMLCanvasElement>(null)
