@@ -1,0 +1,35 @@
+# HTTP redirect to HTTPS
+http://cms.cfoainexus.com {
+    redir https://{host}{uri} permanent
+}
+
+# HTTPS configuration with standard Let's Encrypt certificate
+https://cms.cfoainexus.com {
+    root * /var/www/html
+    encode gzip
+
+    # Cap request bodies at 16 MB — drops the multi-MB bot POST flood
+    # that caused the original OOM crash.
+    request_body {
+        max_size 16MB
+    }
+
+    # Block sensitive / never-needed paths.
+    @blocked {
+        path */xmlrpc.php
+        path */.git/*
+        path */wp-config.php
+        path */wp-content/uploads/*.php
+        path */wp-content/uploads/*.phtml
+        path */wp-content/uploads/*.phar
+        path /readme.html
+        path /license.txt
+    }
+    respond @blocked 403
+
+    php_fastcgi unix//run/php/php8.3-fpm.sock
+
+    file_server
+
+    try_files {path} {path}/ /index.php?{query}
+}

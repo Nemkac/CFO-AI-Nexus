@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SponsorsAndExhibitorsRouteImport } from './routes/sponsors-and-exhibitors'
 import { Route as SpeakersRouteImport } from './routes/speakers'
 import { Route as ProposalRouteImport } from './routes/proposal'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
@@ -22,6 +23,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SponsorsAndExhibitorsRoute = SponsorsAndExhibitorsRouteImport.update({
+  id: '/sponsors-and-exhibitors',
+  path: '/sponsors-and-exhibitors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SpeakersRoute = SpeakersRouteImport.update({
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/proposal': typeof ProposalRoute
   '/speakers': typeof SpeakersRoute
+  '/sponsors-and-exhibitors': typeof SponsorsAndExhibitorsRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/proposal': typeof ProposalRoute
   '/speakers': typeof SpeakersRoute
+  '/sponsors-and-exhibitors': typeof SponsorsAndExhibitorsRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/proposal': typeof ProposalRoute
   '/speakers': typeof SpeakersRoute
+  '/sponsors-and-exhibitors': typeof SponsorsAndExhibitorsRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/proposal'
     | '/speakers'
+    | '/sponsors-and-exhibitors'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/proposal'
     | '/speakers'
+    | '/sponsors-and-exhibitors'
     | '/terms'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/proposal'
     | '/speakers'
+    | '/sponsors-and-exhibitors'
     | '/terms'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProposalRoute: typeof ProposalRoute
   SpeakersRoute: typeof SpeakersRoute
+  SponsorsAndExhibitorsRoute: typeof SponsorsAndExhibitorsRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sponsors-and-exhibitors': {
+      id: '/sponsors-and-exhibitors'
+      path: '/sponsors-and-exhibitors'
+      fullPath: '/sponsors-and-exhibitors'
+      preLoaderRoute: typeof SponsorsAndExhibitorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/speakers': {
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProposalRoute: ProposalRoute,
   SpeakersRoute: SpeakersRoute,
+  SponsorsAndExhibitorsRoute: SponsorsAndExhibitorsRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,22 +1,15 @@
-import { useEffect } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/order-confirmed')({ component: OrderConfirmedPage })
 
-declare global {
-    interface Window {
-        gtag?: (...args: unknown[]) => void
-    }
-}
+// The GA4 `purchase` event is deliberately NOT fired here. It used to be, but a
+// client-side event on this page can only ever see a fraction of real sales:
+// invoiced company orders never reach this page, GA4 is consent-gated so gtag.js
+// is often absent, and the event was queued ahead of gtag's own `config` call and
+// silently dropped. Purchases are now reported from the Stripe webhook, which sees
+// every payment — see site/functions/src/ga4.ts.
 
 function OrderConfirmedPage() {
-    useEffect(() => {
-        window.gtag?.('event', 'purchase', {
-            event_category: 'ecommerce',
-            event_label: 'Ticket Purchase',
-        })
-    }, [])
-
     return (
         <div className='bg-surface-page min-h-screen flex items-center justify-center p-4'>
             <div className='flex flex-col items-center gap-8 max-w-lg text-center'>

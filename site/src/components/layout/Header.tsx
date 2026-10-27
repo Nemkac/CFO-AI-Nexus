@@ -8,13 +8,13 @@ import { usePageLoad } from './PageLoadContext'
 const navLinks = [
   { to: "/speakers" as const, label: "Speakers" },
   { to: "/checkout" as const, label: "Reserve a Ticket" },
-  { to: "/packages" as const, label: "Sponsor" }
+  { to: "/sponsors-and-exhibitors" as const, label: "Sponsors and Exhibitors" }
 ]
 
 const navItems = [
   { to: "/" as const, label: "Home", exact: true },
   { to: "/speakers" as const, label: "Speakers", exact: true },
-  { to: "/packages" as const, label: "Sponsor", exact: true },
+  { to: "/sponsors-and-exhibitors" as const, label: "Sponsors and Exhibitors", exact: true },
 ]
 
 interface HeaderProps {

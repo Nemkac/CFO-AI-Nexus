@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from 'react'
 import { usePageLoad } from '@/components/layout/PageLoadContext'
+import { linkify } from '@/lib/linkify'
 
 // The legal texts are plain text, one heading/paragraph/bullet per line. We parse that
 // structure into blocks so the pages render with real typography instead of a wall of text.
@@ -66,20 +67,6 @@ function parseLegalText(raw: string) {
     return { title, meta, blocks }
 }
 
-// Turn bare email addresses into mailto links.
-function withEmailLinks(text: string) {
-    const parts = text.split(/([\w.+-]+@[\w-]+\.[\w.]+)/g)
-    return parts.map((part, i) =>
-        /^[\w.+-]+@[\w-]+\.[\w.]+$/.test(part) ? (
-            <a key={i} href={`mailto:${part}`} className="text-pink-400 underline hover:text-pink-300">
-                {part}
-            </a>
-        ) : (
-            part
-        )
-    )
-}
-
 const LegalPage = ({ raw }: { raw: string }) => {
     const { signalReady } = usePageLoad()
     const { title, meta, blocks } = useMemo(() => parseLegalText(raw), [raw])
@@ -136,7 +123,7 @@ const LegalPage = ({ raw }: { raw: string }) => {
                                         {block.items.map((item, j) => (
                                             <li key={j} className="text-p-md text-content-body flex gap-3">
                                                 <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-pink-500" />
-                                                <span>{withEmailLinks(item)}</span>
+                                                <span>{linkify(item)}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -144,7 +131,7 @@ const LegalPage = ({ raw }: { raw: string }) => {
                             default:
                                 return (
                                     <p key={i} className="text-p-md text-content-body mb-4 leading-relaxed">
-                                        {withEmailLinks(block.text)}
+                                        {linkify(block.text)}
                                     </p>
                                 )
                         }

@@ -7,7 +7,7 @@ const addInsTop = [
     {
         icon: "/icons/mail_outline.svg",
         title: "Exclusive “The Knowledge Series” Newsletter",
-        description: "Sponsorship of a series of 3 pre-event newsletters delivering your expert insights, including your logo at the top and a “Message from our sponsor” section in the middle to all registrants."
+        description: "Sponsorship of a series of 3 pre-event newsletters delivering your expert insights, including your logo at the top and a “Message from our sponsor” section in the middle to our marketing subscribers."
     },
     {
         icon: "/icons/home_work.svg",
@@ -25,7 +25,7 @@ const addInsBottom = [
     {
         icon: "/icons/workspace_premium.svg",
         title: "Exclusive Sponsored follow-up email",
-        description: "Exclusive email to all registrants highlighting key conference takeaways with a custom call-to-action from the sponsor."
+        description: "Exclusive email to our marketing subscribers highlighting key conference takeaways with a custom call-to-action from the sponsor."
     },
     {
         icon: "/icons/video_library.svg",

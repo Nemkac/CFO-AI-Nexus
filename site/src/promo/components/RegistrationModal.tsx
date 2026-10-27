@@ -6,6 +6,7 @@ import { countries } from 'countries-list'
 import { ChevronDown, Check } from 'lucide-react'
 import { ALLOWED_COUNTRY_CODES } from '@/data/blockedCountries'
 import { formatConferenceTime } from '@/lib/conferenceTime'
+import { getUtmFields } from '@/lib/utm'
 
 const countryList = (Object.entries(countries) as [string, { name: string }][])
     .filter(([code]) => ALLOWED_COUNTRY_CODES.has(code))
@@ -204,7 +205,9 @@ const RegistrationModal = ({ open, onClose, kitFormId, kitFormUid, title, subtex
                         api_key: KIT_API_KEY,
                         email,
                         first_name: name,
-                        fields: { job_title: jobTitle, country: countryName },
+                        // Campaign attribution captured on landing — lets Kit report
+                        // which affiliate/campaign a registration came from.
+                        fields: { job_title: jobTitle, country: countryName, ...getUtmFields() },
                     }),
                 })
                 const data = await res.json()

@@ -1,0 +1,10 @@
+blogname               cfo-ai-nexus
+
+blogdescription        
+
+timezone_string        
+
+date_format            F j, Y
+
+permalink_structure    /%postname%/
+

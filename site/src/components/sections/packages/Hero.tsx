@@ -17,21 +17,34 @@ const PackagesHeroSection = () => {
                 animate="visible"
                 transition={{ duration: 0.5, ease: "easeOut" }}
             >
-                <h2 className="text-h1 text-content-heading text-balance">Where High-Tier Innovators Meet High-Intent Buyers.</h2>
-                <p className="text-p-md text-content-body text-balance">Connect with a curated community of C-suite executives with verified budget authority through our intelligent matchmaking system, designed to align your solutions with their strategic needs.</p>
+                <h1 className="text-h1 text-content-heading text-balance">Where High-Tier Innovators Meet High-Intent Buyers.</h1>
+                <p className="text-p-md text-content-body text-balance">Connect with a curated community of finance and C-suite professionals through our intelligent matchmaking, designed to align your solutions with their strategic needs.</p>
             </motion.div>
 
             <motion.div
-                className="flex flex-col items-center gap-4"
+                className="flex flex-col items-center gap-6"
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             >
-                <Link to="/proposal">
-                    <Button label="Schedule A Call" />
-                </Link>
-                <p className="text-p-xsm text-content-heading">Are you an innovator? Join the exclusive 30. Apply here.</p>
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                    <Link to="/proposal">
+                        <Button label="Schedule a Call" />
+                    </Link>
+                    <a
+                        href="mailto:support@cfoainexus.com?subject=Innovator%20inquiry%20-%20CFO%20AI%20Nexus"
+                        className="text-p-md-link text-content-heading underline underline-offset-4 hover:text-pink-500 transition-colors"
+                    >
+                        Are you an innovator? Get in touch
+                    </a>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border-[0.5px] border-stroke-default bg-surface-default/60 px-4 py-2 text-p-sm text-center">
+                    <span className="text-content-body">Here to attend, not sponsor?</span>
+                    <Link to="/checkout" className="text-p-sm-semibold text-pink-500 hover:text-pink-300 transition-colors">
+                        Get your pass – $295
+                    </Link>
+                </div>
             </motion.div>
         </div>
     )

@@ -22,6 +22,9 @@ const ImageSection = () => {
                 className="absolute inset-0 w-full h-full object-cover"
             />
 
+            {/* Melts the background's top edge into the section above */}
+            <div aria-hidden className="absolute inset-x-0 top-0 h-1/4 bg-linear-to-b from-surface-page to-transparent" />
+
             {/* Left Image — slides in from left on enter */}
             <motion.img
                 src="/assets/opportunities/Left Image.webp"

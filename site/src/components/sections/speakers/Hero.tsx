@@ -27,7 +27,7 @@ const SpeakersHeroSection = () => {
                 animate="visible"
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
             >
-                <h2 className="text-h1 text-content-heading text-balance">Speakers</h2>
+                <h1 className="text-h1 text-content-heading text-balance">CFO AI Nexus 2026 Speakers</h1>
                 <p className="text-p-md text-content-body text-balance">Two days of world-class sessions, live product demos, and AI-driven networking — built to help CFOs and finance teams cut through the noise and find the tools reshaping modern finance.</p>
             </motion.div>
 
@@ -39,9 +39,9 @@ const SpeakersHeroSection = () => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
             >
                 <Link to="/checkout">
-                    <Button label="Get Your Pass" />
+                    <Button label="Get Your Pass – $295" />
                 </Link>
-                <p className="text-p-xsm text-content-heading">Save $200: Only 55 Super Early Bird passes remaining</p>
+                <p className="text-p-xsm text-content-heading">One pass unlocks all sessions across 6 stages</p>
             </motion.div>
         </div>
     )

@@ -8,12 +8,12 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/packages')({ component: PackagesPage })
 
 const sponsorshipRows: SponsorshipRow[] = [
-    { feature: 'Intent-based prospecting (AI-powered)', diamond: true, platinum: true, gold: true, exhibitor: true },
+    { feature: 'Smart matchmaking (AI-powered)', diamond: true, platinum: true, gold: true, exhibitor: true },
     { feature: 'Virtual booth demos, Q&A and Chats', diamond: true, platinum: true, gold: true, exhibitor: true },
     { feature: '30-minutes conference speaking slot', diamond: true, platinum: true, gold: true, exhibitor: true },
-    { feature: 'Curated 1:1 with pre-qualified leads by us', diamond: true, platinum: true, gold: true, exhibitor: true },
+    { feature: 'Relevant 1:1 connections', diamond: true, platinum: true, gold: true, exhibitor: true },
     { feature: 'Digital presence and branding', diamond: true, platinum: true, gold: true, exhibitor: true },
-    { feature: 'MQL Data & Analytics', diamond: true, platinum: true, gold: true, exhibitor: true },
+    { feature: 'Qualified leads & analytics', diamond: true, platinum: true, gold: true, exhibitor: true },
     { feature: '5 conference passes for your team', diamond: true, platinum: true, gold: true, exhibitor: true },
     { feature: 'Breakout room arranged by us', diamond: true, platinum: true, gold: true, exhibitor: false },
     { feature: 'Pre-roll video', diamond: true, platinum: true, gold: true, exhibitor: false },

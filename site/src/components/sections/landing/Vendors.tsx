@@ -178,7 +178,7 @@ const VendorsSection = () => {
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                            Solutions We’re Watching
+                            The 2026 Finance Tech Stack
                         </motion.h2>
                         <motion.p
                             className="text-p-md text-pink-200 text-center text-balance max-w-3xl"
@@ -187,7 +187,7 @@ const VendorsSection = () => {
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         >
-                            Explore the next generation of financial technologies. This is a dynamic watchlist of industry pioneers, subject to change as we finalize our official partnership and exhibitor roster.
+                            A curated view of the vendors defining AI-native finance. Some are exhibitors, some are our partners, and many are already in the stacks our attendees use every day.
                         </motion.p>
                     </div>
                     <motion.div

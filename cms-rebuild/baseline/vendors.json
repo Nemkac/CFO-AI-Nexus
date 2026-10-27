@@ -1,0 +1,1482 @@
+[
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/80",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=80"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/81"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-80",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:06:43",
+        "date_gmt": "2026-04-29T22:06:43",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/highradius_1.webp",
+        "featured_media": 81,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=80"
+        },
+        "id": 80,
+        "link": "https://cms.cfoainexus.com/vendor/highradius/",
+        "modified": "2026-04-29T22:06:43",
+        "modified_gmt": "2026-04-29T22:06:43",
+        "slug": "highradius",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Highradius"
+        },
+        "type": "vendor",
+        "vendor_description": "AI-powered software that automates Order-to-Cash and Treasury, reducing DSO and optimizing working capital for the world's largest enterprises.",
+        "vendor_link": "https://www.highradius.com/",
+        "vendor_types": [
+            "Treasury"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/78",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=78"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/79"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-78",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:05:52",
+        "date_gmt": "2026-04-29T22:05:52",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/kyriba_1.webp",
+        "featured_media": 79,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=78"
+        },
+        "id": 78,
+        "link": "https://cms.cfoainexus.com/vendor/kyriba/",
+        "modified": "2026-04-29T22:05:52",
+        "modified_gmt": "2026-04-29T22:05:52",
+        "slug": "kyriba",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Kyriba"
+        },
+        "type": "vendor",
+        "vendor_description": "Liquidity performance without limits. AI-driven treasury intelligence to optimize cash visibility, manage risk, and move capital with total global control.",
+        "vendor_link": "https://www.kyriba.com/",
+        "vendor_types": [
+            "Treasury"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/76",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=76"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/77"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-76",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:05:24",
+        "date_gmt": "2026-04-29T22:05:24",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/nilus.webp",
+        "featured_media": 77,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=76"
+        },
+        "id": 76,
+        "link": "https://cms.cfoainexus.com/vendor/nilus/",
+        "modified": "2026-04-29T22:05:24",
+        "modified_gmt": "2026-04-29T22:05:24",
+        "slug": "nilus",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Nilus"
+        },
+        "type": "vendor",
+        "vendor_description": "An AI platform that automates payment reconciliation and ledger management, ensuring your banks and internal systems always match perfectly.",
+        "vendor_link": "https://www.nilus.com/",
+        "vendor_types": [
+            "Treasury"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/74",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=74"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/75"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-74",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:04:53",
+        "date_gmt": "2026-04-29T22:04:53",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/lu.webp",
+        "featured_media": 75,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=74"
+        },
+        "id": 74,
+        "link": "https://cms.cfoainexus.com/vendor/lumanu/",
+        "modified": "2026-04-29T22:04:53",
+        "modified_gmt": "2026-04-29T22:04:53",
+        "slug": "lumanu",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Lumanu"
+        },
+        "type": "vendor",
+        "vendor_description": "Automate talent payments, contract management, and budget tracking to streamline your entire external workforce operations.",
+        "vendor_link": "https://www.lumanu.com/",
+        "vendor_types": [
+            "Global Payments"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/72",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=72"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/73"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-72",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:04:20",
+        "date_gmt": "2026-04-29T22:04:20",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/paddle.webp",
+        "featured_media": 73,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=72"
+        },
+        "id": 72,
+        "link": "https://cms.cfoainexus.com/vendor/paddle/",
+        "modified": "2026-04-29T22:04:20",
+        "modified_gmt": "2026-04-29T22:04:20",
+        "slug": "paddle",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Paddle"
+        },
+        "type": "vendor",
+        "vendor_description": "The all-in-one SaaS growth engine. A Merchant of Record that automates global payments, tax compliance, and subscriptions so you can scale anywhere.",
+        "vendor_link": "https://www.paddle.com/",
+        "vendor_types": [
+            "Global Payments"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/69",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=69"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/71"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-69",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:03:45",
+        "date_gmt": "2026-04-29T22:03:45",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/airwallex.webp",
+        "featured_media": 71,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=69"
+        },
+        "id": 69,
+        "link": "https://cms.cfoainexus.com/vendor/airwallex/",
+        "modified": "2026-04-29T22:03:45",
+        "modified_gmt": "2026-04-29T22:03:45",
+        "slug": "airwallex",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Airwallex"
+        },
+        "type": "vendor",
+        "vendor_description": "Global financial infrastructure for modern business. Scale across borders with automated international payments, treasury management.",
+        "vendor_link": "https://www.airwallex.com/",
+        "vendor_types": [
+            "Global Payments"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/67",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=67"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/68"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-67",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:03:01",
+        "date_gmt": "2026-04-29T22:03:01",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/hyperbots.webp",
+        "featured_media": 68,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=67"
+        },
+        "id": 67,
+        "link": "https://cms.cfoainexus.com/vendor/hyperbots/",
+        "modified": "2026-04-29T22:03:01",
+        "modified_gmt": "2026-04-29T22:03:01",
+        "slug": "hyperbots",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Hyperbots"
+        },
+        "type": "vendor",
+        "vendor_description": "AI-native robots for finance. Handle accounts payable, receivable, and expenses with human-like intelligence, delivering 10x speed and zero manual errors.",
+        "vendor_link": "https://www.hyperbots.com/",
+        "vendor_types": [
+            "AR/AP Automation"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/65",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=65"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/66"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-65",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:02:29",
+        "date_gmt": "2026-04-29T22:02:29",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/Sequence.webp",
+        "featured_media": 66,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=65"
+        },
+        "id": 65,
+        "link": "https://cms.cfoainexus.com/vendor/sequence/",
+        "modified": "2026-04-29T22:02:29",
+        "modified_gmt": "2026-04-29T22:02:29",
+        "slug": "sequence",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Sequence"
+        },
+        "type": "vendor",
+        "vendor_description": "The billing infrastructure for scale. Automate complex B2B pricing models, quote-to-cash workflows, and revenue collection with one integrated data-driven system.",
+        "vendor_link": "https://www.sequencehq.com/",
+        "vendor_types": [
+            "AR/AP Automation"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/63",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=63"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/64"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-63",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:01:56",
+        "date_gmt": "2026-04-29T22:01:56",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/bill_com_1.webp",
+        "featured_media": 64,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=63"
+        },
+        "id": 63,
+        "link": "https://cms.cfoainexus.com/vendor/bill/",
+        "modified": "2026-04-29T22:01:56",
+        "modified_gmt": "2026-04-29T22:01:56",
+        "slug": "bill",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Bill"
+        },
+        "type": "vendor",
+        "vendor_description": "Automated finance operations for SMBs. Simplify accounts payable and receivable through a smart platform that gives you total control over cash flow.",
+        "vendor_link": "https://www.bill.com/",
+        "vendor_types": [
+            "AR/AP Automation"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/61",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=61"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/62"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-61",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:01:21",
+        "date_gmt": "2026-04-29T22:01:21",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/navan_1.webp",
+        "featured_media": 62,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=61"
+        },
+        "id": 61,
+        "link": "https://cms.cfoainexus.com/vendor/navan/",
+        "modified": "2026-04-29T22:01:21",
+        "modified_gmt": "2026-04-29T22:01:21",
+        "slug": "navan",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Navan"
+        },
+        "type": "vendor",
+        "vendor_description": "Travel and expense, reinvented. An all-in-one platform using AI to automate reporting, eliminate manual expense claims, and drive massive corporate savings.",
+        "vendor_link": "https://navan.com/",
+        "vendor_types": [
+            "Spend Management"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/59",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=59"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/60"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-59",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:00:50",
+        "date_gmt": "2026-04-29T22:00:50",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/expensify_1.webp",
+        "featured_media": 60,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=59"
+        },
+        "id": 59,
+        "link": "https://cms.cfoainexus.com/vendor/expensify/",
+        "modified": "2026-04-29T22:00:50",
+        "modified_gmt": "2026-04-29T22:00:50",
+        "slug": "expensify",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Expensify"
+        },
+        "type": "vendor",
+        "vendor_description": "Payments and expenses made easy. Automate everything from receipt tracking to bill pay and corporate cards in one app designed for speed.",
+        "vendor_link": "https://www.expensify.com/",
+        "vendor_types": [
+            "Spend Management"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/57",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=57"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/58"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-57",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T22:00:20",
+        "date_gmt": "2026-04-29T22:00:20",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/iris_carbon.webp",
+        "featured_media": 58,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=57"
+        },
+        "id": 57,
+        "link": "https://cms.cfoainexus.com/vendor/iris-carbon/",
+        "modified": "2026-04-29T22:00:20",
+        "modified_gmt": "2026-04-29T22:00:20",
+        "slug": "iris-carbon",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "IRIS Carbon"
+        },
+        "type": "vendor",
+        "vendor_description": "Simplifying complex disclosure. A single platform for ESEF, iXBRL, and regulatory reporting that ensures 100% compliance with maximum accuracy.",
+        "vendor_link": "https://iriscarbon.com/",
+        "vendor_types": [
+            "Financial Close"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/55",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=55"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/56"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-55",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:59:41",
+        "date_gmt": "2026-04-29T21:59:41",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/consark.webp",
+        "featured_media": 56,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=55"
+        },
+        "id": 55,
+        "link": "https://cms.cfoainexus.com/vendor/consark-ai/",
+        "modified": "2026-04-29T21:59:41",
+        "modified_gmt": "2026-04-29T21:59:41",
+        "slug": "consark-ai",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Consark.ai"
+        },
+        "type": "vendor",
+        "vendor_description": "From first entry to final report. AI-powered financial close automation executed by agents and expert-reviewed, delivering a 50% faster close.",
+        "vendor_link": "https://consark.ai/",
+        "vendor_types": [
+            "Financial Close"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/53",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=53"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/54"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-53",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:59:04",
+        "date_gmt": "2026-04-29T21:59:04",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/floqast_1.webp",
+        "featured_media": 54,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=53"
+        },
+        "id": 53,
+        "link": "https://cms.cfoainexus.com/vendor/floqast/",
+        "modified": "2026-04-29T21:59:04",
+        "modified_gmt": "2026-04-29T21:59:04",
+        "slug": "floqast",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "FloQast"
+        },
+        "type": "vendor",
+        "vendor_description": "Enables automation of the financial close process, enhancing accuracy and collaboration through an intuitive, AI-enhanced workflow.",
+        "vendor_link": "https://www.floqast.com/",
+        "vendor_types": [
+            "Financial Close"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/51",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=51"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/92"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-51",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:58:30",
+        "date_gmt": "2026-04-29T21:58:30",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/acumatica-logo-stacked-light-2024.png",
+        "featured_media": 92,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=51"
+        },
+        "id": 51,
+        "link": "https://cms.cfoainexus.com/vendor/acumatica/",
+        "modified": "2026-05-05T06:37:53",
+        "modified_gmt": "2026-05-05T06:37:53",
+        "slug": "acumatica",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Acumatica"
+        },
+        "type": "vendor",
+        "vendor_description": "Cloud-based ERP platform that helps companies manage finance, operations, and workflows in one system while using automation and AI to improve efficiency and decision-making.",
+        "vendor_link": "https://www.rillet.com/",
+        "vendor_types": [
+            "Accounting & ERP"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/49",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=49"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/50"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-49",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:57:55",
+        "date_gmt": "2026-04-29T21:57:55",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/maxima.webp",
+        "featured_media": 50,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=49"
+        },
+        "id": 49,
+        "link": "https://cms.cfoainexus.com/vendor/maxima/",
+        "modified": "2026-04-29T21:57:55",
+        "modified_gmt": "2026-04-29T21:57:55",
+        "slug": "maxima",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Maxima"
+        },
+        "type": "vendor",
+        "vendor_description": "AI-powered financial intelligence that automates complex data analysis, providing CFOs with predictive insights to drive faster business growth.",
+        "vendor_link": "https://www.maxima.ai/",
+        "vendor_types": [
+            "Accounting & ERP"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/47",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=47"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/48"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-47",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:57:20",
+        "date_gmt": "2026-04-29T21:57:20",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/sage_intacct.webp",
+        "featured_media": 48,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=47"
+        },
+        "id": 47,
+        "link": "https://cms.cfoainexus.com/vendor/sage-intacct/",
+        "modified": "2026-04-29T21:57:20",
+        "modified_gmt": "2026-04-29T21:57:20",
+        "slug": "sage-intacct",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Sage Intacct"
+        },
+        "type": "vendor",
+        "vendor_description": "A powerful financial system focused on providing AI-powered accounting like scanning transactions in real-time to catch duplicate entries or anomalies.",
+        "vendor_link": "https://www.sage.com/en-us/sage-business-cloud/intacct/",
+        "vendor_types": [
+            "Accounting & ERP"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/45",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=45"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/46"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-45",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:56:27",
+        "date_gmt": "2026-04-29T21:56:27",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/drivetrain_logo_white.webp",
+        "featured_media": 46,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=45"
+        },
+        "id": 45,
+        "link": "https://cms.cfoainexus.com/vendor/drivetrain/",
+        "modified": "2026-04-29T21:56:27",
+        "modified_gmt": "2026-04-29T21:56:27",
+        "slug": "drivetrain",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Drivetrain"
+        },
+        "type": "vendor",
+        "vendor_description": "Accelerate budgeting and forecasting with a powerful autonomous FP&A platform that centralizes planning for better efficiency and faster decision-making.",
+        "vendor_link": "https://www.drivetrain.ai/",
+        "vendor_types": [
+            "FP&A"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/42",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=42"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/44"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-42",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:55:03",
+        "date_gmt": "2026-04-29T21:55:03",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/una_logo_white-1.webp",
+        "featured_media": 44,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=42"
+        },
+        "id": 42,
+        "link": "https://cms.cfoainexus.com/vendor/una-ai/",
+        "modified": "2026-04-29T21:55:03",
+        "modified_gmt": "2026-04-29T21:55:03",
+        "slug": "una-ai",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Una AI"
+        },
+        "type": "vendor",
+        "vendor_description": "AI-native FP&A platform with connected revenue intelligence, continuous reforecasting, and 4-week implementation. Transform budgeting, forecasting & planning.",
+        "vendor_link": "https://www.una.ai/",
+        "vendor_types": [
+            "FP&A"
+        ]
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/vendor"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/vendors/40",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=40"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/41"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-40",
+            "vendor",
+            "type-vendor",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:52:20",
+        "date_gmt": "2026-04-29T21:52:20",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/anaplan_1.webp",
+        "featured_media": 41,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=vendor&#038;p=40"
+        },
+        "id": 40,
+        "link": "https://cms.cfoainexus.com/vendor/anaplan/",
+        "modified": "2026-04-29T21:52:20",
+        "modified_gmt": "2026-04-29T21:52:20",
+        "slug": "anaplan",
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Anaplan"
+        },
+        "type": "vendor",
+        "vendor_description": "AI-connected planning platform unifying FP&A, supply chain, and workforce planning for enterprise-scale scenario modeling and continuous forecasting.",
+        "vendor_link": "https://www.anaplan.com/",
+        "vendor_types": [
+            "FP&A"
+        ]
+    }
+]

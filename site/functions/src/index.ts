@@ -2,6 +2,7 @@ import { setGlobalOptions } from "firebase-functions";
 import { onRequest } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
 import Stripe from "stripe";
+import { sendPurchase, toMajorUnits, parseGaClientId, lineItemsToGa4 } from "./ga4.js";
 
 setGlobalOptions({ maxInstances: 10 });
 
@@ -9,6 +10,7 @@ const stripeSecretKeyLive = defineSecret("STRIPE_SECRET_KEY");
 const stripeSecretKeyTest = defineSecret("STRIPE_SECRET_KEY_TEST");
 const stripeWebhookSecret = defineSecret("STRIPE_WEBHOOK_SECRET");
 const stripeWebhookSecretLive = defineSecret("STRIPE_WEBHOOK_SECRET_LIVE");
+const ga4ApiSecret = defineSecret("GA4_API_SECRET");
 
 const ALLOWED_ORIGINS = new Set([
   "https://cfoainexus.com",
@@ -18,6 +20,8 @@ const ALLOWED_ORIGINS = new Set([
 
 const ALLOWED_PRICE_IDS = new Set([
   // Live prices
+  "price_1Ty6oCEPnfyhMV5Y6KxluPuP", // Regular Ticket ($295) — currently active
+  "price_1U3yXIEPnfyhMV5Yd1Cw2Vfa", // Summer Sale Ticket ($147.50)
   "price_1TCfFOEPnfyhMV5YcmQXE4pt", // Last Minute Ticket
   "price_1TCfEbEPnfyhMV5YpLrnkqNC", // Standard Ticket
   "price_1TCfEEEPnfyhMV5YJeZYTsd5", // Early Bird Ticket
@@ -65,6 +69,10 @@ const METADATA_LABELS: Record<string, string> = {
   address: "Address",
   city: "City",
   zipCode: "Zip Code",
+  // Carried through Stripe so the webhook can attribute the sale to the browsing
+  // session that produced it. Absent when the buyer declined analytics cookies.
+  gaClientId: "GA Client ID",
+  gaSessionId: "GA Session ID",
 };
 
 function buildStringifiedMetadata(metadata: Record<string, unknown>): Record<string, string> {
@@ -168,8 +176,17 @@ export const createCheckoutSession = onRequest(
   }
 );
 
+// GA client/session ids ride through Stripe metadata. Both are optional — a buyer
+// who declined analytics cookies has no _ga cookie to read.
+function gaIdsFrom(metadata: Stripe.Metadata | null | undefined) {
+  return {
+    clientId: parseGaClientId(metadata?.["GA Client ID"]),
+    sessionId: metadata?.["GA Session ID"] || undefined,
+  };
+}
+
 export const stripeWebhook = onRequest(
-  { secrets: [stripeSecretKeyLive, stripeSecretKeyTest, stripeWebhookSecret, stripeWebhookSecretLive], invoker: "public" },
+  { secrets: [stripeSecretKeyLive, stripeSecretKeyTest, stripeWebhookSecret, stripeWebhookSecretLive, ga4ApiSecret], invoker: "public" },
   async (req, res) => {
     if (req.method !== "POST") {
       res.status(405).send("Method Not Allowed");
@@ -211,6 +228,75 @@ export const stripeWebhook = onRequest(
           console.error("Failed to send invoice:", message);
         }
       }
+
+      // Every order, company or not: `mode: "payment"` always collects at checkout,
+      // and `invoice_creation` only attaches an invoice document to an
+      // already-paid session. `payment_status` is the authority on whether money
+      // actually moved, so branch on that rather than on the purchase type.
+      if (session.payment_status === "paid") {
+        const currency = session.currency ?? "usd";
+        let items: ReturnType<typeof lineItemsToGa4> = [];
+        try {
+          const lineItems = await stripe.checkout.sessions.listLineItems(session.id, { limit: 100 });
+          items = lineItemsToGa4(lineItems.data, currency);
+        } catch (err) {
+          // An itemless purchase still carries correct revenue; don't lose the sale over this.
+          console.error("Could not list line items:", err instanceof Error ? err.message : String(err));
+        }
+
+        await sendPurchase(
+          {
+            transactionId: session.id,
+            value: toMajorUnits(session.amount_total ?? 0, currency),
+            currency,
+            items,
+            eventAtSeconds: event.created,
+            ...gaIdsFrom(session.metadata),
+          },
+          ga4ApiSecret.value()
+        );
+      }
+    }
+
+    // Safety net for true pay-later invoices — ones billed out of band rather than
+    // collected at checkout. Invoices produced by a Checkout Session are
+    // `charge_automatically` and were already counted above, so restricting this to
+    // `send_invoice` is what keeps the two paths from double-counting the same sale.
+    if (event.type === "invoice.paid") {
+      const invoice = event.data.object as Stripe.Invoice;
+      const currency = invoice.currency ?? "usd";
+
+      if (invoice.collection_method !== "send_invoice") {
+        console.log(`Invoice ${invoice.id} already counted via its checkout session — skipping`);
+        res.json({ received: true });
+        return;
+      }
+
+      console.log(`Invoice ${invoice.id} paid, amount: ${invoice.amount_paid} ${currency}`);
+
+      const items = lineItemsToGa4(
+        (invoice.lines?.data ?? []).map((line) => ({
+          description: line.description,
+          quantity: line.quantity,
+          amount: line.amount,
+          currency: line.currency,
+        })),
+        currency
+      );
+
+      await sendPurchase(
+        {
+          // The invoice id, not the checkout session id — the card branch above
+          // already owns session ids, so the two paths can never collide.
+          transactionId: invoice.id ?? `invoice_${event.id}`,
+          value: toMajorUnits(invoice.amount_paid ?? 0, currency),
+          currency,
+          items,
+          eventAtSeconds: event.created,
+          ...gaIdsFrom(invoice.metadata),
+        },
+        ga4ApiSecret.value()
+      );
     }
 
     res.json({ received: true });

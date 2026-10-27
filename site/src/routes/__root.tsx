@@ -7,8 +7,10 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import LoadingScreen from '../components/layout/LoadingScreen'
 import { PageLoadContext } from '../components/layout/PageLoadContext'
+import { AgendaModalContext } from '../components/layout/AgendaModalContext'
 import { MainContentProvider } from '../components/layout/MainContentContext'
 import { ConsentProvider } from '@/components/consent/ConsentProvider'
+import { captureUtmParams } from '@/lib/utm'
 import AgendaModal from '@/components/sections/landing/AgendaModal'
 
 import appCss from '../styles.css?url'
@@ -81,14 +83,19 @@ gtag('consent', 'default', {
   shellComponent: RootDocument,
 })
 
+// Countdown banner is hidden between conferences; flip to true to bring it back.
+const SHOW_BANNER = false
+
 function RootDocument({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [bannerHeight, setBannerHeight] = useState(52)
+  const [bannerHeight, setBannerHeight] = useState(SHOW_BANNER ? 52 : 0)
   const [headerHeight, setHeaderHeight] = useState(80)
   const [agendaOpen, setAgendaOpen] = useState(false)
 
   const kitContainerRef = useRef<HTMLDivElement>(null)
   const kitScriptInjected = useRef(false)
+
+  const openAgenda = useCallback(() => setAgendaOpen(true), [])
 
   const signalReady = useCallback(() => {
     requestAnimationFrame(() => {
@@ -96,6 +103,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         setIsLoaded(true)
       })
     })
+  }, [])
+
+  useEffect(() => {
+    // Capture campaign parameters before client-side routing drops the query string.
+    captureUtmParams()
   }, [])
 
   useEffect(() => {
@@ -135,15 +147,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <PageLoadContext.Provider value={{ isLoaded, signalReady }}>
          <ConsentProvider clarityId="xek177ja6y" privacyUrl="/privacy-policy">
          <MainContentProvider>
+         <AgendaModalContext.Provider value={{ openAgenda }}>
           <LoadingScreen isVisible={!isLoaded} />
-          <Banner
-            onHeightChange={setBannerHeight}
-            onTypingDone={() => { }}
-          />
+          {SHOW_BANNER && (
+            <Banner
+              onHeightChange={setBannerHeight}
+              onTypingDone={() => { }}
+            />
+          )}
           <Header
             bannerHeight={bannerHeight}
             onHeightChange={setHeaderHeight}
-            onDownloadAgenda={() => setAgendaOpen(true)}
+            onDownloadAgenda={openAgenda}
           />
           <main
             className="flex-1"
@@ -169,6 +184,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               },
             ]}
           />
+         </AgendaModalContext.Provider>
          </MainContentProvider>
          </ConsentProvider>
         </PageLoadContext.Provider>

@@ -4,7 +4,9 @@ import Badge from "@/components/ui/badge"
 import Button from "@/components/ui/Button"
 import { usePageLoad } from '@/components/layout/PageLoadContext'
 import { useMainContent } from '@/components/layout/MainContentContext'
+import { useAgendaModal } from '@/components/layout/AgendaModalContext'
 import { Link } from '@tanstack/react-router'
+import { ArrowRight } from 'lucide-react'
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -29,6 +31,7 @@ const FALLBACK_SPONSORS = [
 const HeroSection = () => {
     const { isLoaded, signalReady } = usePageLoad()
     const cms = useMainContent()
+    const { openAgenda } = useAgendaModal()
 
     const badge = cms?.hero?.badge || FALLBACK_BADGE
     const title = cms?.hero?.title || FALLBACK_TITLE
@@ -66,7 +69,7 @@ const HeroSection = () => {
                         animate={isLoaded ? "visible" : "hidden"}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
                     >
-                        <h2 className="text-h1 text-content-heading text-balance">{title}</h2>
+                        <h1 className="text-h1 text-content-heading text-balance">{title}</h1>
                         <h4 className="text-h4 text-content-heading text-balance">{subtitle}</h4>
                         <p className="text-p-md text-content-body text-balance">{description}</p>
                     </motion.div>
@@ -78,10 +81,12 @@ const HeroSection = () => {
                         animate={isLoaded ? "visible" : "hidden"}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
                     >
-                        <Link to={'/checkout'}>
-                            <Button label="Get Your Pass" className="px-20" />
-                        </Link>
-                        <p className="text-p-xsm text-content-heading">10.000+ finance leaders already trained</p>
+                        <div className="flex flex-col sm:flex-row items-center gap-4">
+                            <Link to={'/checkout'}>
+                                <Button label="Get Your Pass – $295" icon={<ArrowRight className="size-5" />} className="px-10" />
+                            </Link>
+                            <Button variant="outline" label="See the agenda" className="px-10" onClick={openAgenda} />
+                        </div>
                     </motion.div>
                 </div>
 

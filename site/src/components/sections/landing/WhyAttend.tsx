@@ -6,7 +6,7 @@ import { Link } from "@tanstack/react-router"
 const reasons = [
     { icon: <img src="/icons/whyAttendIcon-1.svg" />, title: "Leading Voices\nin Finance AI", description: "Learn from the architects of AI implementation within complex global systems." },
     { icon: <img src="/icons/whyAttendIcon-2.svg" />, title: "High-Engagement\nVirtual Booths", description: "Don't just watch - interact. Engage in live software deep-dives, private Q&A, and instant 1:1 video consultations." },
-    { icon: <img src="/icons/whyAttendIcon-3.svg" />, title: "Intent-Based\nMatchmaking", description: "Our AI algorithm analyzes your professional goals to connect you with the exact peers and partners you need to meet." },
+    { icon: <img src="/icons/whyAttendIcon-3.svg" />, title: "Smart\nMatchmaking", description: "Our matchmaking uses the profile and interests you share to connect you with the right peers and partners to meet." },
     { icon: <img src="/icons/whyAttendIcon-4.svg" />, title: "The 2026 Tech\nStack Review", description: " Compare the newest AI solutions for ERP, FP&A, and Treasury in one virtual walk-through." },
 ]
 
@@ -53,9 +53,8 @@ const WhyAttendSection = () => {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             >
                 <Link to={'/checkout'}>
-                    <Button className="px-20" label="Register Now" />
+                    <Button className="px-20" label="Get Your Pass – $295" />
                 </Link>
-                <p className="text-p-xsm text-content-heading">10.000+ finance leaders already trained</p>
             </motion.div>
         </div>
     )

@@ -1,0 +1,1352 @@
+[
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/31",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=31"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/7"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-31",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:37:21",
+        "date_gmt": "2026-04-29T21:37:21",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/2.webp",
+        "featured_media": 7,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=31"
+        },
+        "id": 31,
+        "link": "https://cms.cfoainexus.com/speaker/advanced-cash-flow-forecasting-by-syncing-banks-psps-and-erp-systems/",
+        "modified": "2026-04-29T21:37:21",
+        "modified_gmt": "2026-04-29T21:37:21",
+        "slug": "advanced-cash-flow-forecasting-by-syncing-banks-psps-and-erp-systems",
+        "speaker_link": "https://www.linkedin.com/in/bojan-radojicic-a132a526/",
+        "speaker_name": "Bojan Radoji\u010di\u0107",
+        "speaker_role": "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance.",
+        "speaker_stages": [
+            "Treasury & Cash Management"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Advanced Cash Flow Forecasting by Syncing Banks, PSPs, and ERP Systems"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/6",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=6"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/7"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-6",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:26:33",
+        "date_gmt": "2026-04-29T21:26:33",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/2.webp",
+        "featured_media": 7,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=6"
+        },
+        "id": 6,
+        "link": "https://cms.cfoainexus.com/speaker/opening-keynote-the-cfo-evolution-from-financial-steward-to-ai-growth-pilot/",
+        "modified": "2026-04-29T21:26:33",
+        "modified_gmt": "2026-04-29T21:26:33",
+        "slug": "opening-keynote-the-cfo-evolution-from-financial-steward-to-ai-growth-pilot",
+        "speaker_link": "https://www.linkedin.com/in/bojan-radojicic-a132a526/",
+        "speaker_name": "Bojan Radoji\u010di\u0107",
+        "speaker_role": "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance.",
+        "speaker_stages": [
+            "Main Stage"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Opening Keynote: The CFO Evolution: From Financial Steward to AI Growth Pilot"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/8",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=8"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/9"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-8",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:28:06",
+        "date_gmt": "2026-04-29T21:28:06",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/5.webp",
+        "featured_media": 9,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=8"
+        },
+        "id": 8,
+        "link": "https://cms.cfoainexus.com/speaker/technology-trends-for-finance-tools-implementation-and-real-world-use-cases/",
+        "modified": "2026-04-29T21:28:06",
+        "modified_gmt": "2026-04-29T21:28:06",
+        "slug": "technology-trends-for-finance-tools-implementation-and-real-world-use-cases",
+        "speaker_link": "https://www.linkedin.com/in/bouchernicolas/",
+        "speaker_name": "Nicolas Boucher",
+        "speaker_role": "Nicolas Boucher, Founder of AI Finance Club",
+        "speaker_stages": [
+            "Main Stage"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Technology Trends for Finance: Tools, Implementation and Real-World Use Cases"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/10",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=10"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/11"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-10",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:28:44",
+        "date_gmt": "2026-04-29T21:28:44",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/8.webp",
+        "featured_media": 11,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=10"
+        },
+        "id": 10,
+        "link": "https://cms.cfoainexus.com/speaker/cfo-leadership-transformation/",
+        "modified": "2026-05-05T06:34:27",
+        "modified_gmt": "2026-05-05T06:34:27",
+        "slug": "cfo-leadership-transformation",
+        "speaker_link": "https://www.linkedin.com/in/steverosvold/",
+        "speaker_name": "Steve Rosvold",
+        "speaker_role": "Founder of CFO.University, MBA",
+        "speaker_stages": [
+            "Main Stage"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "CFO Leadership Transformation"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/12",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=12"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/13"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-12",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:29:26",
+        "date_gmt": "2026-04-29T21:29:26",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/14.webp",
+        "featured_media": 13,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=12"
+        },
+        "id": 12,
+        "link": "https://cms.cfoainexus.com/speaker/build-financial-dashboards-leadership-actually-trust/",
+        "modified": "2026-04-29T21:29:26",
+        "modified_gmt": "2026-04-29T21:29:26",
+        "slug": "build-financial-dashboards-leadership-actually-trust",
+        "speaker_link": "https://www.linkedin.com/in/joshaharonoff/",
+        "speaker_name": "Josh Aharonoff",
+        "speaker_role": "Founder of Model Wiz and Mighty Digits",
+        "speaker_stages": [
+            "Main Stage"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Build Financial Dashboards Leadership Actually Trust"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/14",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=14"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/15"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-14",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:30:21",
+        "date_gmt": "2026-04-29T21:30:21",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/9.webp",
+        "featured_media": 15,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=14"
+        },
+        "id": 14,
+        "link": "https://cms.cfoainexus.com/speaker/how-to-use-ai-for-audit-offense/",
+        "modified": "2026-04-29T21:30:21",
+        "modified_gmt": "2026-04-29T21:30:21",
+        "slug": "how-to-use-ai-for-audit-offense",
+        "speaker_link": "https://www.linkedin.com/in/joymbanugo/",
+        "speaker_name": "Joy Mbanugo",
+        "speaker_role": "J.D., MAcc., 2xs CFO, ex-Google, ex-BlackRock, ex-EY, Board Advisor",
+        "speaker_stages": [
+            "Main Stage"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How to Use AI for Audit Offense"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/16",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=16"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/17"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-16",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:30:55",
+        "date_gmt": "2026-04-29T21:30:55",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/3.webp",
+        "featured_media": 17,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=16"
+        },
+        "id": 16,
+        "link": "https://cms.cfoainexus.com/speaker/storytelling-framework-and-practical-tools-to-become-a-powerful-presenter/",
+        "modified": "2026-04-29T21:30:55",
+        "modified_gmt": "2026-04-29T21:30:55",
+        "slug": "storytelling-framework-and-practical-tools-to-become-a-powerful-presenter",
+        "speaker_link": "https://www.linkedin.com/in/ronmonteiro18/",
+        "speaker_name": "Ron Monteiro",
+        "speaker_role": "CPA, CMA, Speaker and Coach, Clean Concept inc.",
+        "speaker_stages": [
+            "Main Stage"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Storytelling framework and practical tools to become a powerful presenter"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/39",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=39"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/7"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-39",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:41:53",
+        "date_gmt": "2026-04-29T21:41:53",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/2.webp",
+        "featured_media": 7,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=39"
+        },
+        "id": 39,
+        "link": "https://cms.cfoainexus.com/speaker/how-ai-is-transforming-ar-from-a-reactive-collections-function-into-a-predictive-engine/",
+        "modified": "2026-04-29T21:41:53",
+        "modified_gmt": "2026-04-29T21:41:53",
+        "slug": "how-ai-is-transforming-ar-from-a-reactive-collections-function-into-a-predictive-engine",
+        "speaker_link": "https://www.linkedin.com/in/bojan-radojicic-a132a526/",
+        "speaker_name": "Bojan Radoji\u010di\u010b",
+        "speaker_role": "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance",
+        "speaker_stages": [
+            "AR/AP Automation"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How AI is transforming AR from a reactive collections function into a predictive engine"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/37",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=37"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/38"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-37",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:41:07",
+        "date_gmt": "2026-04-29T21:41:07",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/1.webp",
+        "featured_media": 38,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=37"
+        },
+        "id": 37,
+        "link": "https://cms.cfoainexus.com/speaker/how-to-strengthen-financial-controls-and-prevent-payment-fraud-via-ai/",
+        "modified": "2026-04-29T21:41:07",
+        "modified_gmt": "2026-04-29T21:41:07",
+        "slug": "how-to-strengthen-financial-controls-and-prevent-payment-fraud-via-ai",
+        "speaker_link": "https://www.linkedin.com/in/lazar-%C4%91uri%C5%A1i%C4%87-5277511b0/",
+        "speaker_name": "Lazar Djuri\u0161i\u0107",
+        "speaker_role": "AI Implementation Manager at Corporate Finance Hub",
+        "speaker_stages": [
+            "AR/AP Automation"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How to Strengthen Financial Controls and Prevent Payment Fraud via AI"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/35",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=35"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/36"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-35",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:39:48",
+        "date_gmt": "2026-04-29T21:39:48",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/11.webp",
+        "featured_media": 36,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=35"
+        },
+        "id": 35,
+        "link": "https://cms.cfoainexus.com/speaker/integrating-ai-agents-into-the-finance-team-workflow/",
+        "modified": "2026-04-29T21:39:48",
+        "modified_gmt": "2026-04-29T21:39:48",
+        "slug": "integrating-ai-agents-into-the-finance-team-workflow",
+        "speaker_link": "https://www.linkedin.com/in/filipkaraicic/",
+        "speaker_name": "Filip Karai\u010di\u0107",
+        "speaker_role": "Chief Executive Officer at Quantox Technology, Founder at OsirisAI",
+        "speaker_stages": [
+            "AR/AP Automation"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Integrating AI Agents into the Finance Team Workflow"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/33",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=33"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/34"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-33",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:39:08",
+        "date_gmt": "2026-04-29T21:39:08",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/Marina-Milisic.webp",
+        "featured_media": 34,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=33"
+        },
+        "id": 33,
+        "link": "https://cms.cfoainexus.com/speaker/how-to-use-automation-to-protect-cash-flow-from-currency-and-interest-rate-risks/",
+        "modified": "2026-04-29T21:39:08",
+        "modified_gmt": "2026-04-29T21:39:08",
+        "slug": "how-to-use-automation-to-protect-cash-flow-from-currency-and-interest-rate-risks",
+        "speaker_link": "https://www.linkedin.com/in/marina-milisic-019839138/",
+        "speaker_name": "Marina Milisi\u0107",
+        "speaker_role": "AI Implementation Developer, Corporate Finance Hub",
+        "speaker_stages": [
+            "Treasury & Cash Management"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How to Use Automation to Protect Cash Flow from Currency and Interest Rate Risks"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/30",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=30"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/7"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-30",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:36:13",
+        "date_gmt": "2026-04-29T21:36:13",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/2.webp",
+        "featured_media": 7,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=30"
+        },
+        "id": 30,
+        "link": "https://cms.cfoainexus.com/speaker/connecting-erp-systems-with-mcp-server-for-real-time-decision-making/",
+        "modified": "2026-04-29T21:37:39",
+        "modified_gmt": "2026-04-29T21:37:39",
+        "slug": "connecting-erp-systems-with-mcp-server-for-real-time-decision-making",
+        "speaker_link": "https://www.linkedin.com/in/bojan-radojicic-a132a526/",
+        "speaker_name": "Bojan Radoji\u010di\u0107",
+        "speaker_role": "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance.",
+        "speaker_stages": [
+            "Financial Close & Consolidation"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Connecting ERP Systems with MCP server for Real-Time Decision Making"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/28",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=28"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/29"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-28",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:35:32",
+        "date_gmt": "2026-04-29T21:35:32",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/6.webp",
+        "featured_media": 29,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=28"
+        },
+        "id": 28,
+        "link": "https://cms.cfoainexus.com/speaker/how-to-automate-the-financial-close-and-eliminate-manual-reconciliations/",
+        "modified": "2026-04-29T21:35:32",
+        "modified_gmt": "2026-04-29T21:35:32",
+        "slug": "how-to-automate-the-financial-close-and-eliminate-manual-reconciliations",
+        "speaker_link": "https://www.linkedin.com/in/aleksandar-stojanovic-msc/",
+        "speaker_name": "Alex Stojanovi\u0107",
+        "speaker_role": "Founder of Fiscalion",
+        "speaker_stages": [
+            "Financial Close & Consolidation"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How to Automate the Financial Close and Eliminate Manual Reconciliations"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/26",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=26"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/27"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-26",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:34:54",
+        "date_gmt": "2026-04-29T21:34:54",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/10.webp",
+        "featured_media": 27,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=26"
+        },
+        "id": 26,
+        "link": "https://cms.cfoainexus.com/speaker/how-to-eliminate-financial-reporting-errors-and-face-audits-with-confidence-using-ai/",
+        "modified": "2026-04-29T21:34:54",
+        "modified_gmt": "2026-04-29T21:34:54",
+        "slug": "how-to-eliminate-financial-reporting-errors-and-face-audits-with-confidence-using-ai",
+        "speaker_link": "https://www.linkedin.com/in/dusan-aleksov-425812155/",
+        "speaker_name": "Du\u0161an Aleksov",
+        "speaker_role": "Partner at WTS Tax & Finance",
+        "speaker_stages": [
+            "Financial Close & Consolidation"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How to Eliminate Financial Reporting Errors and Face Audits with Confidence using AI"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/24",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=24"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/25"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-24",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:34:05",
+        "date_gmt": "2026-04-29T21:34:05",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/12.webp",
+        "featured_media": 25,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=24"
+        },
+        "id": 24,
+        "link": "https://cms.cfoainexus.com/speaker/how-to-communicate-insights-and-influence-business-decisions-like-a-strategic-cfo/",
+        "modified": "2026-04-29T21:34:05",
+        "modified_gmt": "2026-04-29T21:34:05",
+        "slug": "how-to-communicate-insights-and-influence-business-decisions-like-a-strategic-cfo",
+        "speaker_link": "https://www.linkedin.com/in/soufyanhamid/",
+        "speaker_name": "Soufyan Hamid",
+        "speaker_role": "Founder of The Finance Circle.",
+        "speaker_stages": [
+            "FP&A"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "How to Communicate Insights and Influence Business Decisions like a Strategic CFO"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/22",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=22"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/23"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-22",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:33:16",
+        "date_gmt": "2026-04-29T21:33:16",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/7.webp",
+        "featured_media": 23,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=22"
+        },
+        "id": 22,
+        "link": "https://cms.cfoainexus.com/speaker/why-ai-without-expertise-is-just-automated-mediocrity/",
+        "modified": "2026-04-29T21:33:16",
+        "modified_gmt": "2026-04-29T21:33:16",
+        "slug": "why-ai-without-expertise-is-just-automated-mediocrity",
+        "speaker_link": "https://www.linkedin.com/in/s-carolinalago/",
+        "speaker_name": "Carolina Lago",
+        "speaker_role": "Corporate Trainer, FP&A & Financial Modeling Specialist",
+        "speaker_stages": [
+            "FP&A"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Why AI Without Expertise is Just Automated Mediocrity"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/20",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=20"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/21"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-20",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:32:21",
+        "date_gmt": "2026-04-29T21:32:21",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/13.webp",
+        "featured_media": 21,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=20"
+        },
+        "id": 20,
+        "link": "https://cms.cfoainexus.com/speaker/fpa-today-industry-leading-solutions/",
+        "modified": "2026-05-05T06:32:50",
+        "modified_gmt": "2026-05-05T06:32:50",
+        "slug": "fpa-today-industry-leading-solutions",
+        "speaker_link": "https://www.linkedin.com/in/thefpandaguy/",
+        "speaker_name": "Paul Barnhurst",
+        "speaker_role": "Founder of The FP&A Guy, Co-founder FP&A Hub, Microsoft MVP",
+        "speaker_stages": [
+            "FP&A"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "FP\uff06A Today: Industry-Leading Solutions"
+        },
+        "type": "speaker"
+    },
+    {
+        "_links": {
+            "about": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/types/speaker"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers"
+                }
+            ],
+            "curies": [
+                {
+                    "href": "https://api.w.org/{rel}",
+                    "name": "wp",
+                    "templated": true
+                }
+            ],
+            "self": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/speakers/18",
+                    "targetHints": {
+                        "allow": [
+                            "GET"
+                        ]
+                    }
+                }
+            ],
+            "wp:attachment": [
+                {
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media?parent=18"
+                }
+            ],
+            "wp:featuredmedia": [
+                {
+                    "embeddable": true,
+                    "href": "https://cms.cfoainexus.com/wp-json/wp/v2/media/19"
+                }
+            ]
+        },
+        "acf": [],
+        "class_list": [
+            "post-18",
+            "speaker",
+            "type-speaker",
+            "status-publish",
+            "has-post-thumbnail",
+            "hentry"
+        ],
+        "date": "2026-04-29T21:31:40",
+        "date_gmt": "2026-04-29T21:31:40",
+        "featured_image_url": "https://cms.cfoainexus.com/wp-content/uploads/2026/04/4.webp",
+        "featured_media": 19,
+        "guid": {
+            "rendered": "https://cms.cfoainexus.com/?post_type=speaker&#038;p=18"
+        },
+        "id": 18,
+        "link": "https://cms.cfoainexus.com/speaker/strategic-fpa-roadmap-2027/",
+        "modified": "2026-05-05T06:31:52",
+        "modified_gmt": "2026-05-05T06:31:52",
+        "slug": "strategic-fpa-roadmap-2027",
+        "speaker_link": "https://www.linkedin.com/in/christian-wattig/",
+        "speaker_name": "Christian Wattig",
+        "speaker_role": "Director, Wharton FP&A Program, Founder of Inside FP&A",
+        "speaker_stages": [
+            "FP&A"
+        ],
+        "status": "publish",
+        "template": "",
+        "title": {
+            "rendered": "Strategic FP\uff06A Roadmap 2027"
+        },
+        "type": "speaker"
+    }
+]

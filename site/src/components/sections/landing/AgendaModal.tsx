@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Check, X } from 'lucide-react'
+import ConsentCheckbox from '@/components/ui/ConsentCheckbox'
+import SponsorConsentLabel from '@/components/ui/SponsorConsentLabel'
+import { recordSponsorConsent } from '@/lib/kit'
+import { getUtmFields } from '@/lib/utm'
 
 const KIT_API_KEY = import.meta.env.VITE_KIT_API_KEY ?? ''
 const KIT_FORM_ID = '9463108'
@@ -69,6 +73,8 @@ const AgendaModal = ({ open, onClose }: Props) => {
     const [loading, setLoading] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [error, setError] = useState('')
+    // Optional and unchecked by default — must not block the download.
+    const [sponsorConsent, setSponsorConsent] = useState(false)
 
     useEffect(() => {
         if (open) document.body.style.overflow = 'hidden'
@@ -83,6 +89,7 @@ const AgendaModal = ({ open, onClose }: Props) => {
                 setEmail('')
                 setError('')
                 setSubmitted(false)
+                setSponsorConsent(false)
             }, 300)
             return () => clearTimeout(id)
         }
@@ -107,12 +114,15 @@ const AgendaModal = ({ open, onClose }: Props) => {
                     api_key: KIT_API_KEY,
                     email,
                     first_name: name,
+                    fields: getUtmFields(),
                 }),
             })
             const data = await res.json()
             if (!res.ok && !data.subscription) {
                 console.warn('Kit V3 subscribe failed:', data.message)
             }
+
+            if (sponsorConsent) await recordSponsorConsent(email, name, 'agenda-modal')
 
             setSubmitted(true)
         } catch {
@@ -188,6 +198,15 @@ const AgendaModal = ({ open, onClose }: Props) => {
                                                 <DarkInput type="email" placeholder="john@company.com" value={email} onChange={setEmail} />
                                             </div>
                                         </div>
+
+                                        <ConsentCheckbox
+                                            id="agenda-sponsor-consent"
+                                            checked={sponsorConsent}
+                                            onChange={setSponsorConsent}
+                                            className="text-p-sm"
+                                        >
+                                            <SponsorConsentLabel variant="form" onNavigate={onClose} />
+                                        </ConsentCheckbox>
 
                                         {error && <p className="text-p-sm text-red-400 text-center">{error}</p>}
 

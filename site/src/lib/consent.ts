@@ -14,10 +14,18 @@ const COOKIE_MAX_AGE = 15552000 // 180 days
 const PARENT_DOMAIN = '.cfoainexus.com'
 const GA_ID = 'G-9S4P7SGE7G'
 
+// The stub Clarity's hosted tag expects to find: a callable that queues its calls on
+// `.q` until the real clarity.js takes over.
+type ClarityFn = {
+    (...args: unknown[]): void
+    q?: IArguments[]
+}
+
 declare global {
     interface Window {
         dataLayer?: unknown[]
         gtag?: (...args: unknown[]) => void
+        clarity?: ClarityFn
     }
 }
 
@@ -45,9 +53,16 @@ function writeConsent(value: ConsentValue) {
 
 let analyticsLoaded = false
 
+// Only ever called once the visitor has consented, so the Consent Mode update
+// belongs here rather than at the call sites. It used to live in grantConsent alone,
+// which meant a RETURNING visitor — cookie already 'granted', banner never shown —
+// loaded GA while Consent Mode still sat at its denied default, and GA4 counted them
+// as a cookieless ping instead of a user. Must run before gtag('config').
 export function loadAnalytics(clarityId: string) {
     if (analyticsLoaded) return
     analyticsLoaded = true
+
+    gtag('consent', 'update', { analytics_storage: 'granted' })
 
     // Google Analytics (GA4)
     const ga = document.createElement('script')
@@ -57,7 +72,21 @@ export function loadAnalytics(clarityId: string) {
     gtag('js', new Date())
     gtag('config', GA_ID)
 
-    // Microsoft Clarity
+    // Microsoft Clarity.
+    //
+    // The hosted tag at /tag/<id> does NOT define window.clarity — it assumes the
+    // queueing stub from Microsoft's copy-paste snippet is already there and calls
+    // window.clarity(...) on its very first line. Loading the tag on its own throws
+    // "Cannot read properties of undefined (reading 'v')" before Clarity ever starts,
+    // which is why the dashboard showed no sessions. Define the stub first.
+    // Written exactly as Microsoft's snippet does it, queue included — the real
+    // clarity.js drains window.clarity.q once it loads.
+    if (!window.clarity) {
+        window.clarity = function () {
+            const fn = window.clarity!
+            ;(fn.q = fn.q || []).push(arguments)
+        }
+    }
     const clarity = document.createElement('script')
     clarity.async = true
     clarity.src = `https://www.clarity.ms/tag/${clarityId}`
@@ -79,7 +108,7 @@ function clearAnalyticsCookies() {
 
 export function grantConsent(clarityId: string) {
     writeConsent('granted')
-    gtag('consent', 'update', { analytics_storage: 'granted' })
+    // The Consent Mode update is sent inside loadAnalytics — see the note there.
     loadAnalytics(clarityId)
 }
 

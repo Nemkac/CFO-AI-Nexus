@@ -1,4 +1,5 @@
 import Button from '@/components/ui/Button'
+import CtaBanner from '@/components/ui/CtaBanner'
 import { Link } from '@tanstack/react-router'
 import { motion } from 'motion/react'
 
@@ -106,6 +107,15 @@ const SponsorshipPackages = ({ rows }: SponsorshipPackagesProps) => {
                         <Button label="Get Full Proposal" />
                     </Link>
                 </motion.div>
+                <CtaBanner
+                    variant="secondary"
+                    title="Attending instead?"
+                    subtitle="6 stages, live demos and matchmaking · October 20–21"
+                >
+                    <Link to="/checkout">
+                        <Button className="px-10" label="Get Your Pass – $295" />
+                    </Link>
+                </CtaBanner>
             </div>
         </div>
     )

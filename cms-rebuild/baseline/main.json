@@ -1,0 +1,71 @@
+{
+    "banner": {
+        "date": "2026-09-15",
+        "follow_up_text": "Save Your Seat \u2014 $295",
+        "main_text": "Regular Price Ticket \u2022 Ends"
+    },
+    "faq": [
+        {
+            "answer": "October 20-21, 2026, from 10:00 AM to 4:00 PM EST or 4:00 PM to 10:00 PM CET each day.",
+            "question": "When does the conference take place?"
+        },
+        {
+            "answer": "Yes \u2014 100% virtual, hosted on a dedicated event platform. You will receive your access link 48 hours before the conference starts.",
+            "question": "Is this fully virtual?"
+        },
+        {
+            "answer": "All registered attendees receive a unique access link with login instructions in the days before the event, plus reminders leading up to the start. Our support team is on standby throughout the event to help with any technical issues, you will never be left without assistance.",
+            "question": "How do I access the conference?"
+        },
+        {
+            "answer": "Yes. You can register and pay for colleagues using a single payment method (corporate card or invoice).",
+            "question": "Can my company purchase tickets on behalf of attendees?"
+        },
+        {
+            "answer": "Senior finance leaders \u2014 CFOs, VPs of Finance, Finance Directors, and Controllers \u2014 at mid-market and enterprise companies actively evaluating or implementing AI in finance operations.",
+            "question": "Who is this conference for?"
+        },
+        {
+            "answer": "- Live access to all 35+ speaker sessions in two days\r\n- Access to the 7 different stages like FP&A, Accounting, Treasury, Automations and others. \r\n- 1:1 meetings with other participants, knowledge partners and vendors\r\n- Testing different tools on expo with vendor representatives\r\n- Demo of any produce exhibited on the expo stage\r\n- Certificate of attendance if requested\r\n- Claude for finance - lastly updated e-book\r\n- And much more.",
+            "question": "What exactly is included in the ticket?"
+        },
+        {
+            "answer": "Most AI (or Finance) events are built for engineers or product teams. This is the only conference designed specifically for finance leaders, covering deployment, governance, audit-readiness, and ROI from the CFO perspective.",
+            "question": "How is this different from other conferences?"
+        },
+        {
+            "answer": "Yes, most sessions include a live Q&A segment, and we work with all speakers to incorporate one wherever possible. Throughout the event, our team of consultants is active in the live feed answering your questions in real time. In addition, vendor experts organized by category are available with their teams, so whatever your question \u2014 strategic, technical, or implementation-related, you will get answers from the right people.",
+            "question": "Will I be able to ask questions during sessions?"
+        },
+        {
+            "answer": "Yes. We use Stripe for payment processing (PCI-DSS Level 1 compliant) and never store your card details. Personal data is handled per GDPR requirements.",
+            "question": "Is my data secure when I register?"
+        },
+        {
+            "answer": "Sponsors of the event receive an attendee list with company name, role, work email. You can opt out of sponsor communications at any time.",
+            "question": "Will my information be shared with sponsors?"
+        },
+        {
+            "answer": "This is a B2B event for finance professionals at companies, your work email confirms you are part of the audience this conference is designed for, which keeps the community focused and the discussions relevant. Your registration stays with you \u2014 even if you change companies, just let us know your new work email and we will update your access. If you are an independent consultant and don\u2019t have company email, email us at support@cfoainexus.com and we will review your registration manually.",
+            "question": "Why do you require a work email?"
+        },
+        {
+            "answer": "You can email us at support@cfoainexus.com",
+            "question": "How can I contact you?"
+        }
+    ],
+    "hero": {
+        "badge": "October 20\u201321, 2026 | 100% Virtual | 10AM - 4PM EST",
+        "description": "Two days of world-class sessions, live product demos, and AI-driven networking \u2014 built to help CFOs and finance teams cut through the noise and find the tools reshaping modern finance.",
+        "image": "https://cms.cfoainexus.com/wp-content/uploads/2026/05/Nexus-Ai-govornici.png",
+        "sponsors": [
+            "https://cms.cfoainexus.com/wp-content/uploads/2026/05/unu_footer_final.png",
+            "https://cms.cfoainexus.com/wp-content/uploads/2026/05/wts_footer_final.png",
+            "https://cms.cfoainexus.com/wp-content/uploads/2026/05/cfeb_footer_final.png",
+            "https://cms.cfoainexus.com/wp-content/uploads/2026/08/wday_logo_TM_adaptive-planning_white-RGB-scaled.png",
+            "https://cms.cfoainexus.com/wp-content/uploads/2026/08/Ramp-Lockup-RGB-White.png"
+        ],
+        "subtitle": "Auditable, Compliant, Controlled",
+        "title": "Deploy AI in Finance Function"
+    }
+}

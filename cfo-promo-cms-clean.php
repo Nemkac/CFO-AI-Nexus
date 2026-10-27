@@ -461,7 +461,12 @@ function cfo_get_promo_content() {
 add_filter('rest_post_dispatch', function($response, $server, $request) {
     if ($request->get_route() === '/cfo/v1/promo') {
         $data = $response->get_data();
-        $data['registration'] = ['kit_form_id' => cfo_promo_get('kit_form_id', '')];
+        $data['registration'] = [
+            'kit_form_id'  => cfo_promo_get('kit_form_id', ''),
+            // Without the UID the promo site never submits Kit's own embed form,
+            // which is what records referrer/UTM data natively on the subscriber.
+            'kit_form_uid' => cfo_promo_get('kit_form_uid', ''),
+        ];
         $response->set_data($data);
     }
     return $response;

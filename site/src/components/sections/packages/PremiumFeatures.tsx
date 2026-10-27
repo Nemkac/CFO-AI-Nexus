@@ -15,7 +15,7 @@ const features = [
     },
     {
         title: `Viral Digital Presence`,
-        description: `Guaranteed 100,000 brand impressions on LinkedIn through leading B2B creator profiles and pages. Premium featuring on the website, social media content, official PDF agenda and all event presentations.`,
+        description: `100,000 brand impressions on LinkedIn through leading B2B creator profiles and pages. Premium featuring on the website, social media content, official PDF agenda and all event presentations.`,
         image: "./assets/opportunities/ViralDigitalPresence.webp"
     },
     {

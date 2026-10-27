@@ -10,6 +10,7 @@ import Carousel from './sections/Carousel'
 import Costs from './sections/Costs'
 import { fetchPromoContent, type PromoData } from '@/lib/wordpress'
 import { ConsentProvider } from '@/components/consent/ConsentProvider'
+import { captureUtmParams } from '@/lib/utm'
 
 const PromoContent = ({ data }: { data: PromoData | null }) => {
     const { open, closeModal } = useRegistration()
@@ -56,6 +57,8 @@ const PromoApp = () => {
     const [data, setData] = useState<PromoData | null>(null)
 
     useEffect(() => {
+        // Capture campaign parameters before anything can navigate them away.
+        captureUtmParams()
         fetchPromoContent().then(setData).catch(console.error)
     }, [])
 

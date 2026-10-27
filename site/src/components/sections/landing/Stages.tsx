@@ -3,18 +3,21 @@ import { motion, AnimatePresence } from "motion/react"
 import Button from "@/components/ui/Button"
 import FilterButton from "@/components/ui/FilterButton"
 import SpeakerCard from "@/components/ui/SpeakerCard"
-import { fetchSpeakers, type WPSpeaker } from "@/lib/wordpress"
+import { fetchStages, type WPStage } from "@/lib/wordpress"
 import { Link } from "@tanstack/react-router"
-
-const stages = ['Main Stage', 'FP&A', 'Financial Close & Consolidation', 'Treasury & Cash Management', 'AR/AP Automation']
+import { useAgendaModal } from "@/components/layout/AgendaModalContext"
 
 const StagesSection = () => {
-    const [activeStage, setActiveStage] = useState<string>('Main Stage')
-    const [speakers, setSpeakers] = useState<WPSpeaker[]>([])
+    const [stages, setStages] = useState<WPStage[]>([])
+    const [activeStageId, setActiveStageId] = useState<string | null>(null)
+    const { openAgenda } = useAgendaModal()
 
     useEffect(() => {
-        fetchSpeakers().then(setSpeakers).catch(console.error)
+        fetchStages().then(setStages).catch(console.error)
     }, [])
+
+    // The first stage is selected until a visitor picks another one.
+    const activeStage = stages.find(stage => stage.id === activeStageId) ?? stages[0]
 
     return (
         <div className="[background:radial-gradient(50%_80%_at_center,#1F2566,#040820)] md:[background:radial-gradient(40%_80%_at_top,#1F2566,#040820)] py-10 md:py-20 flex items-center w-full justify-center">
@@ -22,13 +25,13 @@ const StagesSection = () => {
                 <div className="flex flex-col items-center flex-wrap gap-8">
                     <div className="flex flex-col gap-4 items-center max-w-xl">
                         <motion.h2
-                            className="text-h2 text-content-heading"
+                            className="text-h2 text-content-heading text-center text-balance"
                             initial={{ opacity: 0, y: 32 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                            Conference
+                            2026 Speakers &amp; Sessions
                         </motion.h2>
                         <motion.p
                             className="text-p-md text-content-body text-center text-balance max-w-3xl"
@@ -37,7 +40,7 @@ const StagesSection = () => {
                             viewport={{ once: true, margin: "-80px" }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         >
-                            We are constantly adding world-class speakers to the roster. Please note that the schedule and speakers are subject to change as we continue to finalize the ultimate experience for you.
+                            Six stages, two days, live on October 20–21. Browse the sessions by stage below and plan what you&apos;ll join
                         </motion.p>
                     </div>
                     <motion.div
@@ -48,18 +51,18 @@ const StagesSection = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     >
                         {stages.map(stage => (
-                            <FilterButton key={stage} label={stage} variant={activeStage === stage ? 'active' : 'inactive'} onClick={() => setActiveStage(stage)} />
+                            <FilterButton key={stage.id} label={stage.name} variant={activeStage?.id === stage.id ? 'active' : 'inactive'} onClick={() => setActiveStageId(stage.id)} />
                         ))}
                     </motion.div>
                 </div>
 
                 <AnimatePresence mode="wait">
                     <motion.div
-                        key={activeStage}
+                        key={activeStage?.id}
                         className="flex flex-row flex-wrap items-stretch gap-6 justify-center"
                         exit={{ opacity: 0, y: -12, transition: { duration: 0.2, ease: "easeIn" } }}
                     >
-                        {speakers.filter(speaker => speaker.stage.some(s => s === activeStage)).map((speaker, i) => (
+                        {(activeStage?.speakers ?? []).map((speaker, i) => (
                             <motion.div
                                 key={i}
                                 className="flex"
@@ -75,16 +78,16 @@ const StagesSection = () => {
                 </AnimatePresence>
 
                 <motion.div
-                    className="flex flex-col items-center w-full gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center w-full gap-4"
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Link to="/checkout">
-                        <Button className="px-20" label="Register Now" />
+                        <Button className="px-10" label="Get Your Pass – $295" />
                     </Link>
-                    <p className="text-p-xsm text-content-heading">10.000+ finance leaders already trained</p>
+                    <Button variant="outline" className="px-10" label="See All Sessions" onClick={openAgenda} />
                 </motion.div>
             </div>
         </div>

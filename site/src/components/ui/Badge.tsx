@@ -34,8 +34,11 @@ const Badge = ({ label, delay = 0, live = false }: Props) => {
     }, [label, delay])
 
     return (
+        // Below md the label stays on one line and its size scales with the viewport so
+        // the longest label still fits a 320px screen. Plain Tailwind sizes here: the
+        // text-p-* classes don't take breakpoint prefixes.
         <div
-            className="flex items-center gap-2 rounded-full border border-surface-action bg-linear-to-r from-surface-page to-pink-900 px-4 py-3 text-p-sm md:text-p-md text-content-heading"
+            className="flex items-center gap-1.5 md:gap-2 rounded-full border border-surface-action bg-linear-to-r from-surface-page to-pink-900 px-3 py-2 md:px-4 md:py-3 font-medium text-[clamp(0.625rem,3vw,0.875rem)]/[1.5] md:text-sm/[1.5] whitespace-nowrap md:whitespace-normal text-content-heading"
             style={live ? { boxShadow: '0 0 12px 2px rgba(252, 105, 210, 0.4)' } : undefined}
         >
             {live && (

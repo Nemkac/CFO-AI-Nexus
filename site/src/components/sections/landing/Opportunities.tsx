@@ -11,17 +11,17 @@ const opportunities = [
     },
     {
         title: "Your Virtual Booth",
-        description: 'A full demand Generation engine, Live product demos, 1:1 video meetings, On-demand content, Q&A sessions',
+        description: 'A complete booth experience, live product demos, 1:1 video meetings, on-demand content and Q&A',
         image: "./assets/opportunities/VirtualBooth.webp"
     },
     {
-        title: `Intent-Based Meeting "Guarantor"`,
-        description: "We help you succeed by scheduling meetings with pre-qualified leads. You don't just wait for visitors; we drive them to your booth.",
+        title: `Smart Meeting Matchmaking`,
+        description: "Our matchmaking helps relevant attendees discover your booth and request meetings based on the interests they choose to share, so your conversations start with the right people.",
         image: "./assets/opportunities/IntentBasedMatchmakingAndEngagement.webp"
     },
     {
-        title: "Real-Time Data & Analytics",
-        description: "Access and export lead lists, booth visitor metrics, and engagement heatmaps in one click.",
+        title: "Qualified Leads & Analytics",
+        description: "Access and export your opted-in leads, plus meeting and engagement insights from attendees who actively connect with your booth, all in one place.",
         image: "./assets/opportunities/MQLData&Analytics.webp"
     },
     {
@@ -38,8 +38,8 @@ const OpportunitiesSection = () => {
                 <div className="flex flex-col items-center flex-wrap gap-6">
                     <Badge label='Double Your ROI with AI-Powered Matchmaking' />
                     <div className='flex flex-col gap-4 items-center text-center'>
-                        <h2 className='text-h2 text-content-heading'>Exhibitor Opportunities</h2>
-                        <p className='text-p-md text-content-heading text-balance'>Stop wasting time on "blind" networking. Our AI-Powered Prospecting analyzes the intent, interests, and behavior of every attendee to locate your high-value prospects.</p>
+                        <h2 className='text-h2 text-content-heading'>Reach the Right Attendees</h2>
+                        <p className='text-p-md text-content-heading text-balance'>Skip blind networking, our matchmaking helps relevant attendees discover you based on the profiles and interests they choose to share.</p>
                     </div>
                     <Link to='/packages'>
                         <Button label='See Exhibitor & Sponsorship Packages' />

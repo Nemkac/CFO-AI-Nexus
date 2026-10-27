@@ -1,15 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { useNavigate } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 import { usePageLoad } from './PageLoadContext'
 import { useMainContent } from './MainContentContext'
+import { useOfferDeadline } from './useOfferDeadline'
 import Countdown from '@/components/ui/Countdown'
-import { ceWallTimeToUtc } from '@/lib/conferenceTime'
 
-// Fallback values — must mirror the current (pre-CMS) banner content.
-const FALLBACK_DATE = '2026-06-16'
-const FALLBACK_MAIN_TEXT = 'Early bird end'
-const FALLBACK_FOLLOW_UP = '72 seats left at €195'
+// Fallback values — must mirror what the CMS currently serves, so a failed
+// fetch degrades to the same offer rather than a stale one.
+const FALLBACK_MAIN_TEXT = 'Regular Ticket • Ends Sept'
+const FALLBACK_FOLLOW_UP = '72 seats left at $295'
 
 const TYPING_SPEED = 30
 
@@ -32,17 +32,13 @@ interface BannerProps {
 const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
     const { isLoaded } = usePageLoad()
     const cms = useMainContent()
-    const navigate = useNavigate()
     const [typedMain, setTypedMain] = useState('')
     const [phase, setPhase] = useState<'main' | 'cta' | 'done'>('main')
 
-    const isoDate = cms?.banner?.date || FALLBACK_DATE
+    const { isoDate, deadline } = useOfferDeadline()
     const mainTextPrefix = cms?.banner?.main_text || FALLBACK_MAIN_TEXT
     const followUpText = cms?.banner?.follow_up_text || FALLBACK_FOLLOW_UP
 
-    // Count down to the start of the conference day in Central European time
-    // (not midnight UTC), so the countdown isn't an hour or two off.
-    const conferenceDate = useMemo(() => ceWallTimeToUtc(`${isoDate}T00:00`), [isoDate])
     const MAIN_TEXT = `${mainTextPrefix} ${formatConferenceDate(isoDate)} • ${followUpText}`
 
     const bannerRef = useRef<HTMLDivElement>(null)
@@ -86,18 +82,30 @@ const Banner = ({ onHeightChange, onTypingDone }: BannerProps) => {
     return (
         <motion.div
             ref={bannerRef}
-            onClick={() => navigate({ to: '/checkout' })}
-            className="fixed top-0 left-0 hover:border-b hover:border-pink-500 right-0 z-50 flex flex-row items-center justify-center w-full bg-linear-to-r from-[#4C203F] to-[#1F2566] px-6 py-4 cursor-pointer"
+            className="fixed top-0 left-0 right-0 z-50 flex flex-row items-center justify-center w-full bg-linear-to-r from-[#4C203F] to-[#1F2566] px-4 py-2.5 md:px-6 md:py-4"
             initial={{ y: '-100%' }}
             animate={isLoaded ? { y: 0 } : { y: '-100%' }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
         >
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full max-w-6xl gap-3 md:gap-0">
-                <p className="text-p-md text-content-heading min-h-[1.5em] text-balance">
-                    {typedMain}
-                    {phase === 'main' && <span className="cursor-blink">|</span>}
+            {/* Mobile: offer text across the top, compact countdown + CTA side by side below.
+                Desktop: text on the left, countdown + CTA on the right. */}
+            <div className="grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-2 w-full max-w-6xl md:flex md:flex-row md:gap-6">
+                {/* The full text is laid out invisibly underneath so the banner takes its
+                    final height up front instead of growing while the text types out. */}
+                <p className="col-span-2 grid text-xs md:text-sm font-medium text-content-heading md:flex-1">
+                    <span aria-hidden className="invisible col-start-1 row-start-1">{MAIN_TEXT}</span>
+                    <span className="col-start-1 row-start-1">
+                        {typedMain}
+                        {phase === 'main' && <span className="cursor-blink">|</span>}
+                    </span>
                 </p>
-                <Countdown targetDate={conferenceDate} />
+                <Countdown targetDate={deadline} compact />
+                <Link
+                    to="/checkout"
+                    className="flex items-center justify-center min-h-10 md:min-h-11 px-4 md:px-6 rounded-full bg-white text-[#4C203F] text-p-md-semibold whitespace-nowrap hover:bg-pink-50 transition-colors"
+                >
+                    Get Your Pass →
+                </Link>
             </div>
         </motion.div>
     )

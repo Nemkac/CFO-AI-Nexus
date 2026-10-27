@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import GeneralData, { type GeneralDataHandle } from '@/components/sections/checkout/GeneralData'
-import StripePanel from '@/components/sections/checkout/StripePanel'
+import StripePanel, { type CheckoutConsents } from '@/components/sections/checkout/StripePanel'
+import { recordSponsorConsent, recordNewsletterOptIn, SPONSOR_CONSENT_VERSION } from '@/lib/kit'
+import { getGaIds } from '@/lib/ga'
 
 export const Route = createFileRoute('/checkout')({ component: CheckoutPage })
 
@@ -28,9 +30,14 @@ function CheckoutPage() {
     setIsLoading(false)
   }
 
-  const handleProceed = async (quantity: number) => {
+  const handleProceed = async (quantity: number, consents: CheckoutConsents) => {
     const data = generalDataRef.current?.validateAndGetData(quantity)
     if (!data) return
+
+    // Record the optional consents in Kit. Deliberately not awaited — neither may
+    // delay or block the purchase.
+    if (consents.sponsor) void recordSponsorConsent(data.workEmail, data.fullName, 'checkout')
+    if (consents.newsletter) void recordNewsletterOptIn(data.workEmail, data.fullName)
 
     setIsLoading(true)
     try {
@@ -40,7 +47,22 @@ function CheckoutPage() {
         body: JSON.stringify({
           priceId: import.meta.env.VITE_ACTIVE_PRICE_ID,
           quantity,
-          metadata: data as unknown as Record<string, string>,
+          metadata: {
+            ...(data as unknown as Record<string, string>),
+            // Second record of consent, tied to the order itself — including when it
+            // was given and which wording was on screen at the time.
+            sponsorConsent: consents.sponsor ? 'yes' : 'no',
+            ...(consents.sponsor
+              ? {
+                  sponsorConsentAt: new Date().toISOString(),
+                  sponsorConsentVersion: SPONSOR_CONSENT_VERSION,
+                }
+              : {}),
+            newsletterOptIn: consents.newsletter ? 'yes' : 'no',
+            // Lets the Stripe webhook attribute the sale to this session.
+            // Empty when analytics cookies were declined — see lib/ga.ts.
+            ...getGaIds(),
+          },
         }),
       })
       if (!res.ok) throw new Error('Failed to create session')

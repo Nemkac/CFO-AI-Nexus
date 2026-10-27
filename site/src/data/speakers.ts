@@ -7,8 +7,6 @@ export type Speaker = {
     link?: string
 }
 
-export const stages = ['Main Stage', 'FP&A', 'Financial Close & Consolidation', 'Treasury & Cash Management', 'AR/AP Automation']
-
 export const speakers: Speaker[] = [
     {
         image: "./assets/speakers/2.webp",
@@ -36,7 +34,7 @@ export const speakers: Speaker[] = [
     },
     {
         image: "./assets/speakers/14.webp",
-        title: "Build Financial Dashboards Leadership Actually Trust",
+        title: "Build and Manage CFO Grade Financial Models with AI",
         speaker: "Josh Aharonoff",
         role: "Founder of Model Wiz and Mighty Digits",
         stage: ['Main Stage'],
@@ -103,7 +101,7 @@ export const speakers: Speaker[] = [
         title: "How to Eliminate Financial Reporting Errors and Face Audits with Confidence using AI",
         speaker: "Dušan Aleksov",
         role: "Partner at WTS Tax & Finance",
-        stage: ['Financial Close & Consolidation'],
+        stage: ['ERP & Accounting'],
         link: "https://www.linkedin.com/in/dusan-aleksov-425812155/"
     },
     {
@@ -111,7 +109,7 @@ export const speakers: Speaker[] = [
         title: "How to Automate the Financial Close and Eliminate Manual Reconciliations",
         speaker: "Alex Stojanović",
         role: "Founder of Fiscalion",
-        stage: ['Financial Close & Consolidation'],
+        stage: ['ERP & Accounting'],
         link: "https://www.linkedin.com/in/aleksandar-stojanovic-msc/"
     },
     {
@@ -119,7 +117,7 @@ export const speakers: Speaker[] = [
         title: "Connecting ERP Systems with MCP server for Real-Time Decision Making",
         speaker: "Bojan Radojičić",
         role: "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance.",
-        stage: ['Financial Close & Consolidation'],
+        stage: ['ERP & Accounting'],
         link: "https://www.linkedin.com/in/bojan-radojicic-a132a526/"
     },
     {
@@ -127,37 +125,22 @@ export const speakers: Speaker[] = [
         title: "Advanced Cash Flow Forecasting by Syncing Banks, PSPs, and ERP Systems",
         speaker: "Bojan Radojičić",
         role: "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance.",
-        stage: ['Treasury & Cash Management'],
+        stage: ['Treasury'],
         link: "https://www.linkedin.com/in/bojan-radojicic-a132a526/"
-    },
-    {
-        image: "./assets/speakers/Marina Milisic.webp",
-        title: "How to Use Automation to Protect Cash Flow from Currency and Interest Rate Risks",
-        speaker: "Marina Milisić",
-        role: "AI Implementation Developer, Corporate Finance Hub",
-        stage: ['Treasury & Cash Management'],
-        link: "https://www.linkedin.com/in/marina-milisic-019839138/"
     },
     {
         image: "./assets/speakers/11.webp",
         title: "Integrating AI Agents into the Finance Team Workflow",
         speaker: "Filip Karaičić",
         role: "Chief Executive Officer at Quantox Technology, Founder at OsirisAI",
-        stage: ['AR/AP Automation'],
+        stage: ['AP/Spend Management'],
         link: "https://www.linkedin.com/in/filipkaraicic/"
-    },
-    {
-        image: "./assets/speakers/1.webp",
-        title: "How to Strengthen Financial Controls and Prevent Payment Fraud via AI",
-        speaker: "Lazar Djurišić",
-        role: "AI Implementation Manager at Corporate Finance Hub",
-        stage: ['AR/AP Automation']
     },
     {
         image: "./assets/speakers/2.webp",
         title: "How AI is transforming AR from a reactive collections function into a predictive engine",
         speaker: "Bojan Radojičiċ",
         role: "Founder of CFO AI Nexus, Corporate Finance Hub and WTS Tax & Finance",
-        stage: ['AR/AP Automation']
+        stage: ['AP/Spend Management']
     },
 ]

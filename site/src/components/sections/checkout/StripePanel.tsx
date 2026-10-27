@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js'
 import { motion, AnimatePresence } from 'motion/react'
+import { Link } from '@tanstack/react-router'
 import Button from '@/components/ui/Button'
+import ConsentCheckbox from '@/components/ui/ConsentCheckbox'
+import SponsorConsentLabel from '@/components/ui/SponsorConsentLabel'
+import { NEWSLETTER_CONSENT_TEXT } from '@/lib/kit'
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string)
-const TICKET_PRICE = Number(import.meta.env.VITE_TICKET_PRICE) || 195
+const TICKET_PRICE = Number(import.meta.env.VITE_TICKET_PRICE) || 295
+
+// Two decimals only when the active price has cents, so whole-dollar tickets
+// stay "$295" rather than "$295.00".
+const formatUsd = (amount: number) =>
+    amount.toLocaleString('en-US', {
+        minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
+        maximumFractionDigits: 2,
+    })
+
+export type CheckoutConsents = { newsletter: boolean; sponsor: boolean }
 
 interface StripePanelProps {
     clientSecret: string | null
     isLoading: boolean
-    onProceed: (quantity: number) => void
+    onProceed: (quantity: number, consents: CheckoutConsents) => void
     onCancel: () => void
 }
 
@@ -18,6 +32,19 @@ const StripePanel = ({ clientSecret, isLoading, onProceed, onCancel }: StripePan
     const [quantity, setQuantity] = useState(1)
     const [termsAccepted, setTermsAccepted] = useState(false)
     const [termsError, setTermsError] = useState(false)
+    // Both optional and unchecked by default — neither may block checkout.
+    const [newsletterOptIn, setNewsletterOptIn] = useState(false)
+    const [sponsorConsent, setSponsorConsent] = useState(false)
+
+    // Browsers restore the previous checked state on reload and React's hydration
+    // leaves it alone — see the same guard in ConsentCheckbox. No consent box may
+    // come back pre-ticked.
+    const termsRef = useRef<HTMLInputElement>(null)
+    useEffect(() => {
+        if (termsRef.current && termsRef.current.checked !== termsAccepted) {
+            termsRef.current.checked = termsAccepted
+        }
+    }, [termsAccepted])
 
     const handleProceed = () => {
         if (!termsAccepted) {
@@ -25,7 +52,7 @@ const StripePanel = ({ clientSecret, isLoading, onProceed, onCancel }: StripePan
             return
         }
         setTermsError(false)
-        onProceed(quantity)
+        onProceed(quantity, { newsletter: newsletterOptIn, sponsor: sponsorConsent })
     }
 
     return (
@@ -38,7 +65,7 @@ const StripePanel = ({ clientSecret, isLoading, onProceed, onCancel }: StripePan
                 {/* Total price */}
                 <div className="flex flex-row items-center justify-between pt-2">
                     <p className="text-h4 text-content-heading">Total:</p>
-                    <p className="text-h4 text-content-heading">${(quantity * TICKET_PRICE).toLocaleString()}</p>
+                    <p className="text-h4 text-content-heading">${formatUsd(quantity * TICKET_PRICE)}</p>
                 </div>
 
                 {/* Quantity counter */}
@@ -57,21 +84,37 @@ const StripePanel = ({ clientSecret, isLoading, onProceed, onCancel }: StripePan
                     </div>
                 </div>
 
-                {/* Terms */}
-                <div className={`flex flex-col gap-2 transition-opacity ${clientSecret || isLoading ? 'opacity-40 pointer-events-none' : ''}`}>
-                    <div className="flex flex-row gap-4 items-start">
-                        <input
-                            type="checkbox"
-                            id="terms"
-                            checked={termsAccepted}
-                            onChange={(e) => { setTermsAccepted(e.target.checked); setTermsError(false) }}
-                            className="mt-1 cursor-pointer"
-                        />
-                        <label htmlFor="terms" className="text-p-md text-content-heading text-pretty cursor-pointer">
-                            By placing this order I agree to the <span className="underline hover:text-pink-500">Organizer Terms</span> and <span className="underline hover:text-pink-500">Privacy Policy</span>
-                        </label>
+                {/* Consents — only the first is required. The two below are optional,
+                    unbundled, and must never block the purchase. */}
+                <div className={`flex flex-col gap-4 transition-opacity ${clientSecret || isLoading ? 'opacity-40 pointer-events-none' : ''}`}>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex flex-row gap-4 items-start">
+                            <input
+                                ref={termsRef}
+                                type="checkbox"
+                                id="terms"
+                                checked={termsAccepted}
+                                autoComplete="off"
+                                onChange={(e) => { setTermsAccepted(e.target.checked); setTermsError(false) }}
+                                className="mt-1 cursor-pointer shrink-0"
+                            />
+                            <label htmlFor="terms" className="text-p-md text-content-heading text-pretty cursor-pointer">
+                                I agree to the{' '}
+                                <Link to="/terms" className="underline hover:text-pink-500" onClick={(e) => e.stopPropagation()}>Organizer Terms</Link>{' '}
+                                and acknowledge that I have read the{' '}
+                                <Link to="/privacy-policy" className="underline hover:text-pink-500" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>.
+                            </label>
+                        </div>
+                        {termsError && <p className="text-p-sm text-red-400">You must accept the terms to continue</p>}
                     </div>
-                    {termsError && <p className="text-p-sm text-red-400">You must accept the terms to continue</p>}
+
+                    <ConsentCheckbox id="newsletter-optin" checked={newsletterOptIn} onChange={setNewsletterOptIn}>
+                        {NEWSLETTER_CONSENT_TEXT}
+                    </ConsentCheckbox>
+
+                    <ConsentCheckbox id="sponsor-consent" checked={sponsorConsent} onChange={setSponsorConsent}>
+                        <SponsorConsentLabel variant="checkout" />
+                    </ConsentCheckbox>
                 </div>
 
                 {clientSecret || isLoading ? (

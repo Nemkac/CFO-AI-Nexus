@@ -4,13 +4,13 @@ import FeatureCard from '@/components/ui/FeatureCard'
 
 const features = [
     {
-        title: "Intent-Based Matchmaking and Engagement",
-        description: 'Our AI-powered prospecting analyzes attendee intent, interests, and behavior to pinpoint your high-value prospects and streamline lead scanning. Book meetings instantly with a seamless integrated scheduler.',
+        title: "Smart Matchmaking & Engagement",
+        description: 'Our matchmaking surfaces relevant attendees based on the profiles and interests they choose to share, and lets interested attendees book meetings with you through the platform.',
         image: "./assets/opportunities/IntentBasedMatchmakingAndEngagement.webp"
     },
     {
         title: "Virtual Booth",
-        description: `Run live or pre-recorded product demos with intent-based qualified buyers, host 1:1 video meetings, and engage via Q&A sessions and chats. Offer downloadable assets, showcase team expertise, monitor exact ROI through advanced metrics.`,
+        description: `Run live or pre-recorded product demos with intent-based qualified buyers, host 1:1 video meetings, share on-demand content and Q&A, and see engagement from attendees who connect with you.`,
         image: "./assets/opportunities/VirtualBooth.webp"
     },
     {
@@ -19,8 +19,8 @@ const features = [
         image: "./assets/opportunities/ConferenceSpeakingSlot.webp",
     },
     {
-        title: `Curated 1:1 with pre-qualified leads`,
-        description: `Our team proactively identifies and invites profiles matching your criteria to ensure your 1:1 calendar is filled with high-value prospects.`,
+        title: `Relevant 1:1 Connections`,
+        description: `Our matchmaking helps relevant attendees discover you and request meetings based on the interests they choose to share.`,
         image: "./assets/opportunities/Curated1-1WithPre-qualifiedLeads.webp",
     },
     {
@@ -29,8 +29,8 @@ const features = [
         image: "./assets/opportunities/DigitalPresenceAndBranding.webp"
     },
     {
-        title: "MQL Data & Analytics",
-        description: 'Access and export lead lists, booth visitor metrics, and engagement heatmaps in one click. Arm yourself for the post-event call and measure exact ROI.',
+        title: "Qualified Leads & Analytics",
+        description: 'Access and export your opted-in leads, plus meeting and engagement insights from attendees who actively connect with your booth.',
         image: "./assets/opportunities/MQLData&Analytics.webp"
     },
 ]

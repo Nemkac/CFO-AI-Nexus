@@ -6,8 +6,13 @@ export type WPSpeaker = {
     speaker: string
     role: string
     title: string
-    stage: string[]
     link?: string
+}
+
+export type WPStage = {
+    id: string
+    name: string
+    speakers: WPSpeaker[]
 }
 
 export type WPVendor = {
@@ -18,18 +23,11 @@ export type WPVendor = {
     link: string
 }
 
-export async function fetchSpeakers(): Promise<WPSpeaker[]> {
-    const res = await fetch(`${WP_BASE}/speakers?per_page=100&orderby=menu_order&order=asc`)
-    if (!res.ok) throw new Error('Failed to fetch speakers')
-    const data = await res.json()
-    return data.map((item: any): WPSpeaker => ({
-        image:   item.featured_image_url    ?? '',
-        speaker: item.speaker_name          ?? item.meta?.speaker_name   ?? '',
-        role:    item.speaker_role          ?? item.meta?.speaker_role   ?? '',
-        title:   item.title.rendered        ?? '',
-        stage:   item.speaker_stages        ?? item.meta?.speaker_stages ?? [],
-        link:    item.speaker_link          ?? item.meta?.speaker_link   ?? undefined,
-    }))
+// Stages in CMS order, each with its published speakers in CMS order.
+export async function fetchStages(): Promise<WPStage[]> {
+    const res = await fetch(`${WP_BASE_RAW}/cfo/v1/stages`, { cache: 'no-store' })
+    if (!res.ok) throw new Error('Failed to fetch stages')
+    return res.json()
 }
 
 export type PromoNumberCard = { number: string; label: string; description: string }
